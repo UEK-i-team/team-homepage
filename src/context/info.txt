@@ -1,0 +1,2 @@
+We store React Context in this folder
+Check our documents: https://github.com/UEK-i-team/documentation/blob/main/structure.MD
