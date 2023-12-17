@@ -1,22 +1,50 @@
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { container, content, image, text, title } from './ItemTile.module.scss';
 
-export const ItemTile = ({ projectTitle, projectText, projectImageSrc }) => {
-  // const imageSrc = getImage(projectImageSrc)
+export const ItemTile = ({ projectTitle, projectText, projectImage }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          internal: { mediaType: { regex: "/image/" } }
+        }
+      ) {
+        nodes {
+          relativePath
+          childImageSharp {
+            gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  `);
 
-  useEffect(() => {
-    console.log(projectImageSrc);
-  }, []);
+  const matchedImage = data.allFile.nodes.find(
+    (node) => node.relativePath === projectImage
+  );
+
+  if (!matchedImage) {
+    console.error(`Image ${projectImage} not found`);
+    return null;
+  }
+
+  const imageSrc = getImage(matchedImage);
 
   return (
-    <div className={`${container}`}>
-      <img alt={'Project image'} src={projectImageSrc} className={`${image}`} />
-      <div className={`${content}`}>
-        <div className={`${title}`}>{projectTitle}</div>
-        <div className={`${text}`}>{projectText}</div>
+    <div className={container}>
+      <GatsbyImage image={imageSrc} alt="Project image" className={image} />
+      <div className={content}>
+        <div className={title}>{projectTitle}</div>
+        <div className={text}>{projectText}</div>
       </div>
     </div>
   );
@@ -25,5 +53,5 @@ export const ItemTile = ({ projectTitle, projectText, projectImageSrc }) => {
 ItemTile.propTypes = {
   projectTitle: PropTypes.string.isRequired,
   projectText: PropTypes.string.isRequired,
-  projectImageSrc: PropTypes.string.isRequired,
+  projectImage: PropTypes.string.isRequired,
 };
