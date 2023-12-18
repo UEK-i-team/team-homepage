@@ -1,0 +1,35 @@
+@import "../../assets/styles/theme";
+
+.containerGrid {
+  display: grid;
+  grid-template-columns: 52% auto;
+  grid-template-rows: 45% 45% 10%;
+  padding: 6%;
+}
+
+.containerGrid > div {
+  text-align: left;
+  color: $white;
+}
+
+.mainContainer {
+  background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
+}
+
+.containerLinks {
+  display: flex;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 90%;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 90%;
+}
+
+p {
+  font-size: 90%;
+}
