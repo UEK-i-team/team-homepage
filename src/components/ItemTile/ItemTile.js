@@ -5,7 +5,13 @@ import React from 'react';
 
 import { container, content, image, text, title } from './ItemTile.module.scss';
 
-export const ItemTile = ({ projectTitle, projectText, projectImage }) => {
+export const ItemTile = ({
+  projectTitle,
+  projectText,
+  projectImage, 
+  /* 'fileName.png', image from src/assets/images/ */
+  projectImageAlt,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -32,16 +38,11 @@ export const ItemTile = ({ projectTitle, projectText, projectImage }) => {
     (node) => node.relativePath === projectImage
   );
 
-  if (!matchedImage) {
-    console.error(`Image ${projectImage} not found`);
-    return null;
-  }
-
   const imageSrc = getImage(matchedImage);
 
   return (
     <div className={container}>
-      <GatsbyImage image={imageSrc} alt="Project image" className={image} />
+      <GatsbyImage image={imageSrc} alt={projectImageAlt} className={image} />
       <div className={content}>
         <div className={title}>{projectTitle}</div>
         <div className={text}>{projectText}</div>
@@ -54,4 +55,5 @@ ItemTile.propTypes = {
   projectTitle: PropTypes.string.isRequired,
   projectText: PropTypes.string.isRequired,
   projectImage: PropTypes.string.isRequired,
+  projectImageAlt: PropTypes.string.isRequired,
 };
