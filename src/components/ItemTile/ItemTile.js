@@ -6,11 +6,11 @@ import React from 'react';
 import { container, content, image, text, title } from './ItemTile.module.scss';
 
 export const ItemTile = ({
-  projectTitle,
-  projectText,
-  projectImage, 
+  itemTitle,
+  itemText,
+  itemImage, 
   /* 'fileName.png', image from src/assets/images/ */
-  projectImageAlt,
+  itemImageAlt,
 }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -35,25 +35,25 @@ export const ItemTile = ({
   `);
 
   const matchedImage = data.allFile.nodes.find(
-    (node) => node.relativePath === projectImage
+    (node) => node.relativePath === itemImage
   );
 
   const imageSrc = getImage(matchedImage);
 
   return (
     <div className={container}>
-      <GatsbyImage image={imageSrc} alt={projectImageAlt} className={image} />
+      <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
       <div className={content}>
-        <div className={title}>{projectTitle}</div>
-        <div className={text}>{projectText}</div>
+        <div className={title}>{itemTitle}</div>
+        <div className={text}>{itemText}</div>
       </div>
     </div>
   );
 };
 
 ItemTile.propTypes = {
-  projectTitle: PropTypes.string.isRequired,
-  projectText: PropTypes.string.isRequired,
-  projectImage: PropTypes.string.isRequired,
-  projectImageAlt: PropTypes.string.isRequired,
+  itemTitle: PropTypes.string.isRequired,
+  itemText: PropTypes.string.isRequired,
+  itemImage: PropTypes.string.isRequired,
+  itemImageAlt: PropTypes.string.isRequired,
 };
