@@ -1,0 +1,70 @@
+@import '../../assets/styles/theme';
+
+.container {
+  display: flex;
+  width: 334px;
+  height: 100vh;
+  background-color: $light-sidebar-mobile;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  font-family: $helvetica;
+}
+.close {
+    background-color: red;
+    position:relative;
+    top: 0px;
+    left: 272px;
+    width: 10px;
+    height: 10px;
+}
+.menu {
+    background-color: red;
+    width: 286px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px 24px;
+    li {
+        transition: ease-in-out 0.2s;
+    }
+    ul {
+        display: none;
+        height: 0px;
+        transition: ease-in-out 0.2s;
+    }
+    ul li {
+        padding: 12px 0px;
+        border-top: 1px solid black;
+    }
+    ul li:last-child {
+        padding: 12px 0px 0px 0px;
+    }
+
+    > li {
+        padding: 12px 0px;
+        border-bottom: 1px solid black;
+        position: relative;
+    }
+
+    > ul {
+        background-color: rgb(165, 165, 255);
+        width: 100%;
+        margin: 0px;
+        padding: 12px 0px;
+    }
+    > ul li {
+        padding: 12px 0px;
+        border-top: 1px solid black;
+    }
+
+    li:hover ul{
+        background-color: violet;
+        display: block;
+        transition: ease-in-out 0.2s;
+        width: 100%;
+        margin: 0px;
+        padding: 12px 0px 0px 0px;
+        list-style: none;
+        height: 100%;
+    }
+}
