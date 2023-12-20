@@ -2,69 +2,56 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   width: 334px;
   height: 100vh;
   background-color: $light-sidebar-mobile;
   position: fixed;
   right: 0px;
   top: 0px;
-  font-family: $helvetica;
 }
-.close {
-    background-color: red;
-    position:relative;
-    top: 0px;
-    left: 272px;
-    width: 10px;
-    height: 10px;
+.menu{
+    padding: 0px 24px;
 }
-.menu {
-    background-color: red;
-    width: 286px;
-    list-style: none;
-    padding: 0px;
-    margin: 0px 24px;
-    li {
-        transition: ease-in-out 0.2s;
-    }
-    ul {
-        display: none;
-        height: 0px;
-        transition: ease-in-out 0.2s;
-    }
-    ul li {
-        padding: 12px 0px;
-        border-top: 1px solid black;
-    }
-    ul li:last-child {
-        padding: 12px 0px 0px 0px;
-    }
-
-    > li {
-        padding: 12px 0px;
-        border-bottom: 1px solid black;
-        position: relative;
-    }
-
-    > ul {
-        background-color: rgb(165, 165, 255);
-        width: 100%;
-        margin: 0px;
-        padding: 12px 0px;
-    }
-    > ul li {
-        padding: 12px 0px;
-        border-top: 1px solid black;
-    }
-
-    li:hover ul{
-        background-color: violet;
-        display: block;
-        transition: ease-in-out 0.2s;
-        width: 100%;
-        margin: 0px;
-        padding: 12px 0px 0px 0px;
-        list-style: none;
-        height: 100%;
-    }
+.menuItem{
+    padding: 12px 0px;
+    border-bottom: 1px $black_100_80 solid;
+}
+.menuItemProjects{
+    padding: 12px 0px;
+    border-bottom: solid $black_100_30 1px;
+}
+.caronItem{
+    width: 13px;
+    margin-right: 6px;
+}
+.caronItemRotated{
+    width: 13px;
+    margin-right: 6px;
+    transform: rotate(90deg);
+}
+.projectsOption{
+    display: flex;
+    align-items: center;
+    padding: 12px 0px;
+    border-bottom: solid $black_100_30 1px;
+    transition: ease-in-out;
+    height: 100%;
+    // transition: ease-in-out 0.4s;
+}
+.projectsOptionHidden{
+    transition: ease-in-out;
+    align-items: center;
+    padding:0px;
+    height: 0px;
+    display: none;
+    // transition: ease-in-out 0.4s;
+    // overflow: hidden;
+}
+.menuItemDecoration{
+    background-color: $black;
+    width: 3px;
+    height: 3px;
+    margin-right: 14px;
+    margin-left: 2px;
 }
