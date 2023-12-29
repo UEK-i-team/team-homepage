@@ -3,20 +3,45 @@ import '../MobileNavbar/MobileNavbar.scss';
 import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import { IconButton } from '@mui/material';
 import React from 'react';
+import { useState } from 'react';
 
+import logo_icon_dark_theme from '../../assets/images/logo_icon_dark_theme.png';
 import logo_icon_light_theme from '../../assets/images/logo_icon_light_theme.png';
+import logo_text_dark_theme from '../../assets/images/logo_text_dark_theme.png';
 import logo_text_light_theme from '../../assets/images/logo_text_light_theme.png';
 
 export function MobileNavbar() {
-  //   const [theme, setTheme] = useState(false);
-  //   let navbar = document.getElementsByClassName('MobileNavbar')[0]
-  //   function switchTheme(theme) {
-  //     return (
-  //         navbar.style.backgroundColor = 'rgba(8,0,16)';
-  //         navbar.style.color = 'white';
+  const [theme, setTheme] = useState(false);
 
-  //         );
-  //   }
+  function switchTheme() {
+    setTheme(false);
+    if (theme == false) {
+      document.getElementsByClassName('MobileNavbar')[0].style.color = 'white';
+      document.getElementsByClassName('MobileNavbar')[0].style.backgroundColor =
+        'rgba(8,0,16)';
+      document.getElementsByTagName('img')[0].src = logo_icon_dark_theme;
+      document.getElementsByTagName('img')[1].src = logo_text_dark_theme;
+      document.getElementsByClassName(
+        'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root'
+      )[0].style.color = 'white';
+      document.getElementsByTagName('rect')[0].style.fill = 'white';
+      document.getElementsByTagName('rect')[1].style.fill = 'white';
+      document.getElementsByTagName('rect')[2].style.fill = 'white';
+      setTheme(true);
+    } else {
+      document.getElementsByClassName('MobileNavbar')[0].style.color = 'black';
+      document.getElementsByClassName('MobileNavbar')[0].style.backgroundColor =
+        'white';
+      document.getElementsByTagName('img')[0].src = logo_icon_light_theme;
+      document.getElementsByTagName('img')[1].src = logo_text_light_theme;
+      document.getElementsByClassName(
+        'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root'
+      )[0].style.color = 'black';
+      document.getElementsByTagName('rect')[0].style.fill = 'black';
+      document.getElementsByTagName('rect')[1].style.fill = 'black';
+      document.getElementsByTagName('rect')[2].style.fill = 'black';
+    }
+  }
   return (
     <nav className="MobileNavbar">
       <div className="LogoContainer">
@@ -38,11 +63,11 @@ export function MobileNavbar() {
       </div>
       <div className="Theme">
         <IconButton
-          style={{ width: '40px', height: '40px' }}
-          // onClick={() => SwitchTheme() ? :}
+          style={{ width: '40px', height: '40px', color: 'black' }}
+          onClick={() => switchTheme()}
         >
           <svg className="ThemeIcon">
-            <Brightness6RoundedIcon style={{ color: 'black' }} />
+            <Brightness6RoundedIcon />
           </svg>
         </IconButton>
       </div>
