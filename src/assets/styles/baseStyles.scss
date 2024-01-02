@@ -13,8 +13,14 @@ html{
   scroll-behavior: smooth;
 }
 
+
 body{
   font-family: 'Helvetica', sans-serif;
   font-size: 1.6rem;
-  margin: 0;
+  background-image: url('../images/background-light.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: repeat-y;
+  height: 300vh;
+  margin: 0; 
 }
