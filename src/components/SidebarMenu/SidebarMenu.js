@@ -20,10 +20,10 @@ import {
 } from './SidebarMenu.module.scss';
 
 export const SidebarMenu = () => {
-  const [projects, useProjects] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
 
   const handleToggleProjects = () => {
-    useProjects(!projects);
+    setIsProjectsVisible((prev) => !prev);
   };
 
   return (
@@ -35,9 +35,9 @@ export const SidebarMenu = () => {
         <div className={menuItem}>
           <Link to="/">HOME</Link>
         </div>
-        <div className={projects ? menuItemProjects : menuItem}>
+        <div className={isProjectsVisible ? menuItemProjects : menuItem}>
           <CaronSVG
-            className={projects ? caronItem : caronItemRotated}
+            className={isProjectsVisible ? caronItem : caronItemRotated}
             onClick={handleToggleProjects}
           />
           <span>
@@ -45,13 +45,21 @@ export const SidebarMenu = () => {
           </span>
         </div>
         <div>
-          <div className={projects ? projectsOption : projectsOptionHidden}>
+          <div
+            className={
+              isProjectsVisible ? projectsOption : projectsOptionHidden
+            }
+          >
             <div className={menuItemDecoration}></div>
             <span>
               <Link to="/">MAPA UCZELNI</Link>
             </span>
           </div>
-          <div className={projects ? projectsOption : projectsOptionHidden}>
+          <div
+            className={
+              isProjectsVisible ? projectsOption : projectsOptionHidden
+            }
+          >
             <div className={menuItemDecoration}></div>
             <span>
               <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
@@ -69,12 +77,12 @@ export const SidebarMenu = () => {
         </div>
       </div>
       <div className={socialMedia}>
-        <Link to="/">
+        <a href="https://github.com/UEK-i-team">
           <GithubSVG />
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://www.facebook.com/KNIUEK">
           <FacebookSVG />
-        </Link>
+        </a>
       </div>
     </div>
   );
