@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
@@ -27,33 +28,53 @@ export const SidebarMenu = () => {
 
   return (
     <div className={container}>
-      <CloseSVG className={close} />
+      <div className={close}>
+        <CloseSVG />
+      </div>
       <div className={menu}>
-        <div className={menuItem}>HOME</div>
+        <div className={menuItem}>
+          <Link to="/">HOME</Link>
+        </div>
         <div className={projects ? menuItemProjects : menuItem}>
           <CaronSVG
             className={projects ? caronItem : caronItemRotated}
             onClick={handleToggleProjects}
           />
-          <span>PROJEKTY</span>
+          <span>
+            <Link to="/">PROJEKTY</Link>
+          </span>
         </div>
         <div>
           <div className={projects ? projectsOption : projectsOptionHidden}>
             <div className={menuItemDecoration}></div>
-            <span>MAPA UCZELNI</span>
+            <span>
+              <Link to="/">MAPA UCZELNI</Link>
+            </span>
           </div>
           <div className={projects ? projectsOption : projectsOptionHidden}>
             <div className={menuItemDecoration}></div>
-            <span>TAJNY PROJEKT PROJEKT 339</span>
+            <span>
+              <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
+            </span>
           </div>
         </div>
-        <div className={menuItem}>AKTUALNOŚCI</div>
-        <div className={menuItem}>DOŁĄCZ DO NAS</div>
-        <div className={menuItem}>KONTAKT</div>
+        <div className={menuItem}>
+          <Link to="/">AKTUALNOŚCI</Link>
+        </div>
+        <div className={menuItem}>
+          <Link to="/">DOŁĄCZ DO NAS</Link>
+        </div>
+        <div className={menuItem}>
+          <Link to="/">KONTAKT</Link>
+        </div>
       </div>
       <div className={socialMedia}>
-        <GithubSVG />
-        <FacebookSVG />
+        <Link to="/">
+          <GithubSVG />
+        </Link>
+        <Link to="/">
+          <FacebookSVG />
+        </Link>
       </div>
     </div>
   );
