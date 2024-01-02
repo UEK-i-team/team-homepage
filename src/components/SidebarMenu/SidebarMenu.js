@@ -20,10 +20,12 @@ import {
 } from './SidebarMenu.module.scss';
 
 export const SidebarMenu = () => {
-  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
+  const facebookLink = 'https://www.facebook.com/KNIUEK';
+  const githubLink = 'https://github.com/UEK-i-team';
+  const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
   const handleToggleProjects = () => {
-    setIsProjectsVisible((prev) => !prev);
+    setAreProjectsVisible((prev) => !prev);
   };
 
   return (
@@ -35,9 +37,9 @@ export const SidebarMenu = () => {
         <div className={menuItem}>
           <Link to="/">HOME</Link>
         </div>
-        <div className={isProjectsVisible ? menuItemProjects : menuItem}>
+        <div className={areProjectsVisible ? menuItemProjects : menuItem}>
           <CaronSVG
-            className={isProjectsVisible ? caronItem : caronItemRotated}
+            className={areProjectsVisible ? caronItem : caronItemRotated}
             onClick={handleToggleProjects}
           />
           <span>
@@ -47,7 +49,7 @@ export const SidebarMenu = () => {
         <div>
           <div
             className={
-              isProjectsVisible ? projectsOption : projectsOptionHidden
+              areProjectsVisible ? projectsOption : projectsOptionHidden
             }
           >
             <div className={menuItemDecoration}></div>
@@ -57,7 +59,7 @@ export const SidebarMenu = () => {
           </div>
           <div
             className={
-              isProjectsVisible ? projectsOption : projectsOptionHidden
+              areProjectsVisible ? projectsOption : projectsOptionHidden
             }
           >
             <div className={menuItemDecoration}></div>
@@ -77,10 +79,10 @@ export const SidebarMenu = () => {
         </div>
       </div>
       <div className={socialMedia}>
-        <a href="https://github.com/UEK-i-team">
+        <a href={githubLink}>
           <GithubSVG />
         </a>
-        <a href="https://www.facebook.com/KNIUEK">
+        <a href={facebookLink}>
           <FacebookSVG />
         </a>
       </div>

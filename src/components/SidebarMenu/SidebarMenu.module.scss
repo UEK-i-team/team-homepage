@@ -54,7 +54,6 @@
 .caronItemRotated:hover {
   cursor: pointer;
 }
-
 .projectsOption {
   display: flex;
   align-items: center;
@@ -62,7 +61,6 @@
   border-bottom: solid $grey_60 1px;
   transition: ease-in-out;
   height: 100%;
-  // transition: ease-in-out 0.4s;
 }
 .projectsOptionHidden {
   transition: ease-in-out;
@@ -70,8 +68,6 @@
   padding: 0px;
   height: 0px;
   display: none;
-  // transition: ease-in-out 0.4s;
-  // overflow: hidden;
 }
 .menuItemDecoration {
   background-color: $white;
@@ -94,7 +90,6 @@
     max-width: 24px;
   }
 }
-
 a {
   text-decoration: none;
   color: inherit;
