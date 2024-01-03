@@ -21,9 +21,6 @@
     width: 20px;
     height: 20px;
   }
-  :hover {
-    cursor: pointer;
-  }
 }
 .menu {
   margin-top: 116px;
@@ -49,10 +46,6 @@
   margin-right: 6px;
   filter: invert(100%);
   height: 100%;
-}
-.caronItem:hover,
-.caronItemRotated:hover {
-  cursor: pointer;
 }
 .projectsOption {
   display: flex;

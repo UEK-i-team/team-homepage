@@ -5,6 +5,7 @@ import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
 import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
+import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
   caronItem,
   caronItemRotated,
@@ -20,8 +21,6 @@ import {
 } from './SidebarMenu.module.scss';
 
 export const SidebarMenu = () => {
-  const facebookLink = 'https://www.facebook.com/KNIUEK';
-  const githubLink = 'https://github.com/UEK-i-team';
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
   const handleToggleProjects = () => {
@@ -79,10 +78,10 @@ export const SidebarMenu = () => {
         </div>
       </div>
       <div className={socialMedia}>
-        <a href={githubLink}>
+        <a href={GITHUB_LINK}>
           <GithubSVG />
         </a>
-        <a href={facebookLink}>
+        <a href={FACEBOOK_LINK}>
           <FacebookSVG />
         </a>
       </div>
