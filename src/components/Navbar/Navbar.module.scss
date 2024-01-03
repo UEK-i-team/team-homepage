@@ -1,0 +1,100 @@
+@import "../../assets/styles/theme";
+
+
+.MainContainer {
+    z-index: 10;
+    background: $white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    padding: 40px 32px;
+    height: 108px;
+    width: 100%;
+    white-space: nowrap;
+    position: -webkit-sticky;
+    position: sticky;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.MainContainerDark {
+    background-color: $dark-navbar-mobile;
+}
+.LogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    
+}
+
+.Logo {
+   
+    height: 26px;
+    width: 19px;
+    margin-right: 14px;
+
+}
+
+
+
+.Name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 68px;
+}
+#ENG {
+    color: $grey_25;
+    margin-right: 12px;
+}
+#PL {
+    
+}
+#PL_dark {
+    color: $white;
+}
+.LanguageThemeWraper {
+   
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 16px;
+    margin-top: 2px;
+
+}
+
+.LanguageThemeWraper button {
+   
+    background: none;
+    border: none;
+}
+
+
+
+
+
+.SidebarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.Sidebar {
+   
+}
+
+#Line {
+    color: $black;
+}
+#LineDark {
+    color: $white;
+}
