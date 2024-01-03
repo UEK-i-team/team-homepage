@@ -11,6 +11,20 @@
   top: 0px;
   color: $white;
   font-family: $helvetica;
+  transition: 0.3s ease-in-out;
+}
+.containerHidden{
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: 100vh;
+  background-color: $violet_80;
+  position: fixed;
+  right: -334px;
+  top: 0px;
+  color: $white;
+  font-family: $helvetica;
+  transition: 0.3s ease-in-out;
 }
 .close {
   top: 46px;
@@ -40,27 +54,33 @@
   filter: invert(100%);
   transform: rotate(90deg);
   height: 100%;
+  transition: 0.2s ease-in-out;
 }
 .caronItemRotated {
   width: 13px;
   margin-right: 6px;
   filter: invert(100%);
   height: 100%;
+  transition: 0.2s ease-in-out;
 }
 .projectsOption {
   display: flex;
   align-items: center;
   padding: 12px 0px;
   border-bottom: solid $grey_60 1px;
-  transition: ease-in-out;
+  transition: ease-in-out 0.3s;
   height: 100%;
+  transition: 0.3s ease;
 }
 .projectsOptionHidden {
-  transition: ease-in-out;
+  display: flex;
+  transition: ease-in-out 0.3s;
   align-items: center;
   padding: 0px;
   height: 0px;
-  display: none;
+  pointer-events: none;
+  visibility: hidden;
+  font-size: 0px;
 }
 .menuItemDecoration {
   background-color: $white;

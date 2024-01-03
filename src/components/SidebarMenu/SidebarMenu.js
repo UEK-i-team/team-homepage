@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
@@ -11,6 +12,7 @@ import {
   caronItemRotated,
   close,
   container,
+  containerHidden,
   menu,
   menuItem,
   menuItemDecoration,
@@ -20,7 +22,7 @@ import {
   socialMedia,
 } from './SidebarMenu.module.scss';
 
-export const SidebarMenu = () => {
+export const SidebarMenu = ({ isSidebarMenuVisible }) => {
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
   const handleToggleProjects = () => {
@@ -28,7 +30,7 @@ export const SidebarMenu = () => {
   };
 
   return (
-    <div className={container}>
+    <div className={isSidebarMenuVisible ? container : containerHidden}>
       <div className={close}>
         <CloseSVG />
       </div>
@@ -87,4 +89,8 @@ export const SidebarMenu = () => {
       </div>
     </div>
   );
+};
+
+SidebarMenu.propTypes = {
+  isSidebarMenuVisible: PropTypes.bool.isRequired,
 };
