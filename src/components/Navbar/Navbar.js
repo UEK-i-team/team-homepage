@@ -1,11 +1,11 @@
-import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
-import { IconButton } from '@mui/material';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { useState } from 'react';
 
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
+import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
+import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import {
   ENG,
   LanguageThemeWraper,
@@ -67,22 +67,14 @@ export function Navbar() {
         <button id={isLightTheme ? PL : PL_dark}>PL</button>
         <span id={isLightTheme ? Line : LineDark}> | </span>
         <button id={ENG}>ENG</button>
-        <IconButton
-          style={{ width: '40px', height: '40px', color: 'black' }}
-          onClick={() => switchTheme()}
-        >
-          <svg>
-            <Brightness6RoundedIcon
-              sx={{ color: isLightTheme ? '#000' : '#FFF' }}
-            />
-          </svg>
-        </IconButton>
+
+        <button onClick={() => switchTheme()}>
+          {isLightTheme ? <ThemeIconLight /> : <ThemeIconDark />}
+        </button>
       </div>
       <div className={SidebarContainer}>
         <div className={Sidebar}>
-          <IconButton>
-            {isLightTheme ? <SidebarLight /> : <SidebarDark />}
-          </IconButton>
+          <button>{isLightTheme ? <SidebarLight /> : <SidebarDark />}</button>
         </div>
       </div>
     </nav>
