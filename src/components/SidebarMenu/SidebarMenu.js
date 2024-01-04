@@ -11,8 +11,10 @@ import {
   caronItem,
   caronItemRotated,
   close,
-  container,
-  containerHidden,
+  containerDark,
+  containerHiddenDark,
+  containerHiddenLight,
+  containerLight,
   menu,
   menuItem,
   menuItemDecoration,
@@ -22,16 +24,33 @@ import {
   socialMedia,
 } from './SidebarMenu.module.scss';
 
-export const SidebarMenu = ({ isSidebarMenuVisible }) => {
+export const SidebarMenu = ({
+  isSidebarMenuVisible,
+  setIsSidebarMenuVisible,
+  isDarkTheme,
+}) => {
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
+  const handleClose = () => {
+    setIsSidebarMenuVisible(false);
+  };
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
   };
 
   return (
-    <div className={isSidebarMenuVisible ? container : containerHidden}>
-      <div className={close}>
+    <div
+      className={
+        isSidebarMenuVisible
+          ? isDarkTheme
+            ? containerDark
+            : containerLight
+          : isDarkTheme
+          ? containerHiddenDark
+          : containerHiddenLight
+      }
+    >
+      <div className={close} onClick={handleClose}>
         <CloseSVG />
       </div>
       <div className={menu}>
@@ -93,4 +112,6 @@ export const SidebarMenu = ({ isSidebarMenuVisible }) => {
 
 SidebarMenu.propTypes = {
   isSidebarMenuVisible: PropTypes.bool.isRequired,
+  setIsSidebarMenuVisible: PropTypes.func.isRequired,
+  isDarkTheme: PropTypes.bool.isRequired,
 };
