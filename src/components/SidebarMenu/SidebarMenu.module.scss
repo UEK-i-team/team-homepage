@@ -1,0 +1,227 @@
+@import '../../assets/styles/theme';
+
+.containerDark,
+.containerHiddenDark {
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: 100vh;
+  background-color: $violet_80;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  color: $white;
+  font-family: $helvetica;
+  transition: 0.3s ease-in-out;
+
+  .close {
+    top: 46px;
+    right: 46px;
+    position: absolute;
+    filter: invert(100%);
+    * {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .menu {
+    margin-top: 116px;
+    padding: 0px 24px;
+  }
+  .menuItem {
+    padding: 12px 0px;
+    border-bottom: 1px $grey_10 solid;
+  }
+  .menuItemProjects {
+    padding: 12px 0px;
+    border-bottom: solid $grey_60 1px;
+  }
+  .caronItem {
+    width: 13px;
+    margin-right: 6px;
+    filter: invert(100%);
+    transform: rotate(90deg);
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    left: -10px;
+    margin: -6px 0px;
+    margin-right: -10px;
+    padding: 8px 8px;
+    box-sizing: content-box;
+  }
+  .caronItemRotated {
+    width: 13px;
+    filter: invert(100%);
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    left: -10px;
+    margin: -6px 0px;
+    margin-right: -10px;
+    padding: 8px 8px;
+    box-sizing: content-box;
+  }
+  .projectsOption {
+    display: flex;
+    align-items: center;
+    padding: 12px 0px;
+    border-bottom: solid $grey_60 1px;
+    transition: ease-in-out 0.3s;
+    height: 100%;
+    transition: 0.3s ease;
+  }
+  .projectsOptionHidden {
+    display: flex;
+    transition: ease-in-out 0.3s;
+    align-items: center;
+    padding: 0px;
+    height: 0px;
+    pointer-events: none;
+    visibility: hidden;
+    font-size: 0px;
+    opacity: 0;
+  }
+  .menuItemDecoration {
+    background-color: $white;
+    width: 3px;
+    height: 3px;
+    margin-right: 14px;
+    margin-left: 2px;
+  }
+  .socialMedia {
+    display: flex;
+    margin-top: 59px;
+    padding: 0px 24px;
+    height: 200px;
+    height: 24px;
+    a * {
+      display: block;
+      margin-right: 8px;
+      filter: invert(100%);
+      height: 100%;
+      max-width: 24px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.containerHiddenDark {
+  background-color: $violet_80;
+  right: -334px;
+  color: $white;
+}
+
+.containerLight,
+.containerHiddenLight {
+  display: flex;
+  flex-direction: column;
+  width: 334px;
+  height: 100vh;
+  background-color: $violet_50;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  color: $black;
+  font-family: $helvetica;
+  transition: 0.3s ease-in-out;
+
+  .close {
+    top: 46px;
+    right: 46px;
+    position: absolute;
+    * {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .menu {
+    margin-top: 116px;
+    padding: 0px 24px;
+  }
+  .menuItem {
+    padding: 12px 0px;
+    border-bottom: 1px $black_100_80 solid;
+  }
+  .menuItemProjects {
+    padding: 12px 0px;
+    border-bottom: solid $black_100_30 1px;
+  }
+  .caronItem {
+    width: 13px;
+    margin-right: 6px;
+    transform: rotate(90deg);
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    left: -10px;
+    margin: -6px 0px;
+    margin-right: -10px;
+    padding: 8px 8px;
+    box-sizing: content-box;
+  }
+  .caronItemRotated {
+    width: 13px;
+    margin-right: 6px;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    left: -10px;
+    margin: -6px 0px;
+    margin-right: -10px;
+    padding: 8px 8px;
+    box-sizing: content-box;
+  }
+  .projectsOption {
+    display: flex;
+    align-items: center;
+    padding: 12px 0px;
+    border-bottom: solid $black_100_30 1px;
+    transition: ease-in-out 0.3s;
+    height: 100%;
+    transition: 0.3s ease;
+  }
+  .projectsOptionHidden {
+    display: flex;
+    transition: ease-in-out 0.3s;
+    align-items: center;
+    padding: 0px;
+    height: 0px;
+    pointer-events: none;
+    visibility: hidden;
+    font-size: 0px;
+    opacity: 0;
+  }
+  .menuItemDecoration {
+    background-color: $black;
+    width: 3px;
+    height: 3px;
+    margin-right: 14px;
+    margin-left: 2px;
+  }
+  .socialMedia {
+    display: flex;
+    margin-top: 59px;
+    padding: 0px 24px;
+    height: 200px;
+    height: 24px;
+    a * {
+      display: block;
+      margin-right: 8px;
+      filter: invert(100%);
+      height: 100%;
+      max-width: 24px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.containerHiddenLight {
+  background-color: $violet_50;
+  color: $black;
+  right: -334px;
+}
