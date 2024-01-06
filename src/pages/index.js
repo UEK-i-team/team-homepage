@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { TitleText } from '../components/TitleText/TitleText';
+import { Navbar } from '../components/Navbar/Navbar';
 
 const IndexPage = () => (
   <>
-    <TitleText />
+    <Navbar />
   </>
 );
 

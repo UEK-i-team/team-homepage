@@ -13,6 +13,7 @@
   color: $white;
   font-family: $helvetica;
   transition: 0.3s ease-in-out;
+  z-index: 11;
 
   .close {
     top: 46px;
@@ -127,6 +128,7 @@
   color: $black;
   font-family: $helvetica;
   transition: 0.3s ease-in-out;
+  z-index: 11;
 
   .close {
     top: 46px;

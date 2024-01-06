@@ -1,0 +1,89 @@
+@import '../../assets/styles/theme';
+
+.mainContainer {
+  z-index: 10;
+  background: $white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  padding: 40px 32px;
+  height: 108px;
+  width: 100%;
+  white-space: nowrap;
+  position: -webkit-sticky;
+  position: sticky;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.mainContainerDark {
+  background-color: $dark-navbar-mobile;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.logo {
+  height: 26px;
+  width: 19px;
+  margin-right: 14px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  width: 68px;
+}
+#engLight {
+  color: $language-button-unmarked;
+  margin-right: 12px;
+}
+#engDark {
+  color: $language-button-unmarked;
+  margin-right: 12px;
+}
+#plLight {
+  color: $black;
+}
+#plDark {
+  color: $white;
+}
+.languageThemeWraper {
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.languageThemeWraper button {
+  background: none;
+  border: none;
+}
+
+.sidebarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+}
+
+#line {
+  color: $black;
+}
+#lineDark {
+  color: $white;
+}
