@@ -9,43 +9,46 @@ $breakpoint-tablet: 700px;
 // scheme for color names
 // color-name_color-intensiveness_transparency
 
+$language-button-unmarked: rgba(103, 103, 103, 0.668);
+
 $dark-tile-background-mobile: rgba(0, 0, 0, 0.35);
 
 $light-tile-background-mobile: rgba(255, 255, 255, 0.35);
 
+$light-footer-top-mobile: #f8deff;
 
-$light-footer-top-mobile: #F8DEFF;
+$light-footer-bottom-mobile: #adccff;
 
-$light-footer-bottom-mobile: #ADCCFF;
-
+$dark-navbar-mobile: rgba(8, 0, 16);
 
 $dark-footer-top-mobile: #450043;
 
-$dark-footer-bottom-mobile: #0E011D;
+$dark-footer-bottom-mobile: #0e011d;
 
+$dark-sidebar-mobile: #140d19;
 
-$dark-sidebar-mobile: #140D19;
-
-$light-sidebar-mobile: #D7CFFC;
+$light-sidebar-mobile: #d7cffc;
 
 // grey
-$grey_10: #BCBBBE;
+$grey_10: #bcbbbe;
 
 $grey_20_25: #0b090940;
 
-$grey_30: #4E4E4E;
+$grey_25: #999999;
+
+$grey_30: #4e4e4e;
 
 $grey_40: #464646;
 
 $grey_50: #404040;
 
-$light_grey_50: #E3E3E3;
+$light_grey_50: #e3e3e3;
 
-$grey_60: #2F2C31;
+$grey_60: #2f2c31;
 
-$grey_70: #0E011D;
+$grey_70: #0e011d;
 
-$grey_80: #0A0114;
+$grey_80: #0a0114;
 
 // black
 $black: #000;
@@ -75,12 +78,10 @@ $white_100_75: rgba(255, 255, 255, 0.75);
 
 //other
 
-$pink_50: #F9DBFB;
+$pink_50: #f9dbfb;
 
-$violet_50: #D7CFFC;
+$violet_50: #d7cffc;
 
-$violet_80: #140D19;
+$violet_80: #140d19;
 
-$light-blue-80: #7CADFF;
-
-
+$light-blue-80: #7cadff;
