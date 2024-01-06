@@ -23,10 +23,10 @@ import {
 } from './Navbar.module.scss';
 
 export function Navbar() {
-  const [isLightTheme, setisLightTheme] = useState(true);
+  const [isLightTheme, setIsLightTheme] = useState(true);
 
   function switchTheme() {
-    setisLightTheme((prev) => !prev);
+    setIsLightTheme((prev) => !prev);
   }
   return (
     <nav className={`${mainContainer} ${!isLightTheme && mainContainerDark}`}>
