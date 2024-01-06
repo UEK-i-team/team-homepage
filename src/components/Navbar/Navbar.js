@@ -8,18 +8,18 @@ import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import {
   engLight,
-  LanguageThemeWraper,
+  languageThemeWraper,
   Line,
-  LineDark,
+  lineDark,
   Logo,
-  LogoContainer,
-  MainContainer,
-  MainContainerDark,
+  logoContainer,
+  mainContainer,
+  mainContainerDark,
   Name,
   plDark,
   plLight,
   Sidebar,
-  SidebarContainer,
+  sidebarContainer,
 } from './Navbar.module.scss';
 
 export function Navbar() {
@@ -29,8 +29,8 @@ export function Navbar() {
     setisLightTheme((prev) => !prev);
   }
   return (
-    <nav className={`${MainContainer} ${!isLightTheme && MainContainerDark}`}>
-      <div className={LogoContainer}>
+    <nav className={`${mainContainer} ${!isLightTheme && mainContainerDark}`}>
+      <div className={logoContainer}>
         {isLightTheme ? (
           <>
             <div className={Logo}>
@@ -63,16 +63,16 @@ export function Navbar() {
           </>
         )}
       </div>
-      <div className={LanguageThemeWraper}>
+      <div className={languageThemeWraper}>
         <button id={isLightTheme ? plLight : plDark}>PL</button>
-        <span id={isLightTheme ? Line : LineDark}> | </span>
+        <span id={isLightTheme ? Line : lineDark}> | </span>
         <button id={engLight}>ENG</button>
 
         <button onClick={() => switchTheme()}>
           {isLightTheme ? <ThemeIconLight /> : <ThemeIconDark />}
         </button>
       </div>
-      <div className={SidebarContainer}>
+      <div className={sidebarContainer}>
         <div className={Sidebar}>
           <button>{isLightTheme ? <SidebarLight /> : <SidebarDark />}</button>
         </div>

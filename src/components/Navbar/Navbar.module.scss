@@ -1,6 +1,6 @@
 @import '../../assets/styles/theme';
 
-.MainContainer {
+.mainContainer {
   z-index: 10;
   background: $white;
   color: black;
@@ -20,10 +20,10 @@
   -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.MainContainerDark {
+.mainContainerDark {
   background-color: $dark-navbar-mobile;
 }
-.LogoContainer {
+.logoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@
 #plDark {
   color: $white;
 }
-.LanguageThemeWraper {
+.languageThemeWraper {
   font-size: 19px;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@
   margin-right: 16px;
 }
 
-.LanguageThemeWraper button {
+.languageThemeWraper button {
   background: none;
   border: none;
 }
@@ -84,6 +84,6 @@
 #Line {
   color: $black;
 }
-#LineDark {
+#lineDark {
   color: $white;
 }
