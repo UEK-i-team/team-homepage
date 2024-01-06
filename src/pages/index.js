@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { Navbar } from '../components/Navbar/Navbar';
-
+import { ThemeProvider } from '../components/ThemeProvider/ThemeProvider';
 const IndexPage = () => (
   <>
-    <Navbar />
+    <ThemeProvider>
+      <Navbar />
+    </ThemeProvider>
   </>
 );
 

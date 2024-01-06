@@ -1,12 +1,13 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
 import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
+import { ThemeContext } from '../ThemeProvider/ThemeProvider';
 import {
   caronItem,
   caronItemRotated,
@@ -24,7 +25,8 @@ import {
   socialMedia,
 } from './SidebarMenu.module.scss';
 
-export const SidebarMenu = ({ isVisible, isDarkTheme }) => {
+export const SidebarMenu = ({ isVisible }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(isVisible);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
@@ -113,5 +115,4 @@ export const SidebarMenu = ({ isVisible, isDarkTheme }) => {
 
 SidebarMenu.propTypes = {
   isVisible: PropTypes.bool.isRequired,
-  isDarkTheme: PropTypes.bool.isRequired,
 };
