@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
@@ -24,12 +24,13 @@ import {
   socialMedia,
 } from './SidebarMenu.module.scss';
 
-export const SidebarMenu = ({
-  isSidebarMenuVisible,
-  setIsSidebarMenuVisible,
-  isDarkTheme,
-}) => {
+export const SidebarMenu = ({ isVisible, isDarkTheme }) => {
+  const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(isVisible);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsSidebarMenuVisible(isVisible);
+  }, [isVisible]);
 
   const handleClose = () => {
     setIsSidebarMenuVisible(false);
@@ -111,7 +112,6 @@ export const SidebarMenu = ({
 };
 
 SidebarMenu.propTypes = {
-  isSidebarMenuVisible: PropTypes.bool.isRequired,
-  setIsSidebarMenuVisible: PropTypes.func.isRequired,
+  isVisible: PropTypes.bool.isRequired,
   isDarkTheme: PropTypes.bool.isRequired,
 };
