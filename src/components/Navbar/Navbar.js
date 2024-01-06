@@ -7,7 +7,7 @@ import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import {
-  ENG,
+  engLight,
   LanguageThemeWraper,
   Line,
   LineDark,
@@ -16,8 +16,8 @@ import {
   MainContainer,
   MainContainerDark,
   Name,
-  PL,
-  PL_dark,
+  plDark,
+  plLight,
   Sidebar,
   SidebarContainer,
 } from './Navbar.module.scss';
@@ -64,9 +64,9 @@ export function Navbar() {
         )}
       </div>
       <div className={LanguageThemeWraper}>
-        <button id={isLightTheme ? PL : PL_dark}>PL</button>
+        <button id={isLightTheme ? plLight : plDark}>PL</button>
         <span id={isLightTheme ? Line : LineDark}> | </span>
-        <button id={ENG}>ENG</button>
+        <button id={engLight}>ENG</button>
 
         <button onClick={() => switchTheme()}>
           {isLightTheme ? <ThemeIconLight /> : <ThemeIconDark />}
