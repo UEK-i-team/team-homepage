@@ -1,0 +1,17 @@
+@import '../../assets/styles/theme';
+
+
+
+.darkTheme {
+  position: absolute;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  }
+
+  .themeSwitcher {
+    position: absolute;
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+  }
