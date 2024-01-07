@@ -29,7 +29,7 @@ export const SidebarMenu = ({ isVisible, isDarkTheme }) => {
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
   useEffect(() => {
-    setIsSidebarMenuVisible(isVisible);
+    setIsSidebarMenuVisible((prev) => !prev);
   }, [isVisible]);
 
   const handleClose = () => {
