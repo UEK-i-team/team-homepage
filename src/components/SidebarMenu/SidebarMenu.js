@@ -6,8 +6,8 @@ import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
 import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
+import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
-import { ThemeContext } from '../ThemeProvider/ThemeProvider';
 import {
   caronItem,
   caronItemRotated,

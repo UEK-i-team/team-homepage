@@ -6,8 +6,8 @@ import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
+import { ThemeContext } from '../../context/ThemeContex';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
-import { ThemeContext } from '../ThemeProvider/ThemeProvider';
 import {
   engLight,
   languageThemeWraper,
