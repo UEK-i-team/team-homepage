@@ -1,5 +1,8 @@
 import React from 'react';
 
+import FacebookSVG from '../../assets/svgs/facebook-logo-dark-theme.svg';
+import GithubSVG from '../../assets/svgs/github-logo-dark-theme.svg';
+import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
   containerGrid,
   containerLinks,
@@ -37,11 +40,11 @@ export const MobileFooter = () => (
       <div>
         <h3>Znajdziesz nas na:</h3>
         <div className={containerLinks}>
-          <a href={'https://github.com/UEK-i-team'}>
-            <img alt={'Github logo'} />
+          <a href={GITHUB_LINK}>
+            <GithubSVG />
           </a>
-          <a href={'https://www.facebook.com/KNIUEK/'}>
-            <img alt={'Facebook logo'} />
+          <a href={FACEBOOK_LINK}>
+            <FacebookSVG />
           </a>
         </div>
       </div>
