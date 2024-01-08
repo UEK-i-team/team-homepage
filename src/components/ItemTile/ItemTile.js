@@ -8,7 +8,7 @@ import { container, content, image, text, title } from './ItemTile.module.scss';
 export const ItemTile = ({
   itemTitle,
   itemText,
-  itemImage, 
+  itemImage,
   /* 'fileName.png', image from src/assets/images/ */
   itemImageAlt,
 }) => {

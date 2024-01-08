@@ -1,11 +1,12 @@
 import { StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
+import { ThemeContext } from '../../context/ThemeContex';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   engLight,
@@ -24,15 +25,11 @@ import {
 } from './Navbar.module.scss';
 
 export function Navbar() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
-  }
-
-  function switchTheme() {
-    setIsDarkTheme((prev) => !prev);
   }
 
   return (
@@ -76,7 +73,7 @@ export function Navbar() {
           <span id={isDarkTheme ? lineDark : line}> | </span>
           <button id={engLight}>ENG</button>
 
-          <button onClick={() => switchTheme()}>
+          <button onClick={() => toggleTheme()}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>
@@ -88,7 +85,7 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      <SidebarMenu isDarkTheme={isDarkTheme} isVisible={isSidebarMenuVisible} />
+      <SidebarMenu isVisible={isSidebarMenuVisible} />
     </div>
   );
 }
