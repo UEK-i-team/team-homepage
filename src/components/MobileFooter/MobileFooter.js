@@ -4,13 +4,13 @@ import FacebookSVG from '../../assets/svgs/facebook-logo-dark-theme.svg';
 import GithubSVG from '../../assets/svgs/github-logo-dark-theme.svg';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
-  containerGrid,
+  containerGridDark,
   containerLinks,
   mainContainer,
 } from './MobileFooter.module.scss';
 export const MobileFooter = () => (
   <div className={mainContainer}>
-    <div className={containerGrid}>
+    <div className={containerGridDark}>
       <div>
         <h2>
           Koło naukowe i::team <br />

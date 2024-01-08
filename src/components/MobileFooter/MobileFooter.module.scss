@@ -7,13 +7,22 @@
   padding: 6%;
 }
 
-.containerGrid > div {
+.containerGridDark > div {
   text-align: left;
   color: $white;
 }
 
-.mainContainer {
+.containerGridLight > div {
+  text-align: left;
+  color: $black;
+}
+
+.mainContainerDark {
   background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
+}
+
+.mainContainerDark {
+  background: white;
 }
 
 .containerLinks {
