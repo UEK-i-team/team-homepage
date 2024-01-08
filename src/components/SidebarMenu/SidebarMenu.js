@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
@@ -29,6 +30,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
   const sidebarRef = useRef();
   const { isDarkTheme } = useContext(ThemeContext);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
+  const { t } = useTranslation();
 
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
@@ -77,7 +79,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
                 className={areProjectsVisible ? caronItem : caronItemRotated}
               />
               <span>
-                <Link to="/">PROJEKTY</Link>
+                <Link to="/">{t('projekty')}</Link>
               </span>
             </button>
           </div>
