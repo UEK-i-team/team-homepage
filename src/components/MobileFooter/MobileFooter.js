@@ -6,10 +6,10 @@ import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
   containerGridDark,
   containerLinks,
-  mainContainer,
+  mainContainerDark,
 } from './MobileFooter.module.scss';
 export const MobileFooter = () => (
-  <div className={mainContainer}>
+  <div className={mainContainerDark}>
     <div className={containerGridDark}>
       <div>
         <h2>
