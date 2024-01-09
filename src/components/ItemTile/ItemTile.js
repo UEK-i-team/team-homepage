@@ -1,9 +1,17 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { container, content, image, text, title } from './ItemTile.module.scss';
+import { ThemeContext } from '../../context/ThemeContex';
+import {
+  container,
+  content,
+  dark,
+  image,
+  text,
+  title,
+} from './ItemTile.module.scss';
 
 export const ItemTile = ({
   itemTitle,
@@ -39,9 +47,10 @@ export const ItemTile = ({
   );
 
   const imageSrc = getImage(matchedImage);
+  const { isDarkTheme } = useContext(ThemeContext);
 
   return (
-    <div className={container}>
+    <div className={isDarkTheme ? `${container} ${dark}` : container}>
       <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
       <div className={content}>
         <div className={title}>{itemTitle}</div>
