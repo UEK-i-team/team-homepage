@@ -85,7 +85,10 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      <SidebarMenu isVisible={isSidebarMenuVisible} />
+      <SidebarMenu
+        isVisible={isSidebarMenuVisible}
+        onToggle={toggleSidebarMenu}
+      />
     </div>
   );
 }
