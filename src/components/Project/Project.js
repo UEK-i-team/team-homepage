@@ -1,15 +1,34 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { mobileProject, mobileProjectTitle } from './Project.module.scss';
-
-const ARROW = <>&#10140;</>;
+import { ThemeContext } from '../../context/ThemeContex';
+import {
+  mobileProjectDarkTheme,
+  mobileProjectLightTheme,
+  mobileProjectTitleDarkTheme,
+  mobileProjectTitleLightTheme,
+} from './Project.module.scss';
 
 export const Project = ({ link, description, title }) => {
+  const { isDarkTheme } = useContext(ThemeContext);
+  const ARROW = <>&#10140;</>;
+
   return (
     <>
-      <h1 className={mobileProjectTitle}>{title}</h1>
-      <div className={mobileProject}>
+      <h1
+        className={
+          isDarkTheme
+            ? mobileProjectTitleDarkTheme
+            : mobileProjectTitleLightTheme
+        }
+      >
+        {title}
+      </h1>
+      <div
+        className={
+          isDarkTheme ? mobileProjectDarkTheme : mobileProjectLightTheme
+        }
+      >
         <div>{description}</div>
         <a href={link}>Zobacz nasz projekt w praktyce {ARROW}</a>
       </div>
