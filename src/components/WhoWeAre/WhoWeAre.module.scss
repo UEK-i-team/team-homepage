@@ -1,27 +1,27 @@
 @import "../../assets/styles/theme";
 
-// LIGHT THEME
-
-.h1 {
-    font: 100% $helvetica;
-    font-weight: bold;
-    padding-top: 4%;
-    width: 100%;
-    margin-bottom: 2%;
-    margin-left: 5%;
-}
-.p {
-    font: 80% $helvetica;
-    width: 90%;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    margin-left: 5%;
-}
 .container {
     line-height: 1.6;
     width: 100%;
-    margin: 6% 0% 100% 0%;
+    margin-top: 30px;
     overflow-x: hidden;
+}
+// LIGHT THEME
+
+.h1 {
+    font: 20px $helvetica;
+    font-weight: bold;
+    padding-top: 26px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 18px;
+}
+.p {
+    font: 16px $helvetica;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 18px;
 }
 .background {
     width: 100%;
@@ -35,20 +35,21 @@
 //DARK THEME
 
 .h1Dark {
-    font: 100% $helvetica;
+    font: 20px $helvetica;
     color: $white;
-    padding-top: 4%;
+    font-weight: bold;
+    padding-top: 26px;
     width: 100%;
-    margin-bottom: 2%;
-    margin-left: 5%;
+    margin-bottom: 10px;
+    margin-left: 18px;
 }
 .pDark {
-    font: 80% $helvetica;
+    font: 16px $helvetica;
     color: $white;
     width: 90%;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 18px;
 }
 .backgroundDark {
     width: 100%;
