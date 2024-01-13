@@ -5,3 +5,4 @@ public
 .env
 .vscode/
 .DS_Store
+yarn.lock
