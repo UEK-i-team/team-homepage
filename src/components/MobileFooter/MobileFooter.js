@@ -7,6 +7,7 @@ import {
   containerGridDark,
   containerLinks,
   mainContainerDark,
+  zarzadMail,
 } from './MobileFooter.module.scss';
 export const MobileFooter = () => (
   <div className={mainContainerDark}>
@@ -19,7 +20,7 @@ export const MobileFooter = () => (
       </div>
       <div>
         <h3>Zarząd:</h3>
-        <p>zarzad@example.com</p>
+        <p className={zarzadMail}>zarzad@example.com</p>
       </div>
       <div>
         <p>

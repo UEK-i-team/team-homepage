@@ -2,9 +2,10 @@
 
 .containerGridDark {
   display: grid;
-  grid-template-columns: 52% auto;
-  grid-template-rows: 45% 45% 10%;
-  padding: 6%;
+  grid-template-columns: 56% auto;
+  grid-template-rows: 46% 52% auto;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .containerGridDark > div {
@@ -19,6 +20,8 @@
 
 .mainContainerDark {
   background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
+  padding-top: 55px;
+  padding-bottom: 90px;
 }
 
 .mainContainerLight {
@@ -28,21 +31,26 @@
 .containerLinks {
   display: flex;
   a * {
-    padding: 10%;
-    margin-bottom: 20%;
+    margin-top: 5px;
+    margin-right: 7px;
   }
+}
+
+.zarzadMail{
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 90%;
+  font-size: 15px;
 }
 
 h3 {
   font-weight: bold;
-  font-size: 90%;
+  font-size: 13px;
 }
 
 p {
-  font-size: 90%;
+  font-size: 13px;
 }
