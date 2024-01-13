@@ -4,8 +4,8 @@
   display: grid;
   grid-template-columns: 56% auto;
   grid-template-rows: 46% 52% auto;
-  padding-left: 25px;
-  padding-right: 25px;
+  margin-left: 22px;
+  margin-right: 10px;
 }
 
 .containerGridDark > div {
@@ -37,8 +37,8 @@
 }
 
 .zarzadMail{
-  font-size: 14px;
-  word-wrap: break-word;
+  font-size: 15px;
+  word-wrap: anywhere;
 }
 
 h2 {
@@ -53,4 +53,5 @@ h3 {
 
 p {
   font-size: 13px;
+  word-wrap: anywhere;
 }
