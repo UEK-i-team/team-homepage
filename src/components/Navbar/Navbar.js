@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext } from 'react';
 import { useState } from 'react';
@@ -9,6 +10,9 @@ import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  desktopMenu,
+  desktopMenuDark,
+  desktopMenuItem,
   engLight,
   languageThemeWraper,
   line,
@@ -67,6 +71,24 @@ export function Navbar() {
               </div>
             </>
           )}
+        </div>
+        <div
+          className={
+            isDarkTheme ? `${desktopMenu} ${desktopMenuDark}` : desktopMenu
+          }
+        >
+          <div className={desktopMenuItem}>
+            <Link to="/">Projekty</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Aktualności</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Dołącz do nas</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Kontakt</Link>
+          </div>
         </div>
         <div className={languageThemeWraper}>
           <button id={isDarkTheme ? plDark : plLight}>PL</button>
