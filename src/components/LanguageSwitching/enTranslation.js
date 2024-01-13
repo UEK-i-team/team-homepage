@@ -1,7 +1,12 @@
 const enTranslations = {
   translation: {
-    helloTeamHomepage: 'Hello on team-homepage',
-    projekty: 'Projects',
+    home: 'HOME',
+    projekty: 'PROJECTS',
+    mapa_uczelni: 'UEK NAVMAP',
+    tajny_projekt: 'SECRET PROJECT 339',
+    news: 'NEWS',
+    joinus: 'JOIN US',
+    kontakt: 'CONTACT US',
   },
 };
 
