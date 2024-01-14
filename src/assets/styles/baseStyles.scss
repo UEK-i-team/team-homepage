@@ -20,18 +20,20 @@ body{
   margin: 0; 
 }
 
-.light-body{
-  background-image: url('../images/background-light.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: repeat-y;
-  height: 300vh;
-}
+@media (min-width: 768px) {
+  .light-body {
+    background-image: url('../images/background-light.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 300vh;
+  }
 
-.dark-body{
-  background-image: url('../images/background-dark.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: repeat-y;
-  height: 300vh;
+  .dark-body {
+    background-image: url('../images/background-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 300vh;
+  }
 }
