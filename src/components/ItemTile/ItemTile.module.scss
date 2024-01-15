@@ -1,5 +1,6 @@
 @import '../../assets/styles/theme';
 
+@media (max-width: 768px){
 .container {
   display: flex;
   max-width: 374px;
@@ -46,5 +47,48 @@
 
   .content {
     color: $white;
+  }
+}
+}
+
+@media (min-width: 769px){
+  .container {
+    display: flex;
+    max-width: 90%;
+    margin:auto;
+    opacity: 0.9;
+    background-color: $black_100_35;
+    border-radius: 10px;
+    align-items: stretch;
+  }
+  .image {
+    margin: 4px 4px 0px 4px;
+    min-width: 60%;
+    max-width: 61%;
+    min-height: 400px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    order: 1;
+  }
+  .content {
+    overflow-y: auto;
+    color: $white;
+    margin-bottom: 32px;
+    order: 2;
+  }
+  .title {
+    font-size: 30px;
+    line-height: 24.2px;
+    font-weight: 400;
+    margin: 30px 0px 30px 30px ;
+  }
+  .text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19.36px;
+    margin: 30px 30px 0px 30px;
+  }
+  .container:nth-child(odd) {
+    flex-direction: row-reverse;
   }
 }
