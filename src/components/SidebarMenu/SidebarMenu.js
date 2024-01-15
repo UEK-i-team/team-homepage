@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
@@ -25,18 +25,10 @@ import {
   socialMedia,
 } from './SidebarMenu.module.scss';
 
-export const SidebarMenu = ({ isVisible }) => {
+export const SidebarMenu = ({ isVisible, onToggle }) => {
   const { isDarkTheme } = useContext(ThemeContext);
-  const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(isVisible);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsSidebarMenuVisible(isVisible);
-  }, [isVisible]);
-
-  const handleClose = () => {
-    setIsSidebarMenuVisible(false);
-  };
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
   };
@@ -44,7 +36,7 @@ export const SidebarMenu = ({ isVisible }) => {
   return (
     <div
       className={
-        isSidebarMenuVisible
+        isVisible
           ? isDarkTheme
             ? containerDark
             : containerLight
@@ -53,7 +45,7 @@ export const SidebarMenu = ({ isVisible }) => {
           : containerHiddenLight
       }
     >
-      <div className={close} onClick={handleClose}>
+      <div className={close} onClick={onToggle}>
         <CloseSVG />
       </div>
       <div className={menu}>
@@ -115,4 +107,5 @@ export const SidebarMenu = ({ isVisible }) => {
 
 SidebarMenu.propTypes = {
   isVisible: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
