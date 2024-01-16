@@ -2,22 +2,22 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../context/ThemeContex';
 import {
-  background,
   backgroundDark,
+  backgroundLight,
   container,
-  h1,
   h1Dark,
-  p,
+  h1Light,
   pDark,
+  pLight,
 } from '../WhoWeAre/WhoWeAre.module.scss';
 
 export const WhoWeAre = () => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <section className={`${container}`}>
-      <div className={isDarkTheme ? backgroundDark : background}>
-        <h1 className={isDarkTheme ? h1Dark : h1}>Kim jesteśmy?</h1>
-        <p className={isDarkTheme ? pDark : p}>
+      <div className={theme(backgroundLight, backgroundDark)}>
+        <h1 className={theme(h1Light, h1Dark)}>Kim jesteśmy?</h1>
+        <p className={theme(pLight, pDark)}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida,
           nisl sit amet porta vulputate, odio tellus bibendum sapien, ac
           convallis massa lorem sed neque. Praesent sodales ex nisi, vel
