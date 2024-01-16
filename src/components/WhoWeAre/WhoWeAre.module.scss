@@ -10,6 +10,7 @@
 
 .h1Light {
     font: 20px $helvetica;
+    color: $black;
     font-weight: bold;
     padding-top: 26px;
     width: 100%;
@@ -18,6 +19,7 @@
 }
 .pLight {
     font: 16px $helvetica;
+    color: $black;
     width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -35,27 +37,12 @@
 //DARK THEME
 
 .h1Dark {
-    font: 20px $helvetica;
     color: $white;
-    font-weight: bold;
-    padding-top: 26px;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-left: 18px;
 }
 .pDark {
-    font: 16px $helvetica;
     color: $white;
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 18px;
 }
 .backgroundDark {
-    width: 100%;
-    margin: 0 auto;
-    background-clip: content-box;
-    border-top-right-radius: 150px 48px;
     background-color: rgba(255, 255, 255, 0.49) ;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.25);
 }
