@@ -61,21 +61,25 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             : containerHiddenLight
         }
       >
-        <div className={close} onClick={onToggle}>
+        <button className={close} onClick={onToggle}>
           <CloseSVG />
-        </div>
+        </button>
         <div className={menu}>
           <div className={menuItem}>
             <Link to="/">HOME</Link>
           </div>
-          <div className={areProjectsVisible ? menuItemProjects : menuItem}>
-            <CaronSVG
-              className={areProjectsVisible ? caronItem : caronItemRotated}
-              onClick={handleToggleProjects}
-            />
-            <span>
-              <Link to="/">PROJEKTY</Link>
-            </span>
+          <div
+            onClick={handleToggleProjects}
+            className={areProjectsVisible ? menuItemProjects : menuItem}
+          >
+            <button>
+              <CaronSVG
+                className={areProjectsVisible ? caronItem : caronItemRotated}
+              />
+              <span>
+                <Link to="/">PROJEKTY</Link>
+              </span>
+            </button>
           </div>
           <div>
             <div
@@ -124,5 +128,4 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
 
 SidebarMenu.propTypes = {
   isVisible: PropTypes.bool.isRequired,
-  onToggle: PropTypes.func.isRequired,
 };
