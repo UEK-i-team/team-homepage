@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
@@ -26,80 +26,97 @@ import {
 } from './SidebarMenu.module.scss';
 
 export const SidebarMenu = ({ isVisible, onToggle }) => {
+  const sidebarRef = useRef();
   const { isDarkTheme } = useContext(ThemeContext);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
 
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        if (isVisible) {
+          onToggle();
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onToggle, isVisible]);
 
   return (
-    <div
-      className={
-        isVisible
-          ? isDarkTheme
-            ? containerDark
-            : containerLight
-          : isDarkTheme
-          ? containerHiddenDark
-          : containerHiddenLight
-      }
-    >
-      <div className={close} onClick={onToggle}>
-        <CloseSVG />
-      </div>
-      <div className={menu}>
-        <div className={menuItem}>
-          <Link to="/">HOME</Link>
+    <div ref={sidebarRef}>
+      <div
+        className={
+          isVisible
+            ? isDarkTheme
+              ? containerDark
+              : containerLight
+            : isDarkTheme
+            ? containerHiddenDark
+            : containerHiddenLight
+        }
+      >
+        <div className={close} onClick={onToggle}>
+          <CloseSVG />
         </div>
-        <div className={areProjectsVisible ? menuItemProjects : menuItem}>
-          <CaronSVG
-            className={areProjectsVisible ? caronItem : caronItemRotated}
-            onClick={handleToggleProjects}
-          />
-          <span>
-            <Link to="/">PROJEKTY</Link>
-          </span>
-        </div>
-        <div>
-          <div
-            className={
-              areProjectsVisible ? projectsOption : projectsOptionHidden
-            }
-          >
-            <div className={menuItemDecoration}></div>
+        <div className={menu}>
+          <div className={menuItem}>
+            <Link to="/">HOME</Link>
+          </div>
+          <div className={areProjectsVisible ? menuItemProjects : menuItem}>
+            <CaronSVG
+              className={areProjectsVisible ? caronItem : caronItemRotated}
+              onClick={handleToggleProjects}
+            />
             <span>
-              <Link to="/">MAPA UCZELNI</Link>
+              <Link to="/">PROJEKTY</Link>
             </span>
           </div>
-          <div
-            className={
-              areProjectsVisible ? projectsOption : projectsOptionHidden
-            }
-          >
-            <div className={menuItemDecoration}></div>
-            <span>
-              <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
-            </span>
+          <div>
+            <div
+              className={
+                areProjectsVisible ? projectsOption : projectsOptionHidden
+              }
+            >
+              <div className={menuItemDecoration}></div>
+              <span>
+                <Link to="/">MAPA UCZELNI</Link>
+              </span>
+            </div>
+            <div
+              className={
+                areProjectsVisible ? projectsOption : projectsOptionHidden
+              }
+            >
+              <div className={menuItemDecoration}></div>
+              <span>
+                <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
+              </span>
+            </div>
+          </div>
+          <div className={menuItem}>
+            <Link to="/">AKTUALNOŚCI</Link>
+          </div>
+          <div className={menuItem}>
+            <Link to="/">DOŁĄCZ DO NAS</Link>
+          </div>
+          <div className={menuItem}>
+            <Link to="/">KONTAKT</Link>
           </div>
         </div>
-        <div className={menuItem}>
-          <Link to="/">AKTUALNOŚCI</Link>
+        <div className={socialMedia}>
+          <a href={GITHUB_LINK}>
+            <GithubSVG />
+          </a>
+          <a href={FACEBOOK_LINK}>
+            <FacebookSVG />
+          </a>
         </div>
-        <div className={menuItem}>
-          <Link to="/">DOŁĄCZ DO NAS</Link>
-        </div>
-        <div className={menuItem}>
-          <Link to="/">KONTAKT</Link>
-        </div>
-      </div>
-      <div className={socialMedia}>
-        <a href={GITHUB_LINK}>
-          <GithubSVG />
-        </a>
-        <a href={FACEBOOK_LINK}>
-          <FacebookSVG />
-        </a>
       </div>
     </div>
   );
