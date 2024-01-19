@@ -47,10 +47,10 @@ export const ItemTile = ({
   );
 
   const imageSrc = getImage(matchedImage);
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={isDarkTheme ? `${container} ${dark}` : container}>
+    <div className={theme(container, dark)}>
       <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
       <div className={content}>
         <div className={title}>{itemTitle}</div>

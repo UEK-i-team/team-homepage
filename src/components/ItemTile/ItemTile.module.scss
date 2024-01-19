@@ -20,6 +20,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .content {
+  align-self: flex-start;
   max-width: 326px;
   height: 219px;
   overflow-y: hidden;
@@ -40,7 +41,7 @@
   line-height: 19.36px;
   margin-top: 15px;
 }
-.dark{
+.dark {
   background-color: $black_100_35;
 
   .content {
