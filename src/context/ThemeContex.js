@@ -15,7 +15,7 @@ const ThemeProvider = ({ children }) => {
   }, []);
 
   const theme = (lightThemeClassName, darkThemeClassName) =>
-    `${lightThemeClassName} ${isDarkTheme && darkThemeClassName}`;
+    isDarkTheme ? darkThemeClassName : lightThemeClassName;
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, toggleTheme, theme }}>
