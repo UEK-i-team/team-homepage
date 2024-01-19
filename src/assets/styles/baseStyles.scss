@@ -13,8 +13,27 @@ html{
   scroll-behavior: smooth;
 }
 
+
 body{
   font-family: 'Helvetica', sans-serif;
   font-size: 1.6rem;
-  margin: 0;
+  margin: 0; 
+}
+
+@media (min-width: 768px) {
+  .light-body {
+    background-image: url('../images/background-light.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 100vh;
+  }
+
+  .dark-body {
+    background-image: url('../images/background-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 100vh;
+  }
 }

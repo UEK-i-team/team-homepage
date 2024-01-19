@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  useEffect(() => {
+    document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
+  }, [isDarkTheme]);
 
   const toggleTheme = useCallback(() => {
     setIsDarkTheme((prev) => !prev);
