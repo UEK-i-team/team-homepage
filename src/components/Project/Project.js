@@ -10,25 +10,20 @@ import {
 } from './Project.module.scss';
 
 export const Project = ({ link, description, title }) => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const ARROW = <>&#10140;</>;
 
   return (
     <>
       <h1
-        className={
-          isDarkTheme
-            ? mobileProjectTitleDarkTheme
-            : mobileProjectTitleLightTheme
-        }
+        className={theme(
+          mobileProjectTitleLightTheme,
+          mobileProjectTitleDarkTheme
+        )}
       >
         {title}
       </h1>
-      <div
-        className={
-          isDarkTheme ? mobileProjectDarkTheme : mobileProjectLightTheme
-        }
-      >
+      <div className={theme(mobileProjectLightTheme, mobileProjectDarkTheme)}>
         <div>{description}</div>
         <a href={link}>Zobacz nasz projekt w praktyce {ARROW}</a>
       </div>
