@@ -54,10 +54,10 @@
   color: $language-button-unmarked;
   margin-right: 12px;
 }
-#plLight {
+.plLight {
   color: $black;
 }
-#plDark {
+.plDark {
   color: $white;
 }
 .languageThemeWraper {
@@ -84,14 +84,14 @@
   border: none;
 }
 
-#line {
+.line {
   color: $black;
 }
-#lineDark {
+.lineDark {
   color: $white;
 }
 
-@media screen and (min-width: $breakpoint-tablet) {
+@media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
     height: 157px;
     padding: 0px 0px;
@@ -154,7 +154,7 @@
       padding-bottom: 4px;
     }
   }
-  #line {
+  .line {
     background-color: $black;
     height: 18px;
     width: 2px;
@@ -162,7 +162,7 @@
     font-size: 0px;
     margin: 0px 4px;
   }
-  #lineDark {
+  .lineDark {
     background-color: $white;
     height: 18px;
     width: 2px;
@@ -182,12 +182,12 @@
     font-size: 16px;
     font-weight: 600;
   }
-  #plLight {
+  .plLight {
     margin-right: -4px;
     font-size: 16px;
     font-weight: 600;
   }
-  #plDark {
+  .plDark {
     margin-right: -4px;
     font-size: 16px;
     font-weight: 600;

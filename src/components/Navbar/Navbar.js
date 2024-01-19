@@ -31,6 +31,7 @@ import {
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
@@ -38,7 +39,7 @@ export function Navbar() {
 
   return (
     <div>
-      <nav className={`${mainContainer} ${isDarkTheme && mainContainerDark}`}>
+      <nav className={theme(mainContainer, mainContainerDark)}>
         <div className={logoContainer}>
           {isDarkTheme ? (
             <>
@@ -72,11 +73,7 @@ export function Navbar() {
             </>
           )}
         </div>
-        <div
-          className={
-            isDarkTheme ? `${desktopMenu} ${desktopMenuDark}` : desktopMenu
-          }
-        >
+        <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={desktopMenuItem}>
             <Link to="/">Projekty</Link>
           </div>
@@ -91,8 +88,8 @@ export function Navbar() {
           </div>
         </div>
         <div className={languageThemeWraper}>
-          <button id={isDarkTheme ? plDark : plLight}>PL</button>
-          <span id={isDarkTheme ? lineDark : line}> | </span>
+          <button className={theme(plLight, plDark)}>PL</button>
+          <span className={theme(line, lineDark)}> | </span>
           <button id={engLight}>ENG</button>
 
           <button onClick={() => toggleTheme()}>
