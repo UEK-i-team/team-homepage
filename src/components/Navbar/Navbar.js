@@ -1,19 +1,21 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext } from 'react';
-import { useState } from 'react';
+import React, { useContext }, { useEffect, useState } from 'react';
 
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { ThemeContext } from '../../context/ThemeContex';
+import { changeLanguage } from '../LanguageSwitching/LanguageSwitch';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  activeButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
   engLight,
+  inactiveButton,
   languageThemeWraper,
   line,
   lineDark,
@@ -30,12 +32,32 @@ import {
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
+  const [language, setLanguage] = useState('');
+  const [buttonColorPL, setButtonColorPL] = useState('');
+  const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
+
+  function switchTheme() {
+    setIsDarkTheme((prev) => !prev);
+  }
+  const handleButtonChange = (lang) => {
+    setLanguage(lang);
+  };
+
+  useEffect(() => {
+    if (language === 'pl') {
+      setButtonColorPL(activeButton);
+      setButtonColorENG(inactiveButton);
+    } else if (language === 'en') {
+      setButtonColorENG(activeButton);
+      setButtonColorPL(inactiveButton);
+    }
+  }, [language]);
 
   return (
     <div>
@@ -47,13 +69,13 @@ export function Navbar() {
                 <StaticImage
                   src="../../assets/images/logo_icon_dark_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
               <div className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_dark_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
             </>
           ) : (
@@ -62,13 +84,13 @@ export function Navbar() {
                 <StaticImage
                   src="../../assets/images/logo_icon_light_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
               <div className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_light_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
             </>
           )}
@@ -88,9 +110,27 @@ export function Navbar() {
           </div>
         </div>
         <div className={languageThemeWraper}>
-          <button className={theme(plLight, plDark)}>PL</button>
-          <span className={theme(line, lineDark)}> | </span>
-          <button id={engLight}>ENG</button>
+          <button
+            id={isDarkTheme ? plDark : plLight}
+            onClick={() => {
+              changeLanguage('pl');
+              handleButtonChange('pl');
+            }}
+            style={{ color: buttonColorPL }}
+          >
+            PL
+          </button>
+          <span className={isDarkTheme ? lineDark : line}> | </span>
+          <button
+            id={engLight}
+            onClick={() => {
+              changeLanguage('en');
+              handleButtonChange('en');
+            }}
+            style={{ color: buttonColorENG }}
+          >
+            ENG
+          </button>
 
           <button onClick={() => toggleTheme()}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}

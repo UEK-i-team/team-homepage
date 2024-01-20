@@ -90,6 +90,13 @@
 .lineDark {
   color: $white;
 }
+#activeButton{
+  color: $black;
+ 
+}
+#inactiveButton{
+  color: $grey_30;
+}
 
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
