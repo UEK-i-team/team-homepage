@@ -13,10 +13,10 @@ import {
   mainContainerLight,
 } from './Footer.module.scss';
 export const Footer = () => {
-  const { isDarkTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className={isDarkTheme ? mainContainerDark : mainContainerLight}>
-      <div className={isDarkTheme ? containerGridDark : containerGridLight}>
+    <div className={theme(mainContainerLight, mainContainerDark)}>
+      <div className={theme(containerGridLight, containerGridDark)}>
         <div>
           <h2>
             Koło naukowe i::team <br />
@@ -45,9 +45,7 @@ export const Footer = () => {
         <div></div>
         <div>
           <h3>Znajdziesz nas na:</h3>
-          <div
-            className={isDarkTheme ? containerIconsDark : containerIconsLight}
-          >
+          <div className={theme(containerIconsLight, containerIconsDark)}>
             <a href={GITHUB_LINK}>
               <GithubSVG />
             </a>

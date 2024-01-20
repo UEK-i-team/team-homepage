@@ -1,16 +1,5 @@
 @import "../../assets/styles/theme";
 
-.containerGridDark {
-  display: inline-grid;
-  height: 200px;
-  grid-template-columns: 52% auto;
-  grid-template-rows: 9% 11% 4%;
-  column-gap: 15px;
-  row-gap: 80px;
-  margin-left: 22px;
-  margin-right: 10px;
-}
-
 .containerGridLight {
   display: inline-grid;
   height: 200px;
@@ -22,9 +11,15 @@
   margin-right: 10px;
 }
 
-.containerGridDark > div {
-  text-align: left;
-  color: $white;
+.containerGridDark {
+  display: inline-grid;
+  height: 200px;
+  grid-template-columns: 52% auto;
+  grid-template-rows: 9% 11% 4%;
+  column-gap: 15px;
+  row-gap: 80px;
+  margin-left: 22px;
+  margin-right: 10px;
 }
 
 .containerGridLight > div {
@@ -32,10 +27,9 @@
   color: $black;
 }
 
-.mainContainerDark {
-  background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
-  padding-top: 55px;
-  padding-bottom: 90px;
+.containerGridDark > div {
+  text-align: left;
+  color: $white;
 }
 
 .mainContainerLight {
@@ -44,10 +38,15 @@
   padding-bottom: 90px;
 }
 
-.containerIconsDark {
+.mainContainerDark {
+  background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
+  padding-top: 55px;
+  padding-bottom: 90px;
+}
+
+.containerIconsLight {
   height: 100%;
   a * {
-    filter: invert(100%);
     position: relative;
     top: -390px;
     width: 20px;
@@ -56,9 +55,10 @@
   }
 }
 
-.containerIconsLight {
+.containerIconsDark {
   height: 100%;
   a * {
+    filter: invert(100%);
     position: relative;
     top: -390px;
     width: 20px;
