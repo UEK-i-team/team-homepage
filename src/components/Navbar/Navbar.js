@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext } from 'react';
 import { useState } from 'react';
@@ -9,6 +10,9 @@ import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  desktopMenu,
+  desktopMenuDark,
+  desktopMenuItem,
   engLight,
   languageThemeWraper,
   line,
@@ -27,6 +31,7 @@ import {
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
@@ -34,7 +39,7 @@ export function Navbar() {
 
   return (
     <div>
-      <nav className={`${mainContainer} ${isDarkTheme && mainContainerDark}`}>
+      <nav className={theme(mainContainer, mainContainerDark)}>
         <div className={logoContainer}>
           {isDarkTheme ? (
             <>
@@ -68,9 +73,23 @@ export function Navbar() {
             </>
           )}
         </div>
+        <div className={theme(desktopMenu, desktopMenuDark)}>
+          <div className={desktopMenuItem}>
+            <Link to="/">Projekty</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Aktualności</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Dołącz do nas</Link>
+          </div>
+          <div className={desktopMenuItem}>
+            <Link to="/">Kontakt</Link>
+          </div>
+        </div>
         <div className={languageThemeWraper}>
-          <button id={isDarkTheme ? plDark : plLight}>PL</button>
-          <span id={isDarkTheme ? lineDark : line}> | </span>
+          <button className={theme(plLight, plDark)}>PL</button>
+          <span className={theme(line, lineDark)}> | </span>
           <button id={engLight}>ENG</button>
 
           <button onClick={() => toggleTheme()}>

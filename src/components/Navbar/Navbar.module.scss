@@ -43,6 +43,9 @@
   height: 15px;
   width: 68px;
 }
+.desktopMenu {
+  display: none;
+}
 #engLight {
   color: $language-button-unmarked;
   margin-right: 12px;
@@ -51,10 +54,10 @@
   color: $language-button-unmarked;
   margin-right: 12px;
 }
-#plLight {
+.plLight {
   color: $black;
 }
-#plDark {
+.plDark {
   color: $white;
 }
 .languageThemeWraper {
@@ -81,9 +84,116 @@
   border: none;
 }
 
-#line {
+.line {
   color: $black;
 }
-#lineDark {
+.lineDark {
   color: $white;
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .mainContainer {
+    height: 157px;
+    padding: 0px 0px;
+    box-shadow: none;
+  }
+  .sidebarContainer {
+    display: none;
+  }
+  .logoContainer {
+    margin-right: 80px;
+  }
+  .logo {
+    height: 68px;
+    width: 47px;
+    margin-right: 16px;
+    margin-left: 80px;
+  }
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 130px;
+  }
+  .desktopMenu {
+    display: flex;
+    height: 100%;
+  }
+  .desktopMenuDark {
+    color: $white;
+  }
+  .desktopMenuItem {
+    margin-right: 26px;
+    font-size: 20px;
+    margin-top: 71px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+  .desktopMenuItem:last-child {
+    margin-right: 0%;
+  }
+  .languageThemeWraper {
+    margin-top: 6px;
+    padding-top: 4px;
+    margin-right: 80px;
+  }
+  .languageThemeWraper button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0px;
+    width: 30px;
+    margin-left: 16px;
+    height: 30px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 4px;
+    }
+  }
+  .line {
+    background-color: $black;
+    height: 18px;
+    width: 2px;
+    align-content: center;
+    font-size: 0px;
+    margin: 0px 4px;
+  }
+  .lineDark {
+    background-color: $white;
+    height: 18px;
+    width: 2px;
+    align-content: center;
+    font-size: 0px;
+    margin: 0px 4px;
+  }
+  #engLight {
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  #engDark {
+    color: $language-button-unmarked;
+    margin-right: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plLight {
+    margin-right: -4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plDark {
+    margin-right: -4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
