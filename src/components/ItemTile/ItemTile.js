@@ -7,7 +7,7 @@ import { ThemeContext } from '../../context/ThemeContex';
 import {
   container,
   content,
-  dark,
+  darkContainer,
   image,
   text,
   title,
@@ -50,7 +50,7 @@ export const ItemTile = ({
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={theme(container, dark)}>
+    <div className={theme(container, darkContainer)}>
       <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
       <div className={content}>
         <div className={title}>{itemTitle}</div>
