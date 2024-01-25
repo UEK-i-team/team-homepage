@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
+import { Carousel } from '../../components/Carousel/Carousel';
 import { ThemeContext } from '../../context/ThemeContex';
 import {
   body,
@@ -18,6 +19,8 @@ export const Project = ({ link, description, title }) => {
 
   return (
     <div className={body}>
+    <>
+      <Carousel />
       <h1
         className={theme(
           mobileProjectTitleLightTheme,
