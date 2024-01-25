@@ -3,9 +3,6 @@ import './Carousel.module.scss';
 import React from 'react';
 import { useState } from 'react';
 
-import ActiveDot from '../../assets/svgs/ActiveDot.svg';
-import Dot from '../../assets/svgs/Dot.svg';
-import Frame from '../../assets/svgs/Frame.svg';
 import LeftArrowSvg from '../../assets/svgs/LeftArrowSvg.svg';
 import RightArrowSvg from '../../assets/svgs/RightArrowSvg.svg';
 import {
@@ -13,6 +10,7 @@ import {
   carousel,
   img,
   indicator,
+  indicatorFill,
   indicators,
   inner,
   leftArrow,
@@ -57,15 +55,16 @@ export const Carousel = () => {
 
         <div className={`${indicators}`}>
           {images.map((_, i) => (
-            <div
-              key={i}
-              className={`${indicator} ${i === index ? 'active' : ''}`}
-              onClick={() => setIndex(i)}
-            >
-              {i === index ? <ActiveDot /> : <Dot />}
+            <div key={i} onClick={() => setIndex(i)}>
+              {i === index ? (
+                <div className={indicator}>
+                  <div className={indicatorFill} />
+                </div>
+              ) : (
+                <div className={indicator} />
+              )}
             </div>
           ))}
-          <Frame />
         </div>
       </div>
     </div>

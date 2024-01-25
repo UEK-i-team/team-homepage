@@ -2,6 +2,7 @@ import '../i18n/i18n';
 
 import React from 'react';
 
+import { Carousel } from '../components/Carousel/Carousel';
 import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navbar/Navbar';
 import { OurProjects } from '../components/OurProjects/OurProjects';
@@ -11,8 +12,7 @@ const IndexPage = () => (
   <>
     <ThemeProvider>
       <Navbar />
-      <WhoWeAre />
-      <OurProjects />
+      <Carousel />
       <Footer />
     </ThemeProvider>
   </>

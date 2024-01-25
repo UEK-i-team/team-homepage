@@ -38,8 +38,8 @@
 }
 
 .carousel {
-  position: absolute;
   width: 1000px;
+  border: 2px solid red;
 }
 
 .indicators {
@@ -47,16 +47,27 @@
   bottom: 10px;
   align-items: center;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-evenly;
+  width: 20%;
+  height: 4rem;
+  background-color: black;
+  border-radius: 81px;
 }
 
 .indicator {
-  position: absolute;
-  bottom: 10px; // Adjust as needed
+  border: 1px solid white;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
   display: flex;
   align-items: center;
-  z-index: 2;
-
+  justify-content: center;
   cursor: pointer;
+}
+
+.indicatorFill {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  background-color: white;
 }
