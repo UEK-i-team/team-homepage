@@ -10,13 +10,14 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { changeLanguage } from '../LanguageSwitching/LanguageSwitch';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
-  activeButton,
+  darkActiveButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
-  engLight,
-  inactiveButton,
+  darkInactiveButton,
   languageThemeWraper,
+  lightActiveButton,
+  lightInactiveButton,
   line,
   lineDark,
   logo,
@@ -24,8 +25,6 @@ import {
   mainContainer,
   mainContainerDark,
   name,
-  plDark,
-  plLight,
   sidebar,
   sidebarContainer,
 } from './Navbar.module.scss';
@@ -51,14 +50,13 @@ export function Navbar() {
 
   useEffect(() => {
     if (language === 'pl') {
-      setButtonColorPL(activeButton);
-      setButtonColorENG(inactiveButton);
+      setButtonColorPL(isDarkTheme ? darkActiveButton : lightActiveButton);
+      setButtonColorENG(isDarkTheme ? darkInactiveButton : lightInactiveButton);
     } else if (language === 'en') {
-      setButtonColorENG(activeButton);
-      setButtonColorPL(inactiveButton);
+      setButtonColorENG(isDarkTheme ? darkActiveButton : lightActiveButton);
+      setButtonColorPL(isDarkTheme ? darkInactiveButton : lightInactiveButton);
     }
-  }, [language]);
-
+  }, [language, isDarkTheme]);
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -111,23 +109,21 @@ export function Navbar() {
         </div>
         <div className={languageThemeWraper}>
           <button
-            id={isDarkTheme ? plDark : plLight}
             onClick={() => {
               changeLanguage('pl');
               handleButtonChange('pl');
             }}
-            style={{ color: buttonColorPL }}
+            className={buttonColorPL}
           >
             PL
           </button>
           <span className={isDarkTheme ? lineDark : line}> | </span>
           <button
-            id={engLight}
             onClick={() => {
               changeLanguage('en');
               handleButtonChange('en');
             }}
-            style={{ color: buttonColorENG }}
+            className={buttonColorENG}
           >
             ENG
           </button>

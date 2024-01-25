@@ -68,7 +68,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
         </button>
         <div className={menu}>
           <div className={menuItem}>
-            <Link to="/">HOME</Link>
+            <Link to="/">{t('home')}</Link>
           </div>
           <div
             onClick={handleToggleProjects}
@@ -91,7 +91,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">MAPA UCZELNI</Link>
+                <Link to="/">{t('mapa_uczelni')}</Link>
               </span>
             </div>
             <div
@@ -101,18 +101,18 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
+                <Link to="/">{t('tajny_projekt')}</Link>
               </span>
             </div>
           </div>
           <div className={menuItem}>
-            <Link to="/">AKTUALNOŚCI</Link>
+            <Link to="/">{t('news')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">DOŁĄCZ DO NAS</Link>
+            <Link to="/">{t('joinus')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">KONTAKT</Link>
+            <Link to="/">{t('kontakt')}</Link>
           </div>
         </div>
         <div className={socialMedia}>
