@@ -3,8 +3,8 @@ import './Carousel.module.scss';
 import React from 'react';
 import { useState } from 'react';
 
-import LeftArrowSvg from '../../assets/svgs/LeftArrowSvg.svg';
-import RightArrowSvg from '../../assets/svgs/RightArrowSvg.svg';
+import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
+import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
 import {
   arrowContainer,
   carousel,
@@ -15,6 +15,7 @@ import {
   inner,
   leftArrow,
   rightArrow,
+  slider,
 } from './Carousel.module.scss';
 import ph from './imgs/ph.jpg';
 import ph1 from './imgs/ph1.jpg';
@@ -26,36 +27,75 @@ export const Carousel = () => {
   const length = images.length;
 
   const [index, setIndex] = useState(0);
+  const [isClickable, setClickable] = useState(true);
 
   const handlePrevious = () => {
-    const newIndex = index - 1;
-    setIndex(newIndex < 0 ? length - 1 : newIndex);
+    if (isClickable) {
+      const newIndex = index - 1;
+      setIndex(newIndex < 0 ? length - 1 : newIndex);
+
+      setClickable(false);
+
+      setTimeout(() => {
+        setClickable(true);
+      }, 500);
+    }
   };
 
   const handleNext = () => {
-    const newIndex = index + 1;
-    setIndex(newIndex >= length ? 0 : newIndex);
+    if (isClickable) {
+      const newIndex = index + 1;
+      setIndex(newIndex >= length ? 0 : newIndex);
+
+      setClickable(false);
+
+      setTimeout(() => {
+        setClickable(true);
+      }, 500);
+    }
+  };
+
+  const setImage = (index) => {
+    if (isClickable) {
+      setIndex(index);
+
+      setClickable(false);
+
+      setTimeout(() => {
+        setClickable(true);
+      }, 500);
+    }
   };
 
   return (
     <div className={`${carousel}`}>
       <div className={`${inner}`}>
-        <img src={images[index]} className={`${img}`} />
+        <div className={slider}>
+          {images.map((_, i) => (
+            <img
+              key={images[i]}
+              src={images[i]}
+              onClick={() => setIndex(i)}
+              className={`${img}`}
+              style={{ translate: `${-100 * index}%` }}
+            />
+          ))}
+        </div>
 
         <div
           className={`${leftArrow} ${arrowContainer}`}
           onClick={handlePrevious}
         >
-          <LeftArrowSvg />
+          <LeftArrMobile />
         </div>
 
         <div className={`${rightArrow} ${arrowContainer}`} onClick={handleNext}>
-          <RightArrowSvg />
+          <RightArrMobile />
         </div>
 
         <div className={`${indicators}`}>
           {images.map((_, i) => (
-            <div key={i} onClick={() => setIndex(i)}>
+            <div key={i} onClick={() => setImage(i)}>
               {i === index ? (
                 <div className={indicator}>
                   <div className={indicatorFill} />
