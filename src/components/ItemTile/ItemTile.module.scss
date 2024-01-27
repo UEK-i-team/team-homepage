@@ -6,21 +6,18 @@
   opacity: 0.9;
   background-color: $white_100_35;
   border-radius: 10px;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 0px 8px;
 }
 .image {
-  margin: 4px 4px 0px 4px;
   max-width: 366px;
   height: 245px;
   border-radius: 10px 10px 0px 0px;
+  
 }
 .content {
   align-self: flex-start;
-  max-width: 326px;
-  height: 219px;
-  overflow-y: hidden;
   color: $black;
   padding: 0px 24px;
   margin-bottom: 32px;
@@ -70,10 +67,11 @@
     max-width: 90%;
     margin:auto;
     align-items: stretch;
+    height: 50vh;
   }
   .image {
     min-width: 52%;
-    max-height: 400px;
+    height: 100%;
     order: 1;
   }
   .content {
@@ -98,5 +96,12 @@
   }
   .container:nth-child(even) .image {
     border-radius: 10px 0px 0px 10px;
+  }
+}
+.darkContainer {
+  background-color: $black_100_35;
+
+  .content {
+    color: $white;
   }
 }
