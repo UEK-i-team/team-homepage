@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext }, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
@@ -11,10 +12,10 @@ import { changeLanguage } from '../LanguageSwitching/LanguageSwitch';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   darkActiveButton,
+  darkInactiveButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
-  darkInactiveButton,
   languageThemeWraper,
   lightActiveButton,
   lightInactiveButton,
@@ -36,14 +37,12 @@ export function Navbar() {
   const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
-  function switchTheme() {
-    setIsDarkTheme((prev) => !prev);
-  }
   const handleButtonChange = (lang) => {
     setLanguage(lang);
   };
@@ -95,16 +94,16 @@ export function Navbar() {
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={desktopMenuItem}>
-            <Link to="/">Projekty</Link>
+            <Link to="/">{t('projekty')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Aktualności</Link>
+            <Link to="/">{t('news')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Dołącz do nas</Link>
+            <Link to="/">{t('joinus')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Kontakt</Link>
+            <Link to="/">{t('kontakt')}</Link>
           </div>
         </div>
         <div className={languageThemeWraper}>
