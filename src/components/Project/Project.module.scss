@@ -5,7 +5,8 @@
   font: 100% $helvetica;
   font-size: 32px;
   text-align: center;
-  margin: 80px 0px 32px 0px;
+  margin: 80px 0 32px 0;
+  visibility: visible;
 }
 
 .mobileProjectLightTheme {
@@ -13,13 +14,13 @@
   text-align: center;
   background-color: $white_100_35;
   color: $black;
-  margin: 0px 8px;
+  margin: 0 8px;
   font-size: 16px;
   padding: 32px 24px 50px 24px;
 
   div {
     text-align: justify;
-    padding-bottom: 50px;
+    padding: 60px;
   }
 
   a:hover,
@@ -36,6 +37,7 @@
 
 .mobileProjectTitleDarkTheme {
   color: $white;
+  visibility: visible;
 }
 
 .mobileProjectDarkTheme {
@@ -48,5 +50,74 @@
   a:active,
   a {
     color: $white;
+  }
+}
+
+.desktopProjectTitleLightTheme {
+  margin: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .body {
+    padding-bottom: 120px;
+  }
+
+  .desktopProjectTitleLightTheme {
+    color: $black;
+    font: 100% $helvetica;
+    font-size: 38px;
+    text-align: center;
+    margin: 80px 0 32px 0;
+    visibility: visible;
+  }
+
+  .desktopProjectTitleDarkTheme {
+    color: $white;
+    visibility: visible;
+  }
+
+  .mobileProjectTitleLightTheme {
+    margin: 0;
+    visibility: hidden;
+  }
+
+  .mobileProjectLightTheme {
+    font: 100% $helvetica;
+    text-align: center;
+    background-color: $white_100_35;
+    color: $black;
+    margin: 0 40px 8px;
+    font-size: 16px;
+    padding: 2px 20px 80px 24px;
+    border-radius: 22px;
+    div {
+      text-align: justify;
+      padding-bottom: 60px;
+    }
+
+    a:hover,
+    a:link,
+    a:visited,
+    a:active,
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration-line: none;
+      color: $black;
+    }
+  }
+
+  .mobileProjectDarkTheme {
+    background-color: $black_100_35;
+    color: $white;
+
+    a:hover,
+    a:link,
+    a:visited,
+    a:active,
+    a {
+      color: $white;
+    }
   }
 }
