@@ -7,6 +7,14 @@ const plTranslations = {
     news: 'AKTUALNOŚCI',
     joinUs: 'DOŁĄCZ DO NAS',
     contact: 'KONTAKT',
+    findUs: 'Znajdziesz nas na:',
+    ourRoom: 'Biblioteka Główna p.432',
+    uniName: 'Uniwersytetu Ekonomicznego',
+    uniTown: 'w Krakowie',
+    supervisor: 'Opiekun Koła',
+    board: 'Zarząd',
+    iTeam: 'Koło Naukowe i::team',
+    town: 'Kraków',
   },
 };
 
