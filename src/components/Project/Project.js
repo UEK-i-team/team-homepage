@@ -3,6 +3,9 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../context/ThemeContex';
 import {
+  body,
+  desktopProjectTitleDarkTheme,
+  desktopProjectTitleLightTheme,
   mobileProjectDarkTheme,
   mobileProjectLightTheme,
   mobileProjectTitleDarkTheme,
@@ -14,7 +17,7 @@ export const Project = ({ link, description, title }) => {
   const ARROW = <>&#10140;</>;
 
   return (
-    <>
+    <div className={body}>
       <h1
         className={theme(
           mobileProjectTitleLightTheme,
@@ -24,10 +27,18 @@ export const Project = ({ link, description, title }) => {
         {title}
       </h1>
       <div className={theme(mobileProjectLightTheme, mobileProjectDarkTheme)}>
+        <h1
+          className={theme(
+            desktopProjectTitleLightTheme,
+            desktopProjectTitleDarkTheme
+          )}
+        >
+          {title}
+        </h1>
         <div>{description}</div>
         <a href={link}>Zobacz nasz projekt w praktyce {ARROW}</a>
       </div>
-    </>
+    </div>
   );
 };
 
