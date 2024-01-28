@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
@@ -14,29 +15,31 @@ import {
 } from './Footer.module.scss';
 export const Footer = () => {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   return (
     <div className={theme(mainContainerLight, mainContainerDark)}>
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
           <h2>
-            Koło naukowe i::team <br />
-            Uniwersytetu Ekonomicznego <br />w Krakowie
+            {t('iTeam')} <br />
+            {t('uniName')} <br />
+            {t('uniTown')}
           </h2>
         </div>
         <div>
-          <h3>Zarząd:</h3>
+          <h3>{t('board')}</h3>
           <p>zarzad@example.com</p>
         </div>
         <div>
           <p>
             Rakowicka 27, 31-510 <br />
-            Kraków <br />
-            Biblioteka Główna p.432 <br />
+            {t('town')} <br />
+            {t('ourRoom')} <br />
             kniuex@example.com
           </p>
         </div>
         <div>
-          <h3>Opiekun Koła:</h3>
+          <h3>{t('supervisor')}</h3>
           <p>
             mgr Katarzyna Wójcik <br />
             katwoj@fakemail.com
@@ -44,7 +47,7 @@ export const Footer = () => {
         </div>
         <div></div>
         <div>
-          <h3>Znajdziesz nas na:</h3>
+          <h3>{t('findUs')}</h3>
           <div className={theme(containerIconsLight, containerIconsDark)}>
             <a href={GITHUB_LINK}>
               <GithubSVG />

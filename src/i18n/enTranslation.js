@@ -7,6 +7,14 @@ const enTranslations = {
     news: 'NEWS',
     joinUs: 'JOIN US',
     contact: 'CONTACT US',
+    findUs: 'Find us here:',
+    ourRoom: 'Main Library room 432',
+    uniName: 'University of Economics',
+    uniTown: 'in Cracow',
+    supervisor: 'Our supervisor',
+    board: 'Science Club Board',
+    iTeam: 'Science Club i::team',
+    town: 'Cracow',
   },
 };
 
