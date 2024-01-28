@@ -1,20 +1,24 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext } from 'react';
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { ThemeContext } from '../../context/ThemeContex';
+import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  darkActiveLanguageButton,
+  darkInactiveLanguageButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
-  engLight,
   languageThemeWraper,
+  lightActiveLanguageButton,
+  lightInactiveLanguageButton,
   line,
   lineDark,
   logo,
@@ -22,21 +26,44 @@ import {
   mainContainer,
   mainContainerDark,
   name,
-  plDark,
-  plLight,
   sidebar,
   sidebarContainer,
 } from './Navbar.module.scss';
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
+  const [language, setLanguage] = useState('');
+  const [buttonColorPL, setButtonColorPL] = useState('');
+  const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
+  const handleButtonChange = (lang) => {
+    setLanguage(lang);
+  };
+
+  useEffect(() => {
+    if (language === 'pl') {
+      setButtonColorPL(
+        theme(lightActiveLanguageButton, darkActiveLanguageButton)
+      );
+      setButtonColorENG(
+        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
+      );
+    } else if (language === 'en') {
+      setButtonColorENG(
+        theme(lightActiveLanguageButton, darkActiveLanguageButton)
+      );
+      setButtonColorPL(
+        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
+      );
+    }
+  }, [language, isDarkTheme]);
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -47,13 +74,13 @@ export function Navbar() {
                 <StaticImage
                   src="../../assets/images/logo_icon_dark_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
               <div className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_dark_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
             </>
           ) : (
@@ -62,35 +89,51 @@ export function Navbar() {
                 <StaticImage
                   src="../../assets/images/logo_icon_light_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
               <div className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_light_theme.png"
                   alt="ITeam Logo"
-                ></StaticImage>
+                />
               </div>
             </>
           )}
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={desktopMenuItem}>
-            <Link to="/">Projekty</Link>
+            <Link to="/">{t('projects')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Aktualności</Link>
+            <Link to="/">{t('news')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Dołącz do nas</Link>
+            <Link to="/">{t('joinUs')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">Kontakt</Link>
+            <Link to="/">{t('contact')}</Link>
           </div>
         </div>
         <div className={languageThemeWraper}>
-          <button className={theme(plLight, plDark)}>PL</button>
-          <span className={theme(line, lineDark)}> | </span>
-          <button id={engLight}>ENG</button>
+          <button
+            onClick={() => {
+              switchLanguage('pl');
+              handleButtonChange('pl');
+            }}
+            className={buttonColorPL}
+          >
+            PL
+          </button>
+          <span className={isDarkTheme ? lineDark : line}> | </span>
+          <button
+            onClick={() => {
+              switchLanguage('en');
+              handleButtonChange('en');
+            }}
+            className={buttonColorENG}
+          >
+            ENG
+          </button>
 
           <button onClick={() => toggleTheme()}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}

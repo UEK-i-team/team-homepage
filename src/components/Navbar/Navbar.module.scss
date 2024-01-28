@@ -90,6 +90,20 @@
 .lineDark {
   color: $white;
 }
+.lightActiveLanguageButton{
+  color: $black;
+ 
+}
+.lightInactiveLanguageButton{
+  color: $grey_30;
+}
+.darkActiveLanguageButton{
+  color: white;
+}
+.darkInactiveLanguageButton{
+  color:$grey_30;
+}
+
 
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {

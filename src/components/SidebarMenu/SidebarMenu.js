@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
@@ -29,6 +30,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
   const sidebarRef = useRef();
   const { isDarkTheme } = useContext(ThemeContext);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
+  const { t } = useTranslation();
 
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
@@ -66,7 +68,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
         </button>
         <div className={menu}>
           <div className={menuItem}>
-            <Link to="/">HOME</Link>
+            <Link to="/">{t('home')}</Link>
           </div>
           <div
             onClick={handleToggleProjects}
@@ -77,7 +79,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
                 className={areProjectsVisible ? caronItem : caronItemRotated}
               />
               <span>
-                <Link to="/">PROJEKTY</Link>
+                <Link to="/">{t('projects')}</Link>
               </span>
             </button>
           </div>
@@ -89,7 +91,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">MAPA UCZELNI</Link>
+                <Link to="/">{t('navMap')}</Link>
               </span>
             </div>
             <div
@@ -99,18 +101,18 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">TAJNY PROJEKT PROJEKT 339</Link>
+                <Link to="/">{t('secretProject')}</Link>
               </span>
             </div>
           </div>
           <div className={menuItem}>
-            <Link to="/">AKTUALNOŚCI</Link>
+            <Link to="/">{t('news')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">DOŁĄCZ DO NAS</Link>
+            <Link to="/">{t('joinUs')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">KONTAKT</Link>
+            <Link to="/">{t('contact')}</Link>
           </div>
         </div>
         <div className={socialMedia}>
@@ -128,4 +130,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
 
 SidebarMenu.propTypes = {
   isVisible: PropTypes.bool.isRequired,
+};
+SidebarMenu.propTypes = {
+  onToggle: PropTypes.func.isRequired,
 };

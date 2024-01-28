@@ -1,3 +1,5 @@
+import '../i18n/i18n';
+
 import React from 'react';
 
 import { Footer } from '../components/Footer/Footer';
