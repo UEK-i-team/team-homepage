@@ -1,5 +1,5 @@
 import i18n from 'i18next';
 
-export const changeLanguage = (lng) => {
+export const switchLanguage = (lng) => {
   i18n.changeLanguage(lng);
 };

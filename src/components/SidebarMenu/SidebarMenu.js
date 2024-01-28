@@ -79,7 +79,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
                 className={areProjectsVisible ? caronItem : caronItemRotated}
               />
               <span>
-                <Link to="/">{t('projekty')}</Link>
+                <Link to="/">{t('projects')}</Link>
               </span>
             </button>
           </div>
@@ -91,7 +91,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('mapa_uczelni')}</Link>
+                <Link to="/">{t('nav_map')}</Link>
               </span>
             </div>
             <div
@@ -101,7 +101,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('tajny_projekt')}</Link>
+                <Link to="/">{t('secret_project')}</Link>
               </span>
             </div>
           </div>
@@ -109,10 +109,10 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             <Link to="/">{t('news')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('joinus')}</Link>
+            <Link to="/">{t('joinUs')}</Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('kontakt')}</Link>
+            <Link to="/">{t('contact')}</Link>
           </div>
         </div>
         <div className={socialMedia}>
@@ -130,4 +130,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
 
 SidebarMenu.propTypes = {
   isVisible: PropTypes.bool.isRequired,
+};
+SidebarMenu.propTypes = {
+  onToggle: PropTypes.func.isRequired,
 };
