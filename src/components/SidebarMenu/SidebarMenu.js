@@ -91,7 +91,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('nav_map')}</Link>
+                <Link to="/">{t('navMap')}</Link>
               </span>
             </div>
             <div
@@ -101,7 +101,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('secret_project')}</Link>
+                <Link to="/">{t('secretProject')}</Link>
               </span>
             </div>
           </div>
