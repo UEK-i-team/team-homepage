@@ -39,7 +39,7 @@
 }
 
 .carousel {
-  height: 20vh;
+  height: 22vh;
   width: 100%;
   position: relative;
 }
@@ -86,6 +86,7 @@
   width: 100%;
   display: flex;
   overflow: hidden;
+  transition: transform 300ms ease-in-out; /* Dodaj transition tutaj */
 }
 
 .arrowContainer:active {
