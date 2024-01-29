@@ -54,3 +54,21 @@ body {
     background-image: url('../images/background-dark-mobile.png');
   }
 }
+
+@media (max-width: 768px) {
+  .light-body {
+    background-image: url('../images/background-light-mobile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 100vh;
+  }
+
+  .dark-body {
+    background-image: url('../images/background-dark-mobile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    height: 100vh;
+  }
+}
