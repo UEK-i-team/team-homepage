@@ -32,7 +32,7 @@ import {
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
-  const [language, setLanguage] = useState('');
+  const [language, setLanguage] = useState('pl');
   const [buttonColorPL, setButtonColorPL] = useState('');
   const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
