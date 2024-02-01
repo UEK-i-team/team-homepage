@@ -71,31 +71,39 @@ export function Navbar() {
           {isDarkTheme ? (
             <>
               <div className={logo}>
-                <StaticImage
-                  src="../../assets/images/logo_icon_dark_theme.png"
-                  alt="ITeam Logo"
-                />
+                <Link to="/">
+                  <StaticImage
+                    src="../../assets/images/logo_icon_dark_theme.png"
+                    alt="ITeam Logo"
+                  />
+                </Link>
               </div>
               <div className={name}>
-                <StaticImage
-                  src="../../assets/images/logo_text_dark_theme.png"
-                  alt="ITeam Logo"
-                />
+                <Link to="/">
+                  <StaticImage
+                    src="../../assets/images/logo_text_dark_theme.png"
+                    alt="ITeam Logo"
+                  />
+                </Link>
               </div>
             </>
           ) : (
             <>
               <div className={logo}>
-                <StaticImage
-                  src="../../assets/images/logo_icon_light_theme.png"
-                  alt="ITeam Logo"
-                />
+                <Link to="/">
+                  <StaticImage
+                    src="../../assets/images/logo_icon_light_theme.png"
+                    alt="ITeam Logo"
+                  />
+                </Link>
               </div>
               <div className={name}>
-                <StaticImage
-                  src="../../assets/images/logo_text_light_theme.png"
-                  alt="ITeam Logo"
-                />
+                <Link to="/">
+                  <StaticImage
+                    src="../../assets/images/logo_text_light_theme.png"
+                    alt="ITeam Logo"
+                  />
+                </Link>
               </div>
             </>
           )}
