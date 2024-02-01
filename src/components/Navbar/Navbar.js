@@ -78,14 +78,14 @@ export function Navbar() {
                   />
                 </Link>
               </div>
-              <div className={name}>
-                <Link to="/">
+              <Link to="/">
+                <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_dark_theme.png"
                     alt="ITeam Logo"
                   />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </>
           ) : (
             <>
@@ -97,14 +97,14 @@ export function Navbar() {
                   />
                 </Link>
               </div>
-              <div className={name}>
-                <Link to="/">
+              <Link to="/">
+                <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_light_theme.png"
                     alt="ITeam Logo"
                   />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </>
           )}
         </div>
