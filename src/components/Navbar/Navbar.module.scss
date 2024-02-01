@@ -61,7 +61,7 @@
   color: $white;
 }
 .languageThemeWraper {
-  font-size: 19px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -90,24 +90,22 @@
 .lineDark {
   color: $white;
 }
-.lightActiveLanguageButton{
+.lightActiveLanguageButton {
   color: $black;
- 
 }
-.lightInactiveLanguageButton{
+.lightInactiveLanguageButton {
   color: $grey_30;
 }
-.darkActiveLanguageButton{
+.darkActiveLanguageButton {
   color: white;
 }
-.darkInactiveLanguageButton{
-  color:$grey_30;
+.darkInactiveLanguageButton {
+  color: $grey_30;
 }
-
 
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
-    height: 157px;
+    height: 117px;
     padding: 0px 0px;
     box-shadow: none;
   }
@@ -118,8 +116,8 @@
     margin-right: 80px;
   }
   .logo {
-    height: 68px;
-    width: 47px;
+    height: 58px;
+    width: 37px;
     margin-right: 16px;
     margin-left: 80px;
   }
@@ -127,8 +125,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 31px;
-    width: 130px;
+    height: 21px;
+    width: 100px;
   }
   .desktopMenu {
     display: flex;
@@ -139,8 +137,8 @@
   }
   .desktopMenuItem {
     margin-right: 26px;
-    font-size: 20px;
-    margin-top: 71px;
+    font-size: 16px;
+    margin-top: 50px;
     height: 24px;
     display: flex;
     align-items: center;
@@ -149,6 +147,7 @@
     margin-right: 0%;
   }
   .languageThemeWraper {
+    font-size: 19px;
     margin-top: 6px;
     padding-top: 4px;
     margin-right: 80px;
