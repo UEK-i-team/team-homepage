@@ -29,13 +29,11 @@
   align-items: center;
   color: $white;
 }
-
 .logo {
   height: 26px;
   width: 19px;
   margin-right: 14px;
 }
-
 .name {
   display: flex;
   justify-content: center;
@@ -46,20 +44,6 @@
 .desktopMenu {
   display: none;
 }
-#engLight {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-#engDark {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-.plLight {
-  color: $black;
-}
-.plDark {
-  color: $white;
-}
 .languageThemeWraper {
   font-size: 14px;
   display: flex;
@@ -67,40 +51,45 @@
   margin-left: auto;
   margin-right: 16px;
 }
+.languageButton {
+  margin: 0px 10px;
+  background-color: $white;
+  border: 2px solid $black;
+  border-radius: 20px;
+  width: 100px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 
-.languageThemeWraper button {
+  svg {
+    height: 100%;
+    width: 20px;
+    margin-right: 5px;
+    margin-left: -3px;
+  }
+  span {
+    font-size: 15px;
+    width: 70%;
+    text-align: center;
+  }
+}
+.themeButton {
   background: none;
   border: none;
 }
-
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .sidebar button {
   background: none;
   border: none;
 }
-
-.line {
-  color: $black;
-}
-.lineDark {
-  color: $white;
-}
-.lightActiveLanguageButton {
-  color: $black;
-}
-.lightInactiveLanguageButton {
-  color: $grey_30;
-}
-.darkActiveLanguageButton {
-  color: white;
-}
-.darkInactiveLanguageButton {
-  color: $grey_30;
+.languageButtonDark {
+  background-color: $black;
+  border: 2px solid $white;
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
@@ -151,60 +140,6 @@
     margin-top: 6px;
     padding-top: 4px;
     margin-right: 80px;
-  }
-  .languageThemeWraper button {
-    background: none;
-    border: none;
-    width: 100%;
-    padding: 0px;
-    width: 30px;
-    margin-left: auto;
-    height: 30px;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      padding-bottom: 4px;
-      margin-left: 26px;
-    }
-  }
-  .line {
-    background-color: $black;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 6px;
-  }
-  .lineDark {
-    background-color: $white;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 4px;
-  }
-  #engLight {
-    margin-left: 0px;
-    margin-right: 0px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  #engDark {
-    color: $language-button-unmarked;
-    margin-right: 12px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plLight {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plDark {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
   }
   a {
     text-decoration: none;

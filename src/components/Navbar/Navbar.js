@@ -1,8 +1,9 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import GlobeSVG from '../../assets/svgs/globe.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
@@ -11,16 +12,12 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
-  darkActiveLanguageButton,
-  darkInactiveLanguageButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
+  languageButton,
+  languageButtonDark,
   languageThemeWraper,
-  lightActiveLanguageButton,
-  lightInactiveLanguageButton,
-  line,
-  lineDark,
   logo,
   logoContainer,
   mainContainer,
@@ -28,42 +25,29 @@ import {
   name,
   sidebar,
   sidebarContainer,
+  themeButton,
 } from './Navbar.module.scss';
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
-  const [language, setLanguage] = useState('pl');
-  const [buttonColorPL, setButtonColorPL] = useState('');
-  const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState('pl');
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
-  const handleButtonChange = (lang) => {
-    setLanguage(lang);
-  };
-
-  useEffect(() => {
-    if (language === 'pl') {
-      setButtonColorPL(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorENG(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
-    } else if (language === 'en') {
-      setButtonColorENG(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorPL(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
+  const handleButtonChange = () => {
+    if (currentLanguage === 'pl') {
+      switchLanguage('en');
+      setCurrentLanguage('en');
+    } else {
+      switchLanguage('pl');
+      setCurrentLanguage('pl');
     }
-  }, [language, isDarkTheme]);
+  };
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -124,26 +108,14 @@ export function Navbar() {
         </div>
         <div className={languageThemeWraper}>
           <button
-            onClick={() => {
-              switchLanguage('pl');
-              handleButtonChange('pl');
-            }}
-            className={buttonColorPL}
+            className={theme(languageButton, languageButtonDark)}
+            onClick={handleButtonChange}
           >
-            PL
-          </button>
-          <span className={isDarkTheme ? lineDark : line}> | </span>
-          <button
-            onClick={() => {
-              switchLanguage('en');
-              handleButtonChange('en');
-            }}
-            className={buttonColorENG}
-          >
-            ENG
+            <GlobeSVG />
+            <span>{currentLanguage === 'pl' ? 'Polski' : 'English'}</span>
           </button>
 
-          <button onClick={() => toggleTheme()}>
+          <button onClick={() => toggleTheme()} className={themeButton}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>
