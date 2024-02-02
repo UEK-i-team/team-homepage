@@ -1,3 +1,4 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,19 +11,26 @@ import {
   containerGridLight,
   containerIconsDark,
   containerIconsLight,
+  logo,
   mainContainerDark,
   mainContainerLight,
+  name,
+  title,
 } from './Footer.module.scss';
+
 export const Footer = () => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+  const { isDarkTheme } = useContext(ThemeContext);
   return (
     <div className={theme(mainContainerLight, mainContainerDark)}>
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
+          <h3 className={title}>Koło Naukowe:</h3>
           <h2>
-            {t('iTeam')} <br />
-            {t('uniName')} <br />
+            <div> {t('iTeam')} </div>
+            <div>i::team {t('uniName')}</div>
+            <div>Uniwersytetu Ekonomicznego</div> 
             {t('uniTown')}
           </h2>
         </div>
@@ -31,9 +39,48 @@ export const Footer = () => {
           <p>zarzad@example.com</p>
         </div>
         <div>
+          {isDarkTheme ? (
+            <>
+              <div className={logo}>
+                <StaticImage
+                  src="../../assets/images/logo_icon_dark_theme.png"
+                  alt="ITeam Logo"
+                ></StaticImage>
+              </div>
+              <div className={name}>
+                <StaticImage
+                  src="../../assets/images/logo_text_dark_theme.png"
+                  alt="ITeam Logo"
+                ></StaticImage>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={logo}>
+                <StaticImage
+                  src="../../assets/images/logo_icon_light_theme.png"
+                  alt="ITeam Logo"
+                ></StaticImage>
+              </div>
+              <div className={name}>
+                <StaticImage
+                  src="../../assets/images/logo_text_light_theme.png"
+                  alt="ITeam Logo"
+                ></StaticImage>
+              </div>{' '}
+            </>
+          )}
+        </div>
+        <div>
+          <div className={title}>
+            <h3>Adres</h3>
+          </div>
           <p>
-            Rakowicka 27, 31-510 <br />
-            {t('town')} <br />
+            <div>
+              Rakowicka 27, 31-510 <br />
+              {t('town')}
+            </div>
+            <div>Rakowicka 27, 31-510 Kraków</div>
             {t('ourRoom')} <br />
             kniuex@example.com
           </p>
