@@ -26,11 +26,11 @@ export const Footer = () => {
     <div className={theme(mainContainerLight, mainContainerDark)}>
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
-          <h3 className={title}>Koło Naukowe:</h3>
+          <h3 className={title}>{t('scienceClub')}</h3>
           <h2>
             <div> {t('iTeam')} </div>
             <div>i::team {t('uniName')}</div>
-            <div>Uniwersytetu Ekonomicznego</div> 
+            <div>Uniwersytetu Ekonomicznego</div>
             {t('uniTown')}
           </h2>
         </div>
@@ -73,7 +73,7 @@ export const Footer = () => {
         </div>
         <div>
           <div className={title}>
-            <h3>Adres</h3>
+            <h3>{t('adress')}</h3>
           </div>
           <p>
             <div>

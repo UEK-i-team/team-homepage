@@ -15,6 +15,8 @@ const plTranslations = {
     board: 'Zarząd',
     iTeam: 'Koło Naukowe i::team',
     town: 'Kraków',
+    scienceClub: 'Koło Naukowe',
+    adress: 'Adres',
   },
 };
 
