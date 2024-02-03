@@ -73,7 +73,7 @@ export const Footer = () => {
         </div>
         <div>
           <div className={title}>
-            <h3>{t('adress')}</h3>
+            <h3>{t('address')}</h3>
           </div>
           <p>
             <div>

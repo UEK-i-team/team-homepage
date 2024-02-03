@@ -16,7 +16,7 @@ const enTranslations = {
     iTeam: 'Science Club i::team',
     town: 'Cracow',
     scienceClub: 'Science Club',
-    adress: 'Adress',
+    address: 'Address',
   },
 };
 
