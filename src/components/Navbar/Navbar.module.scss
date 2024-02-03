@@ -90,6 +90,13 @@
 .languageButtonDark {
   background-color: $black;
   border: 2px solid $white;
+
+  svg {
+    filter: invert(100%);
+  }
+  span {
+    color: $white;
+  }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {

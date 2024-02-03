@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import GlobeSVG from '../../assets/svgs/globe.svg';
@@ -39,7 +39,7 @@ export function Navbar() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
-  const handleButtonChange = () => {
+  const handleButtonChange = useCallback(() => {
     if (currentLanguage === 'pl') {
       switchLanguage('en');
       setCurrentLanguage('en');
@@ -47,7 +47,8 @@ export function Navbar() {
       switchLanguage('pl');
       setCurrentLanguage('pl');
     }
-  };
+  }, [switchLanguage, currentLanguage]);
+
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -115,7 +116,7 @@ export function Navbar() {
             <span>{currentLanguage === 'pl' ? 'Polski' : 'English'}</span>
           </button>
 
-          <button onClick={() => toggleTheme()} className={themeButton}>
+          <button onClick={toggleTheme} className={themeButton}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>
