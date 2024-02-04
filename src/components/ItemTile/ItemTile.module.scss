@@ -72,6 +72,9 @@
     align-items: stretch;
     height: 50vh;
   }
+  .container:last-child {
+    margin-bottom: 222px;
+  }
   .image {
     min-width: 52%;
     height: 100%;
