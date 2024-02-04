@@ -17,6 +17,7 @@ const plTranslations = {
     town: 'Kraków',
     scienceClub: 'Koło Naukowe',
     address: 'Adres',
+    ourProjects: 'Nasze projekty',
   },
 };
 

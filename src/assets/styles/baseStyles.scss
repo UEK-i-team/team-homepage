@@ -37,3 +37,15 @@ body{
     height: 100vh;
   }
 }
+
+@media (max-width: 768px) {
+  .light-body {
+    background-image: url('../images/background-light.png');
+    background-size: cover;
+  }
+
+  .dark-body {
+    background-image: url('../images/background-dark.png');
+    background-size: cover;
+  }
+}

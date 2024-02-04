@@ -12,7 +12,7 @@
   font: 24px $helvetica;
   color: $black;
   font-weight: bolder;
-  padding-top: 52px;
+  padding-top: 32px;
   width: 100%;
   margin-bottom: 10px;
   margin-left: 18px;
@@ -55,20 +55,21 @@
     position: relative;
   }
   .h1Light {
-    font: 64px $helvetica;
+    font: 54px $helvetica;
     color: $black;
     font-weight: bolder;
+    padding-top: 0;
   }
   .pLight {
-    font: 32px $helvetica;
+    font: 27px $helvetica;
     color: $black;
     width: 100%;
   }
   .backgroundLight {
     position: relative;
-    width: 75vw;
-    height: 75vw;
-    margin-top: 92px;
+    width: 70vw;
+    height: 70vw;
+    margin-top: 30px;
     margin-left: -57px;
     padding-top: 198px;
     padding-left: 181px;
@@ -96,5 +97,11 @@
     border-radius: 600px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .h1Light {
+    padding-top: 32px;
   }
 }

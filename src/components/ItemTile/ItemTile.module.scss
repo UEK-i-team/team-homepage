@@ -8,7 +8,7 @@
   border-radius: 10px;
   flex-direction: row;
   align-items: center;
-  margin: 0px 8px;
+  margin: 10px 8px;
 }
 .image {
   max-width: 366px;
@@ -37,6 +37,7 @@
     width: 374px;
     flex-direction: column;
     align-items: center;
+    margin: 30px auto;
   }
   .image {
     width: 366px;
@@ -65,7 +66,7 @@
 @media (min-width: 769px){
   .container {
     max-width: 90%;
-    margin:auto;
+    margin: 20px auto;
     align-items: stretch;
     height: 50vh;
   }

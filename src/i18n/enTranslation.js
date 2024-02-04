@@ -17,6 +17,7 @@ const enTranslations = {
     town: 'Cracow',
     scienceClub: 'Science Club',
     address: 'Address',
+    ourProjects: 'Our projects',
   },
 };
 
