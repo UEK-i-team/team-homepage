@@ -4,6 +4,11 @@
   font-weight: 600;
   font-size: 40px;
   margin: 41px 0 41px 141px;
+  text-transform: lowercase;
+}
+
+.title:first-letter {
+  text-transform: uppercase;
 }
 
 .container {
