@@ -1,0 +1,23 @@
+@import '../../assets/styles/theme';
+
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 20px 30px 30px 65px;
+}
+
+.container {
+  color: $black;
+}
+
+.darkContainer {
+  color: $white;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 20px 30px 28px 32px;
+  }
+}
