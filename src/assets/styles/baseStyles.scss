@@ -13,39 +13,32 @@ html{
   scroll-behavior: smooth;
 }
 
-
 body{
   font-family: 'Helvetica', sans-serif;
   font-size: 1.6rem;
   margin: 0; 
+  background-size: cover;
+  background-repeat: repeat-y;
+  height: 100vh;
+  transition: background-image .5s ease;
 }
 
 @media (min-width: 768px) {
   .light-body {
     background-image: url('../images/background-light.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat-y;
-    height: 100vh;
   }
 
   .dark-body {
     background-image: url('../images/background-dark.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat-y;
-    height: 100vh;
   }
 }
 
 @media (max-width: 768px) {
   .light-body {
-    background-image: url('../images/background-light.png');
-    background-size: cover;
+    background-image: url('../images/background-light-mobile.png');
   }
 
   .dark-body {
-    background-image: url('../images/background-dark.png');
-    background-size: cover;
+    background-image: url('../images/background-dark-mobile.png');
   }
 }
