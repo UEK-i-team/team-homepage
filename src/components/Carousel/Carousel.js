@@ -1,7 +1,7 @@
 import './Carousel.module.scss';
 
 import React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
@@ -28,7 +28,6 @@ export const Carousel = () => {
 
   const [index, setIndex] = useState(0);
   const [isClickable, setClickable] = useState(true);
-  const touchStartX = useRef(0);
 
   const handlePrevious = () => {
     if (isClickable) {
@@ -39,7 +38,7 @@ export const Carousel = () => {
 
       setTimeout(() => {
         setClickable(true);
-      }, 400);
+      }, 500);
     }
   };
 
@@ -52,7 +51,7 @@ export const Carousel = () => {
 
       setTimeout(() => {
         setClickable(true);
-      }, 400);
+      }, 500);
     }
   };
 
@@ -79,29 +78,8 @@ export const Carousel = () => {
     };
   }, [index]);
 
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    const touchEndX = e.touches[0].clientX;
-    const touchDiff = touchStartX.current - touchEndX;
-
-    if (Math.abs(touchDiff) > 50) {
-      if (touchDiff > 0) {
-        handleNext();
-      } else {
-        handlePrevious();
-      }
-    }
-  };
-
   return (
-    <div
-      className={`${carousel}`}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-    >
+    <div className={`${carousel}`}>
       <div className={`${inner}`}>
         <div className={slider}>
           {images.map((_, i) => (
