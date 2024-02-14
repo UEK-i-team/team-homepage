@@ -1,7 +1,7 @@
 import './Carousel.module.scss';
 
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
@@ -29,48 +29,42 @@ export const Carousel = () => {
   const [index, setIndex] = useState(0);
   const [isClickable, setClickable] = useState(true);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     if (isClickable) {
-      const newIndex = index - 1;
-      setIndex(newIndex < 0 ? length - 1 : newIndex);
-
+      setIndex((prev) => (prev - 1 < 0 ? length - 1 : prev - 1));
       setClickable(false);
-
       setTimeout(() => {
         setClickable(true);
       }, 500);
     }
-  };
+  }, [isClickable, length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (isClickable) {
-      const newIndex = index + 1;
-      setIndex(newIndex >= length ? 0 : newIndex);
-
+      setIndex((prev) => (prev + 1 >= length ? 0 : prev + 1));
       setClickable(false);
-
       setTimeout(() => {
         setClickable(true);
       }, 500);
     }
-  };
+  }, [isClickable, length]);
 
-  const setImage = (index) => {
-    if (isClickable) {
-      setIndex(index);
-
-      setClickable(false);
-
-      setTimeout(() => {
-        setClickable(true);
-      }, 500);
-    }
-  };
+  const setImage = useCallback(
+    (index) => {
+      if (isClickable) {
+        setIndex(index);
+        setClickable(false);
+        setTimeout(() => {
+          setClickable(true);
+        }, 500);
+      }
+    },
+    [isClickable]
+  );
 
   useEffect(() => {
     const sliderTimeout = setTimeout(() => {
-      const newIndex = index + 1;
-      setIndex(newIndex >= length ? 0 : newIndex);
+      setIndex((prev) => (prev + 1 >= length ? 0 : prev + 1));
     }, 5000);
 
     return () => {
@@ -107,13 +101,11 @@ export const Carousel = () => {
         <div className={`${indicators}`}>
           {images.map((_, i) => (
             <div key={i} onClick={() => setImage(i)}>
-              {i === index ? (
+              {
                 <div className={indicator}>
-                  <div className={indicatorFill} />
+                  {i === index && <div className={indicatorFill} />}
                 </div>
-              ) : (
-                <div className={indicator} />
-              )}
+              }
             </div>
           ))}
         </div>
