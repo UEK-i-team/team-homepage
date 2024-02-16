@@ -15,7 +15,8 @@ import {
   darkInactiveLanguageButton,
   desktopMenu,
   desktopMenuDark,
-  desktopMenuItem,
+  desktopMenuItemActive,
+  desktopMenuItems,
   languageThemeWraper,
   lightActiveLanguageButton,
   lightInactiveLanguageButton,
@@ -32,6 +33,8 @@ import {
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
+  const storedMenuItem = localStorage.getItem('ACTIVE_ITEM');
+  const [activeMenuItem, setActiveMenuItem] = useState(storedMenuItem);
   const [language, setLanguage] = useState('pl');
   const [buttonColorPL, setButtonColorPL] = useState('');
   const [buttonColorENG, setButtonColorENG] = useState('');
@@ -48,6 +51,7 @@ export function Navbar() {
   };
 
   useEffect(() => {
+    localStorage.setItem('ACTIVE_ITEM', activeMenuItem);
     if (language === 'pl') {
       setButtonColorPL(
         theme(lightActiveLanguageButton, darkActiveLanguageButton)
@@ -63,7 +67,15 @@ export function Navbar() {
         theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
       );
     }
+    if (activeMenuItem !== '/') {
+      handleMenuItem(activeMenuItem);
+    }
   }, [language, isDarkTheme]);
+  const handleMenuItem = (link) => {
+    setActiveMenuItem(link);
+    localStorage.setItem('ACTIVE_ITEM', link);
+  };
+
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -90,14 +102,14 @@ export function Navbar() {
           ) : (
             <>
               <div className={logo}>
-                <Link to="/">
+                <Link to="/" onClick={() => handleMenuItem('')}>
                   <StaticImage
                     src="../../assets/images/logo_icon_light_theme.png"
                     alt="ITeam Logo"
                   />
                 </Link>
               </div>
-              <Link to="/">
+              <Link to="/" onClick={() => handleMenuItem('')}>
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_light_theme.png"
@@ -109,17 +121,40 @@ export function Navbar() {
           )}
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('projects')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('news')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('joinUs')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('contact')}</Link>
+          <div className={desktopMenuItems}>
+            <div
+              className={
+                activeMenuItem === 'projects' ? desktopMenuItemActive : ''
+              }
+              onClick={() => handleMenuItem('projects')}
+            >
+              <Link to="/projects">{t('projects')}</Link>
+            </div>
+            <div
+              className={activeMenuItem === 'news' ? desktopMenuItemActive : ''}
+            >
+              <Link to="/" onClick={() => handleMenuItem('news')}>
+                {t('news')}
+              </Link>
+            </div>
+            <div
+              className={
+                activeMenuItem === 'joinUs' ? desktopMenuItemActive : ''
+              }
+            >
+              <Link to="/" onClick={() => handleMenuItem('joinUs')}>
+                {t('joinUs')}
+              </Link>
+            </div>
+            <div
+              className={
+                activeMenuItem === 'contact' ? desktopMenuItemActive : ''
+              }
+            >
+              <Link to="/" onClick={() => handleMenuItem('contact')}>
+                {t('contact')}
+              </Link>
+            </div>
           </div>
         </div>
         <div className={languageThemeWraper}>
