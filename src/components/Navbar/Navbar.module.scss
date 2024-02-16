@@ -54,24 +54,26 @@
 .languageButton {
   margin: 0px 10px;
   background-color: $white;
-  border: 2px solid $black;
+  border: 1px solid $black;
   border-radius: 20px;
-  width: 100px;
-  height: 80%;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: start;
 
   svg {
     height: 100%;
-    width: 20px;
+    width: 14px;
     margin-right: 5px;
-    margin-left: -3px;
+    margin-left: -4px;
   }
   span {
-    font-size: 15px;
+    font-size: 9px;
     width: 70%;
-    text-align: center;
+    height: auto;
+    text-align: center;  
+    // background-color: red; 
+    padding-top: 1px;
   }
 }
 .themeButton {
@@ -89,7 +91,7 @@
 }
 .languageButtonDark {
   background-color: $black;
-  border: 2px solid $white;
+  border: 1px solid $white;
 
   svg {
     filter: invert(100%);
@@ -147,6 +149,22 @@
     margin-top: 6px;
     padding-top: 4px;
     margin-right: 80px;
+  }
+  .languageButton {
+    border-width: 2px;
+    width: 100px;
+  
+    svg {
+      width: 20px;
+      margin-left: -3px;
+    }
+    span {
+      font-size: 15px;
+    }
+  }
+  .languageButtonDark {
+    background-color: $black;
+    border-color: $white;
   }
   a {
     text-decoration: none;

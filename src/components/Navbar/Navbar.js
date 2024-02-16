@@ -113,7 +113,7 @@ export function Navbar() {
             onClick={handleButtonChange}
           >
             <GlobeSVG />
-            <span>{currentLanguage === 'pl' ? 'Polski' : 'English'}</span>
+            <span>{t('lang')}</span>
           </button>
 
           <button onClick={toggleTheme} className={themeButton}>
