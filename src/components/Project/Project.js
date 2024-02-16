@@ -19,7 +19,6 @@ export const Project = ({ link, description, title, images }) => {
 
   return (
     <div className={body}>
-    <>
       <Carousel images={images} />
       <h1
         className={theme(
