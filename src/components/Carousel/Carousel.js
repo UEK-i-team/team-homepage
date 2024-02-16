@@ -1,5 +1,4 @@
-import './Carousel.module.scss';
-
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -12,18 +11,13 @@ import {
   indicator,
   indicatorFill,
   indicators,
-  inner,
-  leftArrow,
-  rightArrow,
+  leftArrowContainer,
+  rightArrowContainer,
   slider,
+  sliderContainer,
 } from './Carousel.module.scss';
-import ph from './imgs/ph.jpg';
-import ph1 from './imgs/ph1.jpg';
-import ph2 from './imgs/ph2.jpg';
-import ph3 from './imgs/ph3.jpg';
 
-export const Carousel = () => {
-  const images = [ph, ph1, ph2, ph3];
+export const Carousel = ({ images }) => {
   const length = images.length;
 
   const [index, setIndex] = useState(0);
@@ -35,7 +29,7 @@ export const Carousel = () => {
       setClickable(false);
       setTimeout(() => {
         setClickable(true);
-      }, 500);
+      }, 200);
     }
   }, [isClickable, length]);
 
@@ -45,7 +39,7 @@ export const Carousel = () => {
       setClickable(false);
       setTimeout(() => {
         setClickable(true);
-      }, 500);
+      }, 200);
     }
   }, [isClickable, length]);
 
@@ -56,7 +50,7 @@ export const Carousel = () => {
         setClickable(false);
         setTimeout(() => {
           setClickable(true);
-        }, 500);
+        }, 200);
       }
     },
     [isClickable]
@@ -74,13 +68,12 @@ export const Carousel = () => {
 
   return (
     <div className={`${carousel}`}>
-      <div className={`${inner}`}>
+      <div className={`${sliderContainer}`}>
         <div className={slider}>
           {images.map((_, i) => (
             <img
               key={images[i]}
               src={images[i]}
-              onClick={() => setIndex(i)}
               className={`${img}`}
               style={{ translate: `${-100 * index}%` }}
             />
@@ -88,13 +81,16 @@ export const Carousel = () => {
         </div>
 
         <div
-          className={`${leftArrow} ${arrowContainer}`}
+          className={`${leftArrowContainer} ${arrowContainer}`}
           onClick={handlePrevious}
         >
           <LeftArrMobile />
         </div>
 
-        <div className={`${rightArrow} ${arrowContainer}`} onClick={handleNext}>
+        <div
+          className={`${rightArrowContainer} ${arrowContainer}`}
+          onClick={handleNext}
+        >
           <RightArrMobile />
         </div>
 
@@ -112,4 +108,8 @@ export const Carousel = () => {
       </div>
     </div>
   );
+};
+
+Carousel.propTypes = {
+  images: PropTypes.array.isRequired,
 };

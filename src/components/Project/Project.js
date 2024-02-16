@@ -13,14 +13,14 @@ import {
   mobileProjectTitleLightTheme,
 } from './Project.module.scss';
 
-export const Project = ({ link, description, title }) => {
+export const Project = ({ link, description, title, images }) => {
   const { theme } = useContext(ThemeContext);
   const ARROW = <>&#10140;</>;
 
   return (
     <div className={body}>
     <>
-      <Carousel />
+      <Carousel images={images} />
       <h1
         className={theme(
           mobileProjectTitleLightTheme,
@@ -49,4 +49,5 @@ Project.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.any.isRequired,
   link: PropTypes.any.isRequired,
+  images: PropTypes.array.isRequired,
 };
