@@ -17,31 +17,31 @@ import {
   sliderContainer,
 } from './Carousel.module.scss';
 
-export const Carousel = ({ images }) => {
-  const length = images.length;
+export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
+  const imagesLength = images.length;
 
   const [index, setIndex] = useState(0);
   const [isClickable, setClickable] = useState(true);
 
-  const handlePrevious = useCallback(() => {
+  const handlePreviousImage = useCallback(() => {
     if (isClickable) {
-      setIndex((prev) => (prev - 1 < 0 ? length - 1 : prev - 1));
+      setIndex((prev) => (prev - 1 < 0 ? imagesLength - 1 : prev - 1));
       setClickable(false);
       setTimeout(() => {
         setClickable(true);
       }, 200);
     }
-  }, [isClickable, length]);
+  }, [isClickable, imagesLength]);
 
-  const handleNext = useCallback(() => {
+  const handleNextImage = useCallback(() => {
     if (isClickable) {
-      setIndex((prev) => (prev + 1 >= length ? 0 : prev + 1));
+      setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
       setClickable(false);
       setTimeout(() => {
         setClickable(true);
       }, 200);
     }
-  }, [isClickable, length]);
+  }, [isClickable, imagesLength]);
 
   const setImage = useCallback(
     (index) => {
@@ -58,7 +58,7 @@ export const Carousel = ({ images }) => {
 
   useEffect(() => {
     const sliderTimeout = setTimeout(() => {
-      setIndex((prev) => (prev + 1 >= length ? 0 : prev + 1));
+      setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
     }, 5000);
 
     return () => {
@@ -82,14 +82,14 @@ export const Carousel = ({ images }) => {
 
         <div
           className={`${leftArrowContainer} ${arrowContainer}`}
-          onClick={handlePrevious}
+          onClick={handlePreviousImage}
         >
           <LeftArrMobile />
         </div>
 
         <div
           className={`${rightArrowContainer} ${arrowContainer}`}
-          onClick={handleNext}
+          onClick={handleNextImage}
         >
           <RightArrMobile />
         </div>
