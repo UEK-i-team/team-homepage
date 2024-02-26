@@ -1,6 +1,7 @@
 import '../i18n/i18n';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navbar/Navbar';
@@ -18,4 +19,8 @@ const NewsPage = () => (
 
 export default NewsPage;
 
-export const Head = () => <title>News</title>;
+export const Head = () => {
+  const { t } = useTranslation();
+
+  return <title>{t('news')}</title>;
+};
