@@ -50,7 +50,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
   box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
 }
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 769px) {
   .container {
     position: relative;
   }
@@ -67,8 +67,8 @@
   }
   .backgroundLight {
     position: relative;
-    width: 70vw;
-    height: 70vw;
+    width: 90rem;
+    height: 90rem;
     margin-top: 30px;
     margin-left: -57px;
     padding-top: 198px;
@@ -87,8 +87,8 @@
   }
   .backgroundDark {
     position: relative;
-    width: 70vw;
-    height: 70vw;
+    width: 90rem;
+    height: 90rem;
     margin-top: 30px;
     margin-left: -57px;
     padding-top: 198px;
