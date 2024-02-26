@@ -43,6 +43,7 @@
   }
   .image {
     width: 366px;
+    max-width: 97%;
     height: 245px;
     border-radius: 10px 10px 0px 0px;
     margin: 4px 4px 0px 4px;
@@ -71,9 +72,6 @@
     margin: 20px auto;
     align-items: stretch;
     height: 50vh;
-  }
-  .container:last-child {
-    margin-bottom: 222px;
   }
   .image {
     min-width: 52%;
