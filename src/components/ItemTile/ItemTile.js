@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
@@ -17,6 +17,7 @@ export const ItemTile = ({
   itemTitle,
   itemText,
   itemImage,
+  itemLink,
   /* 'fileName.png', image from src/assets/images/ */
   itemImageAlt,
 }) => {
@@ -45,18 +46,17 @@ export const ItemTile = ({
   const matchedImage = data.allFile.nodes.find(
     (node) => node.relativePath === itemImage
   );
-
   const imageSrc = getImage(matchedImage);
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={theme(container, darkContainer)}>
+    <Link to={itemLink} className={theme(container, darkContainer)}>
       <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
       <div className={content}>
         <div className={title}>{itemTitle}</div>
         <div className={text}>{itemText}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -65,4 +65,5 @@ ItemTile.propTypes = {
   itemText: PropTypes.string.isRequired,
   itemImage: PropTypes.string.isRequired,
   itemImageAlt: PropTypes.string.isRequired,
+  itemLink: PropTypes.string.isRequired,
 };
