@@ -71,9 +71,13 @@
     font-size: 9px;
     width: 70%;
     height: auto;
-    text-align: center;  
-    // background-color: red; 
+    text-align: center;
     padding-top: 1px;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid inherit;
   }
 }
 .themeButton {
@@ -153,7 +157,7 @@
   .languageButton {
     border-width: 2px;
     width: 100px;
-  
+
     svg {
       width: 20px;
       margin-left: -3px;
