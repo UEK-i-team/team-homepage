@@ -19,8 +19,6 @@ export const OurProjects = () => {
 
   const currLang = i18n.language;
 
-  console.log(projectsData);
-
   return (
     <section className={theme(container, darkContainer)}>
       <div>
