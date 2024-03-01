@@ -1,6 +1,6 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useCallback, useEffect, useState } from 'react';
 
 import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
@@ -16,66 +16,23 @@ import {
   slider,
   sliderContainer,
 } from './Carousel.module.scss';
+import { useCarousel } from './useCarousel';
 
-export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
-  const imagesLength = images.length;
-
-  const [index, setIndex] = useState(0);
-  const [isClickable, setClickable] = useState(true);
-
-  const handlePreviousImage = useCallback(() => {
-    if (isClickable) {
-      setIndex((prev) => (prev - 1 < 0 ? imagesLength - 1 : prev - 1));
-      setClickable(false);
-      setTimeout(() => {
-        setClickable(true);
-      }, 200);
-    }
-  }, [isClickable, imagesLength]);
-
-  const handleNextImage = useCallback(() => {
-    if (isClickable) {
-      setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
-      setClickable(false);
-      setTimeout(() => {
-        setClickable(true);
-      }, 200);
-    }
-  }, [isClickable, imagesLength]);
-
-  const setImage = useCallback(
-    (index) => {
-      if (isClickable) {
-        setIndex(index);
-        setClickable(false);
-        setTimeout(() => {
-          setClickable(true);
-        }, 200);
-      }
-    },
-    [isClickable]
-  );
-
-  useEffect(() => {
-    const sliderTimeout = setTimeout(() => {
-      setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
-    }, 5000);
-
-    return () => {
-      clearTimeout(sliderTimeout);
-    };
-  }, [index]);
+export const Carousel = ({ images }) => {
+  const { handleNextImage, setImage, handlePreviousImage, currentImageIndex } =
+    useCarousel(images);
 
   return (
-    <div className={`${carousel}`}>
-      <div className={`${sliderContainer}`}>
+    <div className={carousel}>
+      <div className={sliderContainer}>
         <div className={slider}>
-          {images.map((_, i) => (
-            <img
-              key={images[i]}
-              src={images[i]}
-              className={`${img}`}
-              style={{ translate: `${-100 * index}%` }}
+          {images.map(({ image, description }) => (
+            <GatsbyImage
+              key={image}
+              alt={description}
+              image={image}
+              className={img}
+              style={{ transform: ` translateX(${-100 * currentImageIndex}%)` }}
             />
           ))}
         </div>
@@ -94,12 +51,12 @@ export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
           <RightArrMobile />
         </div>
 
-        <div className={`${indicators}`}>
+        <div className={indicators}>
           {images.map((_, i) => (
             <div key={i} onClick={() => setImage(i)}>
               {
                 <div className={indicator}>
-                  {i === index && <div className={indicatorFill} />}
+                  {i === currentImageIndex && <div className={indicatorFill} />}
                 </div>
               }
             </div>
@@ -111,5 +68,10 @@ export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
 };
 
 Carousel.propTypes = {
-  images: PropTypes.array.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.object.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
