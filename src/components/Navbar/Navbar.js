@@ -1,8 +1,10 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import GlobeSVG from '../../assets/svgs/globe.svg';
 import GlobeSVG from '../../assets/svgs/globe.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
@@ -30,6 +32,7 @@ import {
   sidebar,
   sidebarContainer,
   themeButton,
+  themeButton,
 } from './Navbar.module.scss';
 
 export function Navbar() {
@@ -37,6 +40,7 @@ export function Navbar() {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState('pl');
   const [currentLanguage, setCurrentLanguage] = useState('pl');
 
   function toggleSidebarMenu() {
@@ -50,7 +54,16 @@ export function Navbar() {
     } else {
       switchLanguage('pl');
       setCurrentLanguage('pl');
+  const handleButtonChange = useCallback(() => {
+    if (currentLanguage === 'pl') {
+      switchLanguage('en');
+      setCurrentLanguage('en');
+    } else {
+      switchLanguage('pl');
+      setCurrentLanguage('pl');
     }
+  }, [switchLanguage, currentLanguage]);
+
   }, [switchLanguage, currentLanguage]);
 
   return (
@@ -127,6 +140,11 @@ export function Navbar() {
         </div>
         <div className={languageThemeWraper}>
           <button
+            className={theme(languageButton, languageButtonDark)}
+            onClick={handleButtonChange}
+          >
+            <GlobeSVG />
+            <span>{t('lang')}</span>
             className={theme(languageButton, languageButtonDark)}
             onClick={handleButtonChange}
           >
