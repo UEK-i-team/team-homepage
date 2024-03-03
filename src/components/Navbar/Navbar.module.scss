@@ -29,13 +29,11 @@
   align-items: center;
   color: $white;
 }
-
 .logo {
   height: 26px;
   width: 19px;
   margin-right: 14px;
 }
-
 .name {
   display: flex;
   justify-content: center;
@@ -46,20 +44,6 @@
 .desktopMenu {
   display: none;
 }
-#engLight {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-#engDark {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-.plLight {
-  color: $black;
-}
-.plDark {
-  color: $white;
-}
 .languageThemeWraper {
   font-size: 14px;
   display: flex;
@@ -67,40 +51,58 @@
   margin-left: auto;
   margin-right: 16px;
 }
+.languageButton {
+  margin: 0px 10px;
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 20px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 
-.languageThemeWraper button {
+  svg {
+    height: 100%;
+    width: 14px;
+    margin-right: 5px;
+    margin-left: -4px;
+  }
+  span {
+    font-size: 9px;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    padding-top: 1px;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid inherit;
+  }
+}
+.themeButton {
   background: none;
   border: none;
 }
-
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .sidebar button {
   background: none;
   border: none;
 }
+.languageButtonDark {
+  background-color: $black;
+  border: 1px solid $white;
 
-.line {
-  color: $black;
-}
-.lineDark {
-  color: $white;
-}
-.lightActiveLanguageButton {
-  color: $black;
-}
-.lightInactiveLanguageButton {
-  color: $grey_30;
-}
-.darkActiveLanguageButton {
-  color: white;
-}
-.darkInactiveLanguageButton {
-  color: $grey_30;
+  svg {
+    filter: invert(100%);
+  }
+  span {
+    color: $white;
+  }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
@@ -152,59 +154,21 @@
     padding-top: 4px;
     margin-right: 80px;
   }
-  .languageThemeWraper button {
-    background: none;
-    border: none;
-    width: 100%;
-    padding: 0px;
-    width: 30px;
-    margin-left: auto;
-    height: 30px;
+  .languageButton {
+    border-width: 2px;
+    width: 100px;
 
     svg {
-      width: 100%;
-      height: 100%;
-      padding-bottom: 4px;
-      margin-left: 26px;
+      width: 20px;
+      margin-left: -3px;
+    }
+    span {
+      font-size: 15px;
     }
   }
-  .line {
+  .languageButtonDark {
     background-color: $black;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 6px;
-  }
-  .lineDark {
-    background-color: $white;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 4px;
-  }
-  #engLight {
-    margin-left: 0px;
-    margin-right: 0px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  #engDark {
-    color: $language-button-unmarked;
-    margin-right: 12px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plLight {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plDark {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
+    border-color: $white;
   }
   a {
     text-decoration: none;
