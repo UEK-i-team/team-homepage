@@ -1,0 +1,146 @@
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{0}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{1}: rebase (start): checkout develop
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{2}: checkout: moving from develop to fix/resize-clickable-elements
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{3}: pull: Fast-forward
+[33m2956be8[m HEAD@{4}: checkout: moving from fix/resize-clickable-elements to develop
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{5}: checkout: moving from feature/design-borders-on-item-tile to fix/resize-clickable-elements
+[33m0282b1d[m[33m ([m[1;31morigin/feature/design-borders-on-item-tile[m[33m, [m[1;32mfeature/design-borders-on-item-tile[m[33m)[m HEAD@{6}: checkout: moving from fix/resize-clickable-elements to feature/design-borders-on-item-tile
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{7}: rebase (abort): updating HEAD
+[33m75b5700[m HEAD@{8}: rebase (continue): feature: carousel (#30)
+[33m756bff3[m HEAD@{9}: rebase (continue): fix: change p element
+[33m5caccda[m HEAD@{10}: rebase (continue): fix: change p element
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{11}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{12}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{13}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{14}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{15}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{16}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{17}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{18}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{19}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{20}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{21}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{22}: checkout: moving from feature/design-borders-on-item-tile to fix/resize-clickable-elements
+[33m0282b1d[m[33m ([m[1;31morigin/feature/design-borders-on-item-tile[m[33m, [m[1;32mfeature/design-borders-on-item-tile[m[33m)[m HEAD@{23}: rebase (continue) (finish): returning to refs/heads/feature/design-borders-on-item-tile
+[33m0282b1d[m[33m ([m[1;31morigin/feature/design-borders-on-item-tile[m[33m, [m[1;32mfeature/design-borders-on-item-tile[m[33m)[m HEAD@{24}: rebase (continue): feature: design borders on item tile
+[33m7c80a6d[m HEAD@{25}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33md8fced1[m HEAD@{26}: checkout: moving from fix/resize-clickable-elements to feature/design-borders-on-item-tile
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{27}: rebase (abort): updating HEAD
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{28}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me186224[m[33m ([m[1;36mHEAD -> [m[1;32mfix/resize-clickable-elements[m[33m, [m[1;31morigin/fix/resize-clickable-elements[m[33m)[m HEAD@{29}: commit: fix: scss syntax
+[33m72bd072[m HEAD@{30}: checkout: moving from feature/design-borders-on-item-tile to fix/resize-clickable-elements
+[33md8fced1[m HEAD@{31}: commit (merge): Merge branch 'feature/design-borders-on-item-tile' of https://github.com/UEK-i-team/team-homepage into feature/design-borders-on-item-tile
+[33m7c80a6d[m HEAD@{32}: rebase (continue) (finish): returning to refs/heads/feature/design-borders-on-item-tile
+[33m7c80a6d[m HEAD@{33}: rebase (continue): feature: design borders on item tile
+[33m4c501e4[m HEAD@{34}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33m4395908[m HEAD@{35}: commit (merge): fix: xd
+[33m4c501e4[m HEAD@{36}: rebase (continue) (finish): returning to refs/heads/feature/design-borders-on-item-tile
+[33m4c501e4[m HEAD@{37}: rebase (continue) (pick): fix: centering news container
+[33m5e0b43d[m HEAD@{38}: rebase (continue) (pick): fix: border appearance and layout
+[33me66b238[m HEAD@{39}: rebase (continue): feature: design borders on item tile
+[33m442f32d[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{40}: pull --rebase origin develop (start): checkout 442f32d95252e5f52cc2d0c4f1ce923dce354742
+[33me7fc517[m HEAD@{41}: checkout: moving from develop to feature/design-borders-on-item-tile
+[33m2956be8[m HEAD@{42}: checkout: moving from feature/design-borders-on-item-tile to develop
+[33me7fc517[m HEAD@{43}: commit: fix: centering news container
+[33me559247[m HEAD@{44}: checkout: moving from develop to feature/design-borders-on-item-tile
+[33m2956be8[m HEAD@{45}: checkout: moving from feature/design-borders-on-item-tile to develop
+[33me559247[m HEAD@{46}: commit: fix: border appearance and layout
+[33m15db577[m HEAD@{47}: checkout: moving from fix/resize-clickable-elements to feature/design-borders-on-item-tile
+[33m72bd072[m HEAD@{48}: commit: fix: icons color variable
+[33m7144499[m HEAD@{49}: commit: fix: closebutton & languageWrapper margin
+[33mccdd191[m HEAD@{50}: checkout: moving from develop to fix/resize-clickable-elements
+[33m2956be8[m HEAD@{51}: checkout: moving from fix/resize-clickable-elements to develop
+[33mccdd191[m HEAD@{52}: commit: fix: navbar appearance
+[33m79e913e[m HEAD@{53}: checkout: moving from feature/design-borders-on-item-tile to fix/resize-clickable-elements
+[33m15db577[m HEAD@{54}: commit: feature: design borders on item tile
+[33m2956be8[m HEAD@{55}: checkout: moving from develop to feature/design-borders-on-item-tile
+[33m2956be8[m HEAD@{56}: pull: Fast-forward
+[33me6f6033[m HEAD@{57}: checkout: moving from feature/desktop-footer to develop
+[33m1d524aa[m[33m ([m[1;31morigin/feature/desktop-footer[m[33m, [m[1;32mfeature/desktop-footer[m[33m)[m HEAD@{58}: reset: moving to HEAD
+[33m1d524aa[m[33m ([m[1;31morigin/feature/desktop-footer[m[33m, [m[1;32mfeature/desktop-footer[m[33m)[m HEAD@{59}: commit: fix: typos
+[33m551ff41[m HEAD@{60}: commit: fix: add translations to desktop elements
+[33m539338a[m HEAD@{61}: rebase (skip) (finish): returning to refs/heads/feature/desktop-footer
+[33m539338a[m HEAD@{62}: rebase (continue): feature: desktop footer done
+[33me6f6033[m HEAD@{63}: rebase (start): checkout develop
+[33m495c381[m HEAD@{64}: checkout: moving from develop to feature/desktop-footer
+[33me6f6033[m HEAD@{65}: pull: Fast-forward
+[33m3fd9b16[m HEAD@{66}: checkout: moving from feature/desktop-footer to develop
+[33m495c381[m HEAD@{67}: commit: feature: desktop footer done
+[33mc4d64a2[m HEAD@{68}: commit: feature: desktop footer done
+[33m3fd9b16[m HEAD@{69}: reset: moving to HEAD
+[33m3fd9b16[m HEAD@{70}: reset: moving to HEAD
+[33m3fd9b16[m HEAD@{71}: reset: moving to HEAD
+[33m3fd9b16[m HEAD@{72}: reset: moving to HEAD
+[33m3fd9b16[m HEAD@{73}: checkout: moving from develop to feature/desktop-footer
+[33m3fd9b16[m HEAD@{74}: pull: Fast-forward
+[33m035e8da[m HEAD@{75}: checkout: moving from feature/close-sidebar-by-clicking-outside to develop
+[33m2f3af5f[m[33m ([m[1;31morigin/feature/close-sidebar-by-clicking-outside[m[33m, [m[1;32mfeature/close-sidebar-by-clicking-outside[m[33m)[m HEAD@{76}: commit: feature: close sidebar by clicking outskide
+[33m035e8da[m HEAD@{77}: Branch: renamed refs/heads/fix/closing-sidebar-by-clicking-outside to refs/heads/feature/close-sidebar-by-clicking-outside
+[33m035e8da[m HEAD@{79}: checkout: moving from develop to fix/closing-sidebar-by-clicking-outside
+[33m035e8da[m HEAD@{80}: pull origin develop: Fast-forward
+[33me219bba[m[33m ([m[1;31morigin/feature/desktop-project-view[m[33m)[m HEAD@{81}: checkout: moving from fix/change-close-element-to-button-and-show-more-projects-element-to-button to develop
+[33m799e192[m[33m ([m[1;31morigin/fix/change-close-element-to-button-and-show-more-projects-element-to-button[m[33m, [m[1;32mfix/change-close-element-to-button-and-show-more-projects-element-to-button[m[33m)[m HEAD@{82}: commit: fix: change show more projects element to button
+[33m05ccb65[m HEAD@{83}: commit: fix: change close element to button
+[33me219bba[m[33m ([m[1;31morigin/feature/desktop-project-view[m[33m)[m HEAD@{84}: checkout: moving from develop to fix/change-close-element-to-button-and-show-more-projects-element-to-button
+[33me219bba[m[33m ([m[1;31morigin/feature/desktop-project-view[m[33m)[m HEAD@{85}: pull origin develop: Fast-forward
+[33m5332869[m HEAD@{86}: checkout: moving from feature/theme-switching to develop
+[33m069383c[m[33m ([m[1;31morigin/feature/theme-switching[m[33m, [m[1;32mfeature/theme-switching[m[33m)[m HEAD@{87}: commit: feature: add useCallback to toggleTheme function
+[33m5db6f3f[m HEAD@{88}: commit: fix: change file name and folder
+[33mffe48f1[m HEAD@{89}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{90}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{91}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{92}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{93}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{94}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{95}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{96}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{97}: checkout: moving from develop to feature/theme-switching
+[33m5332869[m HEAD@{98}: checkout: moving from feature/theme-switching to develop
+[33mffe48f1[m HEAD@{99}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{100}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{101}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{102}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{103}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{104}: reset: moving to HEAD
+[33mffe48f1[m HEAD@{105}: commit (amend): fix: revert itemTile changes
+[33m58c87af[m HEAD@{106}: commit: fix: revert itemTile changes
+[33m2139b73[m HEAD@{107}: commit: feature: add theme provider to index.js, add theme context to navbar nad siderbar
+[33m9289f8f[m HEAD@{108}: rebase (continue) (finish): returning to refs/heads/feature/theme-switching
+[33m9289f8f[m HEAD@{109}: rebase (continue): feature: create ThemeProvider
+[33m5332869[m HEAD@{110}: rebase (start): checkout 5332869c8e7c77138150fc14eda865d6a8c860a6
+[33mf756f58[m HEAD@{111}: rebase (abort): updating HEAD
+[33m5332869[m HEAD@{112}: rebase (start): checkout develop
+[33mf756f58[m HEAD@{113}: checkout: moving from develop to feature/theme-switching
+[33m5332869[m HEAD@{114}: pull: Fast-forward
+[33mc1e415b[m HEAD@{115}: checkout: moving from feature/theme-switching to develop
+[33mf756f58[m HEAD@{116}: commit: feature: wip
+[33mc43d64c[m HEAD@{117}: reset: moving to HEAD
+[33mc43d64c[m HEAD@{118}: reset: moving to HEAD
+[33mc43d64c[m HEAD@{119}: commit: feature: add switching parent elements scss class by switch button
+[33mbfc48ab[m HEAD@{120}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{121}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{122}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{123}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{124}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{125}: reset: moving to HEAD
+[33mbfc48ab[m HEAD@{126}: merge develop: Merge made by the 'ort' strategy.
+[33mc651dff[m HEAD@{127}: checkout: moving from develop to feature/theme-switching
+[33mc1e415b[m HEAD@{128}: pull: Fast-forward
+[33m0d13502[m HEAD@{129}: checkout: moving from feature/theme-switching to develop
+[33mc651dff[m HEAD@{130}: commit: fix: change scss files to modules
+[33m1cf435a[m HEAD@{131}: reset: moving to 1cf435a
+[33m1cf435a[m HEAD@{132}: commit (amend): feature: button is switching background
+[33med12886[m HEAD@{133}: commit (amend): feature: button is switching background
+[33m4813458[m HEAD@{134}: commit: feature: button is switching background
+[33m0d13502[m HEAD@{135}: reset: moving to HEAD
+[33m0d13502[m HEAD@{136}: reset: moving to HEAD
+[33m0d13502[m HEAD@{137}: reset: moving to HEAD
+[33m0d13502[m HEAD@{138}: reset: moving to HEAD
+[33m0d13502[m HEAD@{139}: checkout: moving from develop to feature/theme-switching
+[33m0d13502[m HEAD@{140}: checkout: moving from feature/theme-switching to develop
+[33m0d13502[m HEAD@{141}: reset: moving to HEAD
+[33m0d13502[m HEAD@{142}: reset: moving to HEAD
+[33m0d13502[m HEAD@{143}: reset: moving to HEAD
+[33m0d13502[m HEAD@{144}: reset: moving to HEAD
+[33m0d13502[m HEAD@{145}: checkout: moving from develop to feature/theme-switching
+[33m0d13502[m HEAD@{146}: clone: from https://github.com/UEK-i-team/team-homepage.git

@@ -111,10 +111,15 @@ div>p:nth-child(3) {
   margin-top: -1rem;
 }
 
+div>p:nth-child(3) {
+  margin-top: -1rem;
+}
+
 @media (min-width: $breakpoint-desktop) {
   .brakpoint {
     display: none;
   }
+
 
   .mainContainerDark,
   .mainContainerLight {
@@ -153,6 +158,7 @@ div>p:nth-child(3) {
     flex-direction: row;
   }
 
+
   .containerGridLight>div:nth-child(4),
   .containerGridDark>div:nth-child(4) {
     grid-column: 1 / span 1;
@@ -177,9 +183,11 @@ div>p:nth-child(3) {
     grid-row: 2;
   }
 
+
   .logo {
     width: 27px;
   }
+
 
   .name {
     width: 59px;
@@ -187,21 +195,26 @@ div>p:nth-child(3) {
     margin-left: 1rem;
   }
 
+
   .title {
     display: block;
   }
+
 
   h2>div:nth-child(1) {
     display: none;
   }
 
+
   h2>div:nth-child(2) {
     display: block;
   }
 
+
   h2>div:nth-child(3) {
     display: none;
   }
+
 
   h3 {
     text-transform: uppercase;
@@ -211,6 +224,7 @@ div>p:nth-child(3) {
   .addressContainer>p:nth-child(1) {
     display: none;
   }
+
 
   .addressContainer>p:nth-child(2) {
     display: block;
