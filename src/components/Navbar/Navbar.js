@@ -11,15 +11,11 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
-  darkActiveLanguageButton,
-  darkInactiveLanguageButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItemActive,
   desktopMenuItems,
   languageThemeWraper,
-  lightActiveLanguageButton,
-  lightInactiveLanguageButton,
   line,
   lineDark,
   logo,
@@ -35,9 +31,6 @@ export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
   const storedMenuItem = localStorage.getItem('ACTIVE_ITEM');
   const [activeMenuItem, setActiveMenuItem] = useState(storedMenuItem);
-  const [language, setLanguage] = useState('pl');
-  const [buttonColorPL, setButtonColorPL] = useState('');
-  const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
@@ -46,31 +39,14 @@ export function Navbar() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
-  const handleButtonChange = (lang) => {
-    setLanguage(lang);
-  };
+  const handleButtonChange = () => {};
 
   useEffect(() => {
     localStorage.setItem('ACTIVE_ITEM', activeMenuItem);
-    if (language === 'pl') {
-      setButtonColorPL(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorENG(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
-    } else if (language === 'en') {
-      setButtonColorENG(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorPL(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
-    }
     if (activeMenuItem !== '/') {
       handleMenuItem(activeMenuItem);
     }
-  }, [language, isDarkTheme]);
+  }, [activeMenuItem]);
   const handleMenuItem = (link) => {
     setActiveMenuItem(link);
     localStorage.setItem('ACTIVE_ITEM', link);
@@ -161,9 +137,8 @@ export function Navbar() {
           <button
             onClick={() => {
               switchLanguage('pl');
-              handleButtonChange('pl');
+              handleButtonChange();
             }}
-            className={buttonColorPL}
           >
             PL
           </button>
@@ -171,9 +146,8 @@ export function Navbar() {
           <button
             onClick={() => {
               switchLanguage('en');
-              handleButtonChange('en');
+              handleButtonChange();
             }}
-            className={buttonColorENG}
           >
             ENG
           </button>
