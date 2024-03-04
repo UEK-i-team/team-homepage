@@ -7,6 +7,7 @@ import GithubSVG from '../../assets/svgs/github.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
+  addressContainer,
   containerGridDark,
   containerGridLight,
   containerIconsDark,
@@ -75,15 +76,17 @@ export const Footer = () => {
           <div className={title}>
             <h3>{t('address')}</h3>
           </div>
-          <p>
-            <div>
+          <div className={addressContainer}>
+            <p>
               Rakowicka 27, 31-510 <br />
               {t('town')}
-            </div>
-            <div>Rakowicka 27, 31-510 Kraków</div>
-            {t('ourRoom')} <br />
-            kniuex@example.com
-          </p>
+            </p>
+            <p>Rakowicka 27, 31-510 {t('town')}</p>
+            <p>
+              {t('ourRoom')} <br />
+              kniuex@example.com
+            </p>
+          </div>
         </div>
         <div>
           <h3>{t('supervisor')}</h3>
