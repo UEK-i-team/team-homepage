@@ -1,26 +1,39 @@
+@use 'theme';
+
 @font-face {
   font-family: 'Helvetica', sans-serif;
 }
 
-*,*::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html{
+:focus-visible {
+  outline-style: outset;
+  // outline-color: rgb(250, 117, 255);
+  outline-color: theme.$pink_100;
+  outline-width: 3px;
+  border-radius: 3px;
+  outline-offset: 2px;
+}
+
+html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
-body{
+body {
   font-family: 'Helvetica', sans-serif;
   font-size: 1.6rem;
-  margin: 0; 
+  margin: 0;
   background-size: cover;
   background-repeat: repeat-y;
   height: 100vh;
-  transition: background-image .5s ease;
+  transition: background-image 0.5s ease;
 }
 
 @media (min-width: 768px) {
