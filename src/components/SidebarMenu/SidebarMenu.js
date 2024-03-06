@@ -106,7 +106,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             </div>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('news')}</Link>
+            <Link to="/news/">{t('news')}</Link>
           </div>
           <div className={menuItem}>
             <Link to="/">{t('joinUs')}</Link>
