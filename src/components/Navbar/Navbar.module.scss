@@ -1,5 +1,6 @@
 @import '../../assets/styles/theme';
 
+
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -16,9 +17,9 @@
   position: sticky;
   overflow: hidden;
   box-sizing: border-box;
-  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
@@ -108,7 +109,7 @@
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
     height: 117px;
-    padding: 0px 0px;
+    padding: 0 0;
     box-shadow: none;
   }
   .sidebarContainer {
@@ -137,17 +138,112 @@
   .desktopMenuDark {
     color: $white;
   }
-  .desktopMenuItem {
-    margin-right: 26px;
+  .desktopMenuItems {
     font-size: 16px;
     margin-top: 50px;
     height: 24px;
     display: flex;
     align-items: center;
+    div * {
+      margin-right: 26px;
+    }
+    div {
+      display: inline-block;
+      position: relative;
+    }
+    div ::before {
+      content: "";
+      position: absolute;
+      bottom: 4.3px;
+      width: 0;
+      height: 1.2px;
+      background-color: $black;
+      transition: width 0.25s ease-out;
+    }
   }
-  .desktopMenuItem:last-child {
-    margin-right: 0%;
+  .desktopMenuItemsDark {
+    font-size: 16px;
+    margin-top: 50px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    div * {
+      margin-right: 26px;
+    }
+    div {
+      display: inline-block;
+      position: relative;
+    }
+    div ::before {
+      content: "";
+      position: absolute;
+      bottom: 4.3px;
+      width: 0;
+      height: 1.2px;
+      background-color: $white;
+      transition: width 0.25s ease-out;
+    }
   }
+  .menuItemsPolish:nth-child(1) {
+    :hover::before {
+      width: 76.3%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsPolish:nth-child(2) {
+    :hover::before {
+      width: 81.6%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsPolish:nth-child(3) {
+    :hover::before {
+      width: 83%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsPolish:nth-child(4) {
+    :hover::before {
+      width: 74%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsEnglish:nth-child(1) {
+    :hover::before {
+      width: 76.8%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsEnglish:nth-child(2) {
+    :hover::before {
+      width: 65%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsEnglish:nth-child(3) {
+    :hover::before {
+      width: 71%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .menuItemsEnglish:nth-child(4) {
+    :hover::before {
+      width: 80%;
+      left: 0;
+      right: auto;
+    }
+  }
+  .activeLink {
+    text-decoration: underline;
+  }
+
   .languageThemeWraper {
     font-size: 19px;
     margin-top: 6px;
