@@ -1,4 +1,4 @@
-@use 'theme';
+@import '../../assets/styles/theme';
 
 @font-face {
   font-family: 'Helvetica', sans-serif;
@@ -14,7 +14,7 @@
 
 :focus-visible {
   outline-style: outset;
-  outline-color: theme.$pink_100;
+  outline-color: $pink_100;
   outline-width: 3px;
   border-radius: 3px;
   outline-offset: 2px;
