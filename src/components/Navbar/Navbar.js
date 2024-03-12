@@ -98,7 +98,7 @@ export function Navbar() {
             <Link to="/">{t('projects')}</Link>
           </div>
           <div className={desktopMenuItem}>
-            <Link to="/">{t('news')}</Link>
+            <Link to="/news/">{t('news')}</Link>
           </div>
           <div className={desktopMenuItem}>
             <Link to="/">{t('joinUs')}</Link>
