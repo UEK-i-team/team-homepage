@@ -4,10 +4,12 @@ import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import GlobeSVG from '../../assets/svgs/globe.svg';
+import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
+import { useCarousel } from '../../context/AnimationsContext';
 import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
@@ -34,6 +36,7 @@ export function Navbar() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState('pl');
+  const { togglePaused } = useCarousel();
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
@@ -114,6 +117,10 @@ export function Navbar() {
           >
             <GlobeSVG />
             <span>{t('lang')}</span>
+          </button>
+
+          <button onClick={togglePaused}>
+            <LeftArrMobile />
           </button>
 
           <button onClick={toggleTheme} className={themeButton}>
