@@ -79,6 +79,7 @@
 
   .mobileProjectTitleLightTheme {
     margin: 0;
+    height: 0;
     visibility: hidden;
   }
 
@@ -87,10 +88,11 @@
     text-align: center;
     background-color: $white_100_35;
     color: $black;
-    margin: 0 40px 8px;
+    margin: -40vh auto 8px;
     font-size: 16px;
-    padding: 2px 20px 80px 24px;
+    padding: 39vh 20px 80px 24px;
     border-radius: 22px;
+    width:95%;
     div {
       text-align: justify;
       padding: 30px 60px 60px 60px;

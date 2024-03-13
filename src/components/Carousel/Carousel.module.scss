@@ -99,3 +99,18 @@
 .indicator:active {
   scale: 1.2;
 }
+
+@media screen and (min-width: $breakpoint-desktop){
+  .carousel{
+    width: 95%;
+    height: 40vh;
+    margin: auto;
+    margin-top: 3rem;
+  }
+  .slider{
+    border-radius: 22px;
+  }
+  .indicators{
+    width: 7%;
+  }
+}
