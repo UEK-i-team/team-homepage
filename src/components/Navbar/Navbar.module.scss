@@ -20,20 +20,24 @@
   -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
 }
+
 .logoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   color: $white;
 }
+
 .logo {
   height: 26px;
   width: 19px;
   margin-right: 14px;
 }
+
 .name {
   display: flex;
   justify-content: center;
@@ -41,22 +45,28 @@
   height: 15px;
   width: 68px;
 }
+
 .desktopMenu {
   display: none;
 }
+
 .languageThemeWraper {
-  font-size: 14px;
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: 16px;
+  font-size: 14px;
+  margin-top: 6px;
+  padding-top: 4px;
+  margin-right: 80px;
 }
+
 .languageButton {
   margin: 0px 10px;
   background-color: $white;
-  border: 1px solid $black;
+  border: 2px solid $black;
   border-radius: 20px;
-  width: 60px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -66,9 +76,11 @@
     width: 14px;
     margin-right: 5px;
     margin-left: -4px;
+    width: 20px;
+    margin-left: -3px;
   }
+
   span {
-    font-size: 9px;
     width: 70%;
     height: auto;
     text-align: center;
@@ -80,19 +92,23 @@
     outline: 2px solid inherit;
   }
 }
+
 .themeButton {
   background: none;
   border: none;
 }
+
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .sidebar button {
   background: none;
   border: none;
 }
+
 .languageButtonDark {
   background-color: $black;
   border: 1px solid $white;
@@ -100,6 +116,7 @@
   svg {
     filter: invert(100%);
   }
+
   span {
     color: $white;
   }
@@ -111,18 +128,22 @@
     padding: 0px 0px;
     box-shadow: none;
   }
+
   .sidebarContainer {
     display: none;
   }
+
   .logoContainer {
     margin-right: 80px;
   }
+
   .logo {
     height: 58px;
     width: 37px;
     margin-right: 16px;
     margin-left: 80px;
   }
+
   .name {
     display: flex;
     justify-content: center;
@@ -130,13 +151,16 @@
     height: 21px;
     width: 100px;
   }
+
   .desktopMenu {
     display: flex;
     height: 100%;
   }
+
   .desktopMenuDark {
     color: $white;
   }
+
   .desktopMenuItem {
     margin-right: 26px;
     font-size: 16px;
@@ -145,31 +169,11 @@
     display: flex;
     align-items: center;
   }
+
   .desktopMenuItem:last-child {
     margin-right: 0%;
   }
-  .languageThemeWraper {
-    font-size: 19px;
-    margin-top: 6px;
-    padding-top: 4px;
-    margin-right: 80px;
-  }
-  .languageButton {
-    border-width: 2px;
-    width: 100px;
 
-    svg {
-      width: 20px;
-      margin-left: -3px;
-    }
-    span {
-      font-size: 15px;
-    }
-  }
-  .languageButtonDark {
-    background-color: $black;
-    border-color: $white;
-  }
   a {
     text-decoration: none;
     color: inherit;

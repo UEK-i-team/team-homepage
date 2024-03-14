@@ -46,25 +46,25 @@
 }
 
 .containerIconsLight {
-  display: flex;
-  gap: 7px;
-  padding-top: 5px;
+  height: 100%;
 
   a * {
-    display: flex;
-    width: 20px;
+    position: relative;
+    margin-top: 5px;
+    margin-right: 7px;
+    color: rgb(0, 0, 0);
   }
 }
 
 .containerIconsDark {
-  display: flex;
-  gap: 7px;
-  padding-top: 5px;
+  height: 100%;
 
   a * {
-    display: flex;
-    width: 20px;
     filter: invert(100%);
+    position: relative;
+    margin-top: 5px;
+    margin-right: 7px;
+    color: white;
   }
 }
 
@@ -215,8 +215,6 @@ div>p:nth-child(3) {
 
   .containerIconsDark,
   .containerIconsLight {
-    a * {
-      width: 25px;
-    }
+    a * {}
   }
 }

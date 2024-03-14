@@ -1,30 +1,5 @@
-<svg
-              width="21"
-              height="21"
-              viewBox="0 0 21 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="21"
-                height="2"
-                rx="1"
-                fill='white'
-              />
-              <rect
-                y="8"
-                width="21"
-                height="2"
-                rx="1"
-                fill='white'
-
-              />
-              <rect
-                y="16"
-                width="21"
-                height="2"
-                rx="1"
-                fill='white'
-
-              />
-            </svg>
+<svg width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="29.1667" height="2.77778" rx="1.38889" fill="white"/>
+<rect y="11.1113" width="29.1667" height="2.77778" rx="1.38889" fill="white"/>
+<rect y="22.2227" width="29.1667" height="2.77778" rx="1.38889" fill="white"/>
+</svg>

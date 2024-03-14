@@ -15,32 +15,21 @@
   transition: 0.3s ease-in-out;
   z-index: 11;
 
-  .close {
-    top: 46px;
-    right: 46px;
-    position: absolute;
-    filter: invert(100%);
-    background: none;
-    border: none;
-
-    * {
-      width: 20px;
-      height: 20px;
-    }
-  }
   .menu {
     margin-top: 116px;
     padding: 0px 24px;
   }
+
   .menuItem {
     padding: 12px 0px;
     border-bottom: 1px $grey_10 solid;
   }
+
   .menuItemProjects {
     padding: 12px 0px;
     border-bottom: solid $grey_60 1px;
   }
-  
+
   .caronItem {
     width: 13px;
     margin-right: 6px;
@@ -55,6 +44,7 @@
     padding: 8px 8px;
     box-sizing: content-box;
   }
+
   .caronItemRotated {
     width: 13px;
     filter: invert(100%);
@@ -68,6 +58,7 @@
     box-sizing: content-box;
     cursor: pointer;
   }
+
   .projectsOption {
     display: flex;
     align-items: center;
@@ -77,6 +68,7 @@
     height: 100%;
     transition: 0.3s ease;
   }
+
   .projectsOptionHidden {
     display: flex;
     transition: ease-in-out 0.3s;
@@ -88,6 +80,7 @@
     font-size: 0px;
     opacity: 0;
   }
+
   .menuItemDecoration {
     background-color: $white;
     width: 3px;
@@ -95,6 +88,7 @@
     margin-right: 14px;
     margin-left: 2px;
   }
+
   .socialMedia {
     display: flex;
     margin-top: 59px;
@@ -102,6 +96,7 @@
     height: 200px;
     height: 40px;
     gap: 12px;
+
     a * {
       display: block;
       filter: invert(100%);
@@ -109,11 +104,13 @@
       max-width: 40px;
     }
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
 }
+
 .containerHiddenDark {
   background-color: $violet_80;
   right: -334px;
@@ -143,19 +140,22 @@
     border: none;
 
     * {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
   }
+
   .menu {
     margin-top: 116px;
     padding: 0px 24px;
   }
+
   .menuItem {
     padding: 12px 0px;
     background: none;
     border-bottom: 1px $black_100_80 solid;
   }
+
   .menuItemProjects {
     padding: 12px 0px;
     border-bottom: solid $black_100_30 1px;
@@ -174,6 +174,7 @@
     padding: 8px 8px;
     box-sizing: content-box;
   }
+
   .caronItemRotated {
     width: 13px;
     margin-right: 6px;
@@ -186,6 +187,7 @@
     padding: 8px 8px;
     box-sizing: content-box;
   }
+
   .projectsOption {
     display: flex;
     align-items: center;
@@ -195,6 +197,7 @@
     height: 100%;
     transition: 0.3s ease;
   }
+
   .projectsOptionHidden {
     display: flex;
     transition: ease-in-out 0.3s;
@@ -206,6 +209,7 @@
     font-size: 0px;
     opacity: 0;
   }
+
   .menuItemDecoration {
     background-color: $black;
     width: 3px;
@@ -213,6 +217,7 @@
     margin-right: 14px;
     margin-left: 2px;
   }
+
   .socialMedia {
     display: flex;
     margin-top: 59px;
@@ -220,6 +225,7 @@
     height: 200px;
     height: 40px;
     gap: 12px;
+
     a * {
       display: block;
       filter: invert(100%);
@@ -227,11 +233,13 @@
       max-width: 40px;
     }
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
 }
+
 .containerHiddenLight {
   background-color: $violet_50;
   color: $black;
