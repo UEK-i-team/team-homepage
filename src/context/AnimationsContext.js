@@ -6,10 +6,13 @@ const AnimationsContext = createContext();
 export const useCarousel = () => useContext(AnimationsContext);
 
 export const AnimationsProvider = ({ children }) => {
-  const [isPaused, setPaused] = useState(false);
+  const [isPaused, setPaused] = useState(
+    localStorage.getItem('isPaused') === 'true' || false
+  );
 
   const togglePaused = () => {
     setPaused((prev) => !prev);
+    localStorage.setItem('isPaused', !isPaused);
   };
 
   return (
