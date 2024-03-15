@@ -105,6 +105,11 @@
   }
 }
 
+.AnimationButton {
+  background: none;
+  border: 0px;
+}
+
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
     height: 117px;

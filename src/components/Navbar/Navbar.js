@@ -3,8 +3,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import AnimationPauseDark from '../../assets/svgs/AnimationPauseDark.svg';
+import AnimationPauseLight from '../../assets/svgs/AnimationPauseLight.svg';
+import AnimationPlayDark from '../../assets/svgs/AnimationPlayDark.svg';
+import AnimationPlayLight from '../../assets/svgs/AnimationPlayLight.svg';
 import GlobeSVG from '../../assets/svgs/globe.svg';
-import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
@@ -14,6 +17,7 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  AnimationButton,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
@@ -119,8 +123,18 @@ export function Navbar() {
             <span>{t('lang')}</span>
           </button>
 
-          <button onClick={togglePaused}>
-            <LeftArrMobile />
+          <button onClick={togglePaused} className={AnimationButton}>
+            {localStorage.getItem('isPaused') === 'true' ? (
+              isDarkTheme ? (
+                <AnimationPlayDark />
+              ) : (
+                <AnimationPlayLight />
+              )
+            ) : isDarkTheme ? (
+              <AnimationPauseDark />
+            ) : (
+              <AnimationPauseLight />
+            )}
           </button>
 
           <button onClick={toggleTheme} className={themeButton}>
