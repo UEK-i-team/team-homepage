@@ -1,5 +1,9 @@
 @import '../../assets/styles/theme';
 
+* {
+  transition: 0.3s ease;
+}
+
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -60,6 +64,7 @@
   display: flex;
   align-items: center;
   justify-content: start;
+  transition: background-color 0.3s ease;
 
   svg {
     height: 100%;
