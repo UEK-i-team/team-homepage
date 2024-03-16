@@ -5,7 +5,7 @@ export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
-    if (window) {
+    if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('isDarkTheme');
       return storedTheme ? JSON.parse(storedTheme) : false;
     } else {
@@ -15,7 +15,7 @@ const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
-    if (window) {
+    if (typeof window !== 'undefined') {
       localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
     } else {
       return true;
