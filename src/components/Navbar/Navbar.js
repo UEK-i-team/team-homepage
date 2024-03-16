@@ -124,7 +124,8 @@ export function Navbar() {
           </button>
 
           <button onClick={togglePaused} className={AnimationButton}>
-            {localStorage.getItem('isPaused') === 'true' ? (
+            {typeof window !== 'undefined' &&
+            window.localStorage.getItem('isPaused') === 'true' ? (
               isDarkTheme ? (
                 <AnimationPlayDark />
               ) : (
