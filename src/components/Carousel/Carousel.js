@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
+import { useCarousel } from '../../context/AnimationsContext';
 import {
   arrowContainer,
   carousel,
@@ -22,6 +23,7 @@ export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
 
   const [index, setIndex] = useState(0);
   const [isClickable, setClickable] = useState(true);
+  const { isPaused } = useCarousel();
 
   const handlePreviousImage = useCallback(() => {
     if (isClickable) {
@@ -57,14 +59,16 @@ export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
   );
 
   useEffect(() => {
-    const sliderTimeout = setTimeout(() => {
-      setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
-    }, 5000);
+    if (!isPaused) {
+      const sliderTimeout = setTimeout(() => {
+        setIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
+      }, 1000);
 
-    return () => {
-      clearTimeout(sliderTimeout);
-    };
-  }, [index]);
+      return () => {
+        clearTimeout(sliderTimeout);
+      };
+    }
+  }, [index, isPaused, imagesLength]);
 
   return (
     <div className={`${carousel}`}>

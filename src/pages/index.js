@@ -6,14 +6,17 @@ import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navbar/Navbar';
 import { OurProjects } from '../components/OurProjects/OurProjects';
 import { WhoWeAre } from '../components/WhoWeAre/WhoWeAre';
+import { AnimationsProvider } from '../context/AnimationsContext';
 import { ThemeProvider } from '../context/ThemeContex';
 const IndexPage = () => (
   <>
     <ThemeProvider>
-      <Navbar />
-      <WhoWeAre />
-      <OurProjects />
-      <Footer />
+      <AnimationsProvider>
+        <Navbar />
+        <WhoWeAre />
+        <OurProjects />
+        <Footer />
+      </AnimationsProvider>
     </ThemeProvider>
   </>
 );
