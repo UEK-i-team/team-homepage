@@ -5,13 +5,21 @@ export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
-    const storedTheme = localStorage.getItem('isDarkTheme');
-    return storedTheme ? JSON.parse(storedTheme) : false;
+    if (window) {
+      const storedTheme = localStorage.getItem('isDarkTheme');
+      return storedTheme ? JSON.parse(storedTheme) : false;
+    } else {
+      return true;
+    }
   });
 
   useEffect(() => {
     document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
-    localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
+    if (window) {
+      localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
+    } else {
+      return true;
+    }
   }, [isDarkTheme]);
 
   const toggleTheme = useCallback(() => {
