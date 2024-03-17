@@ -67,6 +67,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
           className={close}
           onClick={onToggle}
           tabIndex={isVisible ? 0 : -1}
+          aria-label="close sidebar button"
         >
           <CloseSVG />
         </button>
@@ -134,10 +135,18 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
           </div>
         </div>
         <div className={socialMedia}>
-          <a href={GITHUB_LINK} tabIndex={isVisible ? 0 : -1}>
+          <a
+            href={GITHUB_LINK}
+            tabIndex={isVisible ? 0 : -1}
+            aria-label="I:: team github link"
+          >
             <GithubSVG />
           </a>
-          <a href={FACEBOOK_LINK} tabIndex={isVisible ? 0 : -1}>
+          <a
+            href={FACEBOOK_LINK}
+            tabIndex={isVisible ? 0 : -1}
+            aria-label="I:: team facebook link"
+          >
             <FacebookSVG />
           </a>
         </div>
