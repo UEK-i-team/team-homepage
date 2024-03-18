@@ -15,6 +15,7 @@ import {
   activeLink,
   desktopMenu,
   desktopMenuDark,
+  desktopMenuItem,
   desktopMenuItems,
   desktopMenuItemsDark,
   languageButton,
@@ -24,8 +25,6 @@ import {
   logoContainer,
   mainContainer,
   mainContainerDark,
-  menuItemsEnglish,
-  menuItemsPolish,
   name,
   sidebar,
   sidebarContainer,
@@ -99,38 +98,22 @@ export function Navbar() {
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
-            <div
-              className={
-                currentLanguage === 'pl' ? menuItemsPolish : menuItemsEnglish
-              }
-            >
+            <div className={desktopMenuItem}>
               <Link activeClassName={activeLink} to="/projects">
                 {t('projects')}
               </Link>
             </div>
-            <div
-              className={
-                currentLanguage === 'pl' ? menuItemsPolish : menuItemsEnglish
-              }
-            >
+            <div className={desktopMenuItem}>
               <Link activeClassName={activeLink} to="/news">
                 {t('news')}
               </Link>
             </div>
-            <div
-              className={
-                currentLanguage === 'pl' ? menuItemsPolish : menuItemsEnglish
-              }
-            >
+            <div className={desktopMenuItem}>
               <Link activeClassName={activeLink} to="/projects">
                 {t('joinUs')}
               </Link>
             </div>
-            <div
-              className={
-                currentLanguage === 'pl' ? menuItemsPolish : menuItemsEnglish
-              }
-            >
+            <div className={desktopMenuItem}>
               <Link activeClassName={activeLink} to="/projects">
                 {t('contact')}
               </Link>
