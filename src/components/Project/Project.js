@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
-import { Carousel } from '../../components/Carousel/Carousel';
+import ArrowRight from '../../assets/svgs/ArrowRight.svg';
 import { ThemeContext } from '../../context/ThemeContex';
+import { Carousel } from '../Carousel/Carousel';
 import {
+  arrowDarkTheme,
+  arrowLightTheme,
   body,
   desktopProjectTitleDarkTheme,
   desktopProjectTitleLightTheme,
@@ -15,7 +18,6 @@ import {
 
 export const Project = ({ link, description, title, images }) => {
   const { theme } = useContext(ThemeContext);
-  const ARROW = <>&#10140;</>;
 
   return (
     <div className={body}>
@@ -38,7 +40,10 @@ export const Project = ({ link, description, title, images }) => {
           {title}
         </h1>
         <div>{description}</div>
-        <a href={link}>Zobacz nasz projekt w praktyce {ARROW}</a>
+        <a href={link}>
+          Zobacz nasz projekt w praktyce{' '}
+          <ArrowRight className={theme(arrowLightTheme, arrowDarkTheme)} />
+        </a>
       </div>
     </div>
   );

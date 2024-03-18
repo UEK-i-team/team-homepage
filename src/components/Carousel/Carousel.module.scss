@@ -1,6 +1,5 @@
 @import '../../assets/styles/theme';
 
-
 .img {
   width: 100%;
   height: 100%;
@@ -8,7 +7,7 @@
   display: block;
   flex-shrink: 0;
   flex-grow: 0;
-  transition: translate 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 
 .arrowContainer {
@@ -42,7 +41,7 @@
 }
 
 .carousel {
-  height: 22vh;
+  height: 270px;
   width: 100%;
   position: relative;
 }
@@ -52,8 +51,9 @@
   bottom: 10px;
   align-items: center;
   display: flex;
+  padding: 6px 16px;
+  gap: 8px;
   justify-content: space-evenly;
-  width: 30%;
   height: 2.3rem;
   background-color: $black;
   border-radius: 81px;
