@@ -1,14 +1,28 @@
 @import '../../assets/styles/theme';
+.border{
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  margin: 2vh 0;
+  box-shadow: 0 0 20px 5px $light_border; 
+  }
 
-.container {
+  .darkBorder{
+    box-shadow: 0 0 20px 5px $violet_50; 
+  }
+  
+.container{
   display: flex;
   opacity: 0.9;
   background-color: $white_100_35;
   border-radius: 10px;
   flex-direction: row;
   align-items: center;
-  margin: 10px 8px;
+  width: 90vw;
 }
+
 .image {
   max-width: 366px;
   height: 245px;
@@ -68,8 +82,7 @@
 
 @media (min-width: 769px){
   .container {
-    max-width: 90%;
-    margin: 20px auto;
+    max-width: 90vw;
     align-items: stretch;
     height: 50vh;
   }

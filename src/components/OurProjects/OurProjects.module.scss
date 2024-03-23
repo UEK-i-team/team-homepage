@@ -1,5 +1,12 @@
 @import '../../assets/styles/theme';
 
+.projectsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
 .title {
   font-weight: 600;
   font-size: 40px;
@@ -13,6 +20,7 @@
 .darkContainer {
   color: $white;
 }
+
 
 @media (max-width: 768px) {
   .title {
