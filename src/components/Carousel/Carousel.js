@@ -80,29 +80,44 @@ export const Carousel = ({ images /* Array z zaimportowanych zdjęć */ }) => {
           ))}
         </div>
 
-        <div
+        <a
+          href="#"
           className={`${leftArrowContainer} ${arrowContainer}`}
-          onClick={handlePreviousImage}
+          onClick={(e) => {
+            e.preventDefault();
+            handlePreviousImage();
+          }}
         >
           <LeftArrMobile />
-        </div>
+        </a>
 
-        <div
+        <a
+          href="#"
           className={`${rightArrowContainer} ${arrowContainer}`}
-          onClick={handleNextImage}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNextImage();
+          }}
         >
           <RightArrMobile />
-        </div>
+        </a>
 
         <div className={`${indicators}`}>
           {images.map((_, i) => (
-            <div key={i} onClick={() => setImage(i)}>
+            <a
+              href="#"
+              key={i}
+              onClick={(e) => {
+                e.preventDefault();
+                setImage(i);
+              }}
+            >
               {
                 <div className={indicator}>
                   {i === index && <div className={indicatorFill} />}
                 </div>
               }
-            </div>
+            </a>
           ))}
         </div>
       </div>
