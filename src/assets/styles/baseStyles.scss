@@ -32,10 +32,10 @@ body {
   background-size: cover;
   background-repeat: repeat-y;
   height: 100vh;
-  transition: background-image 0.3s ease;
+  transition: background-image $transition-time;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-tablet) {
   .light-body {
     background-image: url('../images/background-light.png');
   }
@@ -45,7 +45,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .light-body {
     background-image: url('../images/background-light-mobile.png');
   }
@@ -55,7 +55,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .light-body {
     background-image: url('../images/background-light-mobile.png');
     background-size: cover;
