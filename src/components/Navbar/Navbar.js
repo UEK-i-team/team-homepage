@@ -20,7 +20,7 @@ import {
   desktopMenuItemsDark,
   languageButton,
   languageButtonDark,
-  languageThemeWraper,
+  languageThemeWrapper,
   logo,
   logoContainer,
   mainContainer,
@@ -125,7 +125,7 @@ export function Navbar() {
             </div>
           </div>
         </div>
-        <div className={languageThemeWraper}>
+        <div className={languageThemeWrapper}>
           <button
             className={theme(languageButton, languageButtonDark)}
             onClick={handleButtonChange}
