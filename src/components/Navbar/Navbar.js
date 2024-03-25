@@ -100,11 +100,7 @@ export function Navbar() {
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
             <div className={desktopMenuItem}>
-              <Link
-                activeClassName={activeLink}
-                className={menuLinks}
-                to="/projects"
-              >
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
                 {t('projects')}
               </Link>
             </div>
@@ -118,20 +114,12 @@ export function Navbar() {
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link
-                activeClassName={activeLink}
-                className={menuLinks}
-                to="/projects"
-              >
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
                 {t('joinUs')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link
-                activeClassName={activeLink}
-                className={menuLinks}
-                to="/projects"
-              >
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
                 {t('contact')}
               </Link>
             </div>
