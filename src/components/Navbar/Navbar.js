@@ -67,7 +67,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_dark_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>
@@ -86,7 +86,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_light_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>

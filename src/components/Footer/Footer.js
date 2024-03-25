@@ -24,7 +24,10 @@ export const Footer = () => {
   const { t } = useTranslation();
   const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <div className={theme(mainContainerLight, mainContainerDark)}>
+    <div
+      className={theme(mainContainerLight, mainContainerDark)}
+      aria-label="site's footer"
+    >
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
           <h3 className={title}>{t('scienceClub')}</h3>
@@ -73,7 +76,7 @@ export const Footer = () => {
           )}
         </div>
         <div>
-          <div className={title}>
+          <div>
             <h3>{t('address')}</h3>
           </div>
           <div className={addressContainer}>
