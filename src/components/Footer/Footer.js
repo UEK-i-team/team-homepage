@@ -98,11 +98,14 @@ export const Footer = () => {
         <div></div>
         <div>
           <h3>{t('findUs')}</h3>
-          <div className={theme(containerIconsLight, containerIconsDark)}>
+          <div
+            className={theme(containerIconsLight, containerIconsDark)}
+            aria-label="I:: team github link"
+          >
             <a href={GITHUB_LINK}>
               <GithubSVG />
             </a>
-            <a href={FACEBOOK_LINK}>
+            <a href={FACEBOOK_LINK} aria-label="I:: team facebook link">
               <FacebookSVG />
             </a>
           </div>

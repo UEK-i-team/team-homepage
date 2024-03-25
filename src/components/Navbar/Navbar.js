@@ -111,17 +111,22 @@ export function Navbar() {
           <button
             className={theme(languageButton, languageButtonDark)}
             onClick={handleButtonChange}
+            aria-label="Language switching button"
           >
             <GlobeSVG />
             <span>{t('lang')}</span>
           </button>
 
-          <button onClick={toggleTheme} className={themeButton}>
+          <button
+            onClick={toggleTheme}
+            className={themeButton}
+            aria-label="Theme switching button"
+          >
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>
         <div className={sidebarContainer}>
-          <div className={sidebar}>
+          <div className={sidebar} aria-label="Sidebar button">
             <button onClick={() => toggleSidebarMenu()}>
               {isDarkTheme ? <SidebarDark /> : <SidebarLight />}
             </button>
