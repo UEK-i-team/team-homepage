@@ -1,5 +1,6 @@
 @import '../../assets/styles/theme';
 
+
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -16,9 +17,9 @@
   position: sticky;
   overflow: hidden;
   box-sizing: border-box;
-  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 4px 4px 0 $black_100_25;
+  -moz-box-shadow: 0 4px 4px 0 $black_100_25;
+  box-shadow: 0 4px 4px 0 $black_100_25;
 }
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
@@ -44,7 +45,7 @@
 .desktopMenu {
   display: none;
 }
-.languageThemeWraper {
+.languageThemeWrapper {
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -108,7 +109,7 @@
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
     height: 117px;
-    padding: 0px 0px;
+    padding: 0 0;
     box-shadow: none;
   }
   .sidebarContainer {
@@ -137,18 +138,55 @@
   .desktopMenuDark {
     color: $white;
   }
-  .desktopMenuItem {
-    margin-right: 26px;
+  .desktopMenuItems {
     font-size: 16px;
     margin-top: 50px;
     height: 24px;
     display: flex;
     align-items: center;
+    div {
+      display: inline-block;
+      position: relative;
+    }
   }
-  .desktopMenuItem:last-child {
-    margin-right: 0%;
+  .desktopMenuItemsDark {
+    div ::before {
+      background-color: $white;
+    }
   }
-  .languageThemeWraper {
+
+  .desktopMenuItem {
+    margin-right: 26px;
+  }
+
+  .menuLinks {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .menuLinks::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    bottom: 10%;
+    left: 0;
+    background-color: $black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .menuLinks:hover::before {
+    transform: scaleX(1);
+  }
+
+  .activeLink {
+    position: relative;
+    text-decoration: underline;
+  }
+
+  .languageThemeWrapper {
     font-size: 19px;
     margin-top: 6px;
     padding-top: 4px;
