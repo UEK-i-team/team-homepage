@@ -13,7 +13,6 @@
   max-width: 366px;
   height: 245px;
   border-radius: 10px 10px 0px 0px;
-
 }
 .content {
   align-self: flex-start;
@@ -31,7 +30,7 @@
   line-height: 19.36px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .container {
     width: auto;
     flex-direction: column;
@@ -51,7 +50,7 @@
     -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  .content{
+  .content {
     width: 326px;
     height: 219px;
     overflow-y: hidden;
@@ -66,7 +65,7 @@
   }
 }
 
-@media (min-width: 769px){
+@media (min-width: 769px) {
   .container {
     max-width: 90%;
     margin: 20px auto;
@@ -86,11 +85,12 @@
   }
   .title {
     font-size: 30px;
-    margin: 50px 30px 30px 30px ;
+    margin: 50px 30px 30px 30px;
   }
   .text {
     font-size: 20px;
     margin: 30px 30px 0px 30px;
+    line-height: 1.2;
   }
   .container:nth-child(odd) {
     flex-direction: row-reverse;
