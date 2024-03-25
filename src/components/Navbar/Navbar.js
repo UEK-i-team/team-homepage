@@ -25,6 +25,7 @@ import {
   logoContainer,
   mainContainer,
   mainContainerDark,
+  menuLinks,
   name,
   sidebar,
   sidebarContainer,
@@ -99,22 +100,38 @@ export function Navbar() {
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} to="/projects">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/projects"
+              >
                 {t('projects')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} to="/news">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/news"
+              >
                 {t('news')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} to="/projects">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/projects"
+              >
                 {t('joinUs')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} to="/projects">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/projects"
+              >
                 {t('contact')}
               </Link>
             </div>
