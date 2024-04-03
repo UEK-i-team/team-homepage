@@ -92,13 +92,14 @@ p {
   word-wrap: anywhere;
 }
 
-.containerGridLight>div:nth-child(3),
-.containerGridDark>div:nth-child(3) {
-  display: none;
+ul{
+  font-size: 13px;
+  word-wrap: anywhere;
+  text-decoration: underline;
 }
 
-.title {
-
+.containerGridLight>div:nth-child(3),
+.containerGridDark>div:nth-child(3) {
   display: none;
 }
 
@@ -174,13 +175,13 @@ div>p:nth-child(3) {
   .containerGridLight>div:nth-child(6),
   .containerGridDark>div:nth-child(6) {
     grid-column: 3 / span 1;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .containerGridLight>div:nth-child(7),
   .containerGridDark>div:nth-child(7) {
     grid-column: 3 / span 1;
-    grid-row: 2;
+    grid-row: 3;
   }
 
   .logo {

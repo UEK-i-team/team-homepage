@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -98,7 +99,6 @@ export const Footer = () => {
             katwoj@fakemail.com
           </p>
         </div>
-        <div></div>
         <div>
           <h3>{t('findUs')}</h3>
           <div
@@ -111,6 +111,25 @@ export const Footer = () => {
             <a href={FACEBOOK_LINK} aria-label="I:: team facebook link">
               <FacebookSVG />
             </a>
+          </div>
+        </div>
+        <div className="linksWrapper">
+          <h3>Linki:</h3>
+          <div className="linksListWrapper">
+            <ul>
+              <li>
+                <Link to={'/'}>{t('home')}</Link>
+              </li>
+              <li>
+                <Link to={'/news'}>{t('news')}</Link>
+              </li>
+              <li>
+                <Link to="/">{t('joinUs')}</Link>
+              </li>
+              <li>
+                <Link to="/">{t('contact')}</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
