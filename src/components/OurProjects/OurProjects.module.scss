@@ -1,11 +1,14 @@
 @import '../../assets/styles/theme';
 
 .projectsContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
+  align-self: center;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 2vh;
+  margin-bottom: 2vh;
+  place-items: center;
 }
 .title {
   font-weight: 600;

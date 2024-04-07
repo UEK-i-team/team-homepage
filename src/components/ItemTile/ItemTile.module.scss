@@ -5,12 +5,11 @@
   justify-content: center;
   align-items: center;
   width: 90vw;
-  margin: 2vh 0;
-  box-shadow: 0 0 20px 5px $light_border; 
+  outline: 2px solid $grey_40;
   }
 
   .darkBorder{
-    box-shadow: 0 0 20px 5px $violet_50; 
+    outline: 2px solid $white;
   }
   
 .container{
