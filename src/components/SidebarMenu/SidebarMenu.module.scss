@@ -1,5 +1,4 @@
 @import '../../assets/styles/theme';
-
 .containerDark,
 .containerHiddenDark {
   display: flex;
@@ -14,7 +13,18 @@
   font-family: $helvetica;
   transition: 0.3s ease-in-out;
   z-index: 11;
+  .close {
+    top: 46px;
+    right: 46px;
+    position: absolute;
+    filter: invert(100%);
+    background: none;
+    border: none;
 
+    * {
+      width: 100%;
+    }
+  }
   .menu {
     margin-top: 116px;
     padding: 0px 24px;
