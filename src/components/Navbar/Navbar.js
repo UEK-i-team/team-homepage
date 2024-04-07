@@ -12,9 +12,12 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
+  activeLink,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
+  desktopMenuItems,
+  desktopMenuItemsDark,
   languageButton,
   languageButtonDark,
   languageThemeWraper,
@@ -22,6 +25,7 @@ import {
   logoContainer,
   mainContainer,
   mainContainerDark,
+  menuLinks,
   name,
   sidebar,
   sidebarContainer,
@@ -94,17 +98,31 @@ export function Navbar() {
           )}
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('projects')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/news/">{t('news')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('joinUs')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('contact')}</Link>
+          <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('projects')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/news"
+              >
+                {t('news')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('joinUs')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('contact')}
+              </Link>
+            </div>
           </div>
         </div>
         <div className={languageThemeWraper}>

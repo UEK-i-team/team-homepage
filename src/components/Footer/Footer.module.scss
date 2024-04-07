@@ -1,5 +1,8 @@
 @import "../../assets/styles/theme";
 
+* {
+  transition: $transition-time;
+}
 
 .containerGridLight {
   display: inline-grid;
