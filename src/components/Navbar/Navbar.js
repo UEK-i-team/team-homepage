@@ -23,6 +23,7 @@ import {
   languageThemeWraper,
   logo,
   logoContainer,
+  logoImg,
   mainContainer,
   mainContainerDark,
   menuLinks,
@@ -60,7 +61,7 @@ export function Navbar() {
           {isDarkTheme ? (
             <>
               <div className={logo}>
-                <Link to="/">
+                <Link to="/" className={logoImg}>
                   <StaticImage
                     src="../../assets/images/logo_icon_dark_theme.png"
                     alt="ITeam Logo"
