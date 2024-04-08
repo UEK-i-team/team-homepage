@@ -4,10 +4,22 @@ import React, { createContext, useCallback, useEffect, useState } from 'react';
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('isDarkTheme');
+      return storedTheme ? JSON.parse(storedTheme) : false;
+    } else {
+      return true;
+    }
+  });
 
   useEffect(() => {
     document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
+    } else {
+      return true;
+    }
   }, [isDarkTheme]);
 
   const toggleTheme = useCallback(() => {
@@ -15,7 +27,7 @@ const ThemeProvider = ({ children }) => {
   }, []);
 
   const theme = (lightThemeClassName, darkThemeClassName) =>
-    `${lightThemeClassName} ${isDarkTheme && darkThemeClassName}`;
+    `${lightThemeClassName} ${isDarkTheme ? darkThemeClassName : ''}`;
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, toggleTheme, theme }}>

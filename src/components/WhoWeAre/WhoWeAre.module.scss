@@ -1,5 +1,8 @@
 @import '../../assets/styles/theme';
 
+* {
+  transition: $transition-time;
+}
 .container {
   line-height: 1.6;
   width: 100%;

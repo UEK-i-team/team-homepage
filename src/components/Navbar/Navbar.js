@@ -1,8 +1,9 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import GlobeSVG from '../../assets/svgs/globe.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
@@ -11,59 +12,48 @@ import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
-  darkActiveLanguageButton,
-  darkInactiveLanguageButton,
+  activeLink,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
+  desktopMenuItems,
+  desktopMenuItemsDark,
+  languageButton,
+  languageButtonDark,
   languageThemeWraper,
-  lightActiveLanguageButton,
-  lightInactiveLanguageButton,
-  line,
-  lineDark,
   logo,
   logoContainer,
+  logoImg,
   mainContainer,
   mainContainerDark,
+  menuLinks,
   name,
   sidebar,
   sidebarContainer,
+  themeButton,
 } from './Navbar.module.scss';
 
 export function Navbar() {
   const [isSidebarMenuVisible, setIsSidebarMenuVisible] = useState(false);
-  const [language, setLanguage] = useState('pl');
-  const [buttonColorPL, setButtonColorPL] = useState('');
-  const [buttonColorENG, setButtonColorENG] = useState('');
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState('pl');
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
   }
 
-  const handleButtonChange = (lang) => {
-    setLanguage(lang);
-  };
-
-  useEffect(() => {
-    if (language === 'pl') {
-      setButtonColorPL(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorENG(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
-    } else if (language === 'en') {
-      setButtonColorENG(
-        theme(lightActiveLanguageButton, darkActiveLanguageButton)
-      );
-      setButtonColorPL(
-        theme(lightInactiveLanguageButton, darkInactiveLanguageButton)
-      );
+  const handleButtonChange = useCallback(() => {
+    if (currentLanguage === 'pl') {
+      switchLanguage('en');
+      setCurrentLanguage('en');
+    } else {
+      switchLanguage('pl');
+      setCurrentLanguage('pl');
     }
-  }, [language, isDarkTheme]);
+  }, [switchLanguage, currentLanguage]);
+
   return (
     <div>
       <nav className={theme(mainContainer, mainContainerDark)}>
@@ -71,7 +61,7 @@ export function Navbar() {
           {isDarkTheme ? (
             <>
               <div className={logo}>
-                <Link to="/">
+                <Link to="/" className={logoImg}>
                   <StaticImage
                     src="../../assets/images/logo_icon_dark_theme.png"
                     alt="ITeam Logo"
@@ -82,7 +72,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_dark_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>
@@ -101,7 +91,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_light_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>
@@ -109,41 +99,43 @@ export function Navbar() {
           )}
         </div>
         <div className={theme(desktopMenu, desktopMenuDark)}>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('projects')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('news')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('joinUs')}</Link>
-          </div>
-          <div className={desktopMenuItem}>
-            <Link to="/">{t('contact')}</Link>
+          <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('projects')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/news"
+              >
+                {t('news')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('joinUs')}
+              </Link>
+            </div>
+            <div className={desktopMenuItem}>
+              <Link activeClassName={activeLink} className={menuLinks} to="/">
+                {t('contact')}
+              </Link>
+            </div>
           </div>
         </div>
         <div className={languageThemeWraper}>
           <button
-            onClick={() => {
-              switchLanguage('pl');
-              handleButtonChange('pl');
-            }}
-            className={buttonColorPL}
+            className={theme(languageButton, languageButtonDark)}
+            onClick={handleButtonChange}
           >
-            PL
-          </button>
-          <span className={isDarkTheme ? lineDark : line}> | </span>
-          <button
-            onClick={() => {
-              switchLanguage('en');
-              handleButtonChange('en');
-            }}
-            className={buttonColorENG}
-          >
-            ENG
+            <GlobeSVG />
+            <span>{t('lang')}</span>
           </button>
 
-          <button onClick={() => toggleTheme()}>
+          <button onClick={toggleTheme} className={themeButton}>
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>

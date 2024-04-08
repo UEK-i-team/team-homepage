@@ -1,5 +1,9 @@
 @import '../../assets/styles/theme';
 
+* {
+  transition: $transition-time;
+}
+
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -16,9 +20,9 @@
   position: sticky;
   overflow: hidden;
   box-sizing: border-box;
-  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 4px 4px 0 $black_100_25;
+  -moz-box-shadow: 0 4px 4px 0 $black_100_25;
+  box-shadow: 0 4px 4px 0 $black_100_25;
 }
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
@@ -29,13 +33,11 @@
   align-items: center;
   color: $white;
 }
-
 .logo {
   height: 26px;
   width: 19px;
   margin-right: 14px;
 }
-
 .name {
   display: flex;
   justify-content: center;
@@ -46,20 +48,6 @@
 .desktopMenu {
   display: none;
 }
-#engLight {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-#engDark {
-  color: $language-button-unmarked;
-  margin-right: 12px;
-}
-.plLight {
-  color: $black;
-}
-.plDark {
-  color: $white;
-}
 .languageThemeWraper {
   font-size: 14px;
   display: flex;
@@ -67,46 +55,64 @@
   margin-left: auto;
   margin-right: 16px;
 }
+.languageButton {
+  margin: 0 10px;
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 20px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 
-.languageThemeWraper button {
+  svg {
+    height: 100%;
+    width: 14px;
+    margin-right: 5px;
+    margin-left: -4px;
+  }
+  span {
+    font-size: 9px;
+    width: 70%;
+    height: auto;
+    text-align: center;
+    padding-top: 1px;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid inherit;
+  }
+}
+.themeButton {
   background: none;
   border: none;
 }
-
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .sidebar button {
   background: none;
   border: none;
 }
+.languageButtonDark {
+  background-color: $black;
+  border: 1px solid $white;
 
-.line {
-  color: $black;
-}
-.lineDark {
-  color: $white;
-}
-.lightActiveLanguageButton {
-  color: $black;
-}
-.lightInactiveLanguageButton {
-  color: $grey_30;
-}
-.darkActiveLanguageButton {
-  color: white;
-}
-.darkInactiveLanguageButton {
-  color: $grey_30;
+  svg {
+    filter: invert(100%);
+  }
+  span {
+    color: $white;
+  }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
   .mainContainer {
     height: 117px;
-    padding: 0px 0px;
+    padding: 0 0;
     box-shadow: none;
   }
   .sidebarContainer {
@@ -116,6 +122,12 @@
     margin-right: 80px;
   }
   .logo {
+    height: 58px;
+    width: 37px;
+    margin-right: 16px;
+    margin-left: 80px;
+  }
+  .logoImg {
     height: 58px;
     width: 37px;
     margin-right: 16px;
@@ -135,76 +147,75 @@
   .desktopMenuDark {
     color: $white;
   }
-  .desktopMenuItem {
-    margin-right: 26px;
+  .desktopMenuItems {
     font-size: 16px;
     margin-top: 50px;
     height: 24px;
     display: flex;
     align-items: center;
+    div {
+      display: inline-block;
+      position: relative;
+    }
   }
-  .desktopMenuItem:last-child {
-    margin-right: 0%;
+  .desktopMenuItemsDark {
+    div ::before {
+      background-color: $white;
+    }
   }
+
+  .desktopMenuItem {
+    margin-right: 26px;
+  }
+
+  .menuLinks {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .menuLinks::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    bottom: 10%;
+    left: 0;
+    background-color: $black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .menuLinks:hover::before {
+    transform: scaleX(1);
+  }
+
+  .activeLink {
+    position: relative;
+    text-decoration: underline;
+  }
+
   .languageThemeWraper {
     font-size: 19px;
     margin-top: 6px;
     padding-top: 4px;
     margin-right: 80px;
   }
-  .languageThemeWraper button {
-    background: none;
-    border: none;
-    width: 100%;
-    padding: 0px;
-    width: 30px;
-    margin-left: auto;
-    height: 30px;
+  .languageButton {
+    border-width: 2px;
+    width: 100px;
 
     svg {
-      width: 100%;
-      height: 100%;
-      padding-bottom: 4px;
-      margin-left: 26px;
+      width: 20px;
+      margin-left: -3px;
+    }
+    span {
+      font-size: 15px;
     }
   }
-  .line {
+  .languageButtonDark {
     background-color: $black;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 6px;
-  }
-  .lineDark {
-    background-color: $white;
-    height: 18px;
-    width: 2px;
-    align-content: center;
-    font-size: 0px;
-    margin: 0px 4px;
-  }
-  #engLight {
-    margin-left: 0px;
-    margin-right: 0px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  #engDark {
-    color: $language-button-unmarked;
-    margin-right: 12px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plLight {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .plDark {
-    margin-right: -4px;
-    font-size: 16px;
-    font-weight: 600;
+    border-color: $white;
   }
   a {
     text-decoration: none;

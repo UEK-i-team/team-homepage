@@ -17,12 +17,14 @@ export const OurProjects = () => {
           itemImageAlt="projekt strony"
           itemText="Jesteś tutaj!"
           itemImage="project-homepage.png"
+          itemLink="/projectView"
         />
         <ItemTile
           itemTitle="TAJNY PROJEKT 339"
           itemImageAlt="tajny projekt"
           itemText="Już wkrótce..."
           itemImage="project-homepage.png"
+          itemLink="/projectView"
         />
       </div>
     </section>

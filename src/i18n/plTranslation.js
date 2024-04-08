@@ -18,6 +18,7 @@ const plTranslations = {
     scienceClub: 'Koło Naukowe',
     address: 'Adres',
     ourProjects: 'Nasze projekty',
+    lang: 'Polski',
   },
 };
 

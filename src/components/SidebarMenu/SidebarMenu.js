@@ -63,23 +63,31 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             : containerHiddenLight
         }
       >
-        <button className={close} onClick={onToggle}>
+        <button
+          className={close}
+          onClick={onToggle}
+          tabIndex={isVisible ? 0 : -1}
+        >
           <CloseSVG />
         </button>
         <div className={menu}>
           <div className={menuItem}>
-            <Link to="/">{t('home')}</Link>
+            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+              {t('home')}
+            </Link>
           </div>
           <div
             onClick={handleToggleProjects}
             className={areProjectsVisible ? menuItemProjects : menuItem}
           >
-            <button>
+            <button tabIndex={isVisible ? 0 : -1}>
               <CaronSVG
                 className={areProjectsVisible ? caronItem : caronItemRotated}
               />
               <span>
-                <Link to="/">{t('projects')}</Link>
+                <Link to="/" tabIndex={isVisible ? 0 : -1}>
+                  {t('projects')}
+                </Link>
               </span>
             </button>
           </div>
@@ -91,7 +99,9 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('navMap')}</Link>
+                <Link to="/" tabIndex={isVisible ? 0 : -1}>
+                  {t('navMap')}
+                </Link>
               </span>
             </div>
             <div
@@ -101,25 +111,33 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             >
               <div className={menuItemDecoration}></div>
               <span>
-                <Link to="/">{t('secretProject')}</Link>
+                <Link to="/" tabIndex={isVisible ? 0 : -1}>
+                  {t('secretProject')}
+                </Link>
               </span>
             </div>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('news')}</Link>
+            <Link to="/news/" tabIndex={isVisible ? 0 : -1}>
+              {t('news')}
+            </Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('joinUs')}</Link>
+            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+              {t('joinUs')}
+            </Link>
           </div>
           <div className={menuItem}>
-            <Link to="/">{t('contact')}</Link>
+            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+              {t('contact')}
+            </Link>
           </div>
         </div>
         <div className={socialMedia}>
-          <a href={GITHUB_LINK}>
+          <a href={GITHUB_LINK} tabIndex={isVisible ? 0 : -1}>
             <GithubSVG />
           </a>
-          <a href={FACEBOOK_LINK}>
+          <a href={FACEBOOK_LINK} tabIndex={isVisible ? 0 : -1}>
             <FacebookSVG />
           </a>
         </div>
