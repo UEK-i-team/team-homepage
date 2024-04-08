@@ -52,15 +52,10 @@
   height: 100%;
 
   a * {
-<<<<<<< HEAD
-    width: 24px;
-    display: flex;
-=======
     position: relative;
     margin-top: 5px;
     margin-right: 7px;
-    color: rgb(0, 0, 0);
->>>>>>> 79e913e (fix: change clicable elements sizes)
+    color: $black;
   }
 }
 
@@ -68,17 +63,11 @@
   height: 100%;
 
   a * {
-<<<<<<< HEAD
-    display: flex;
-    filter: invert(100%);
-    width: 24px;
-=======
     filter: invert(100%);
     position: relative;
     margin-top: 5px;
     margin-right: 7px;
-    color: white;
->>>>>>> 79e913e (fix: change clicable elements sizes)
+    color: $white;
   }
 }
 
@@ -240,14 +229,4 @@ div>p:nth-child(3) {
     display: block;
   }
 
-  .containerIconsDark,
-  .containerIconsLight {
-<<<<<<< HEAD
-    a * {
-      width: 30px;
-    }
-=======
-    a * {}
->>>>>>> 79e913e (fix: change clicable elements sizes)
-  }
 }
