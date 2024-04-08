@@ -7,6 +7,7 @@ import GithubSVG from '../../assets/svgs/github.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import {
+  addressContainer,
   containerGridDark,
   containerGridLight,
   containerIconsDark,
@@ -23,7 +24,10 @@ export const Footer = () => {
   const { t } = useTranslation();
   const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <div className={theme(mainContainerLight, mainContainerDark)}>
+    <div
+      className={theme(mainContainerLight, mainContainerDark)}
+      aria-label="site's footer"
+    >
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
           <h3 className={title}>{t('scienceClub')}</h3>
@@ -72,18 +76,20 @@ export const Footer = () => {
           )}
         </div>
         <div>
-          <div className={title}>
+          <div>
             <h3>{t('address')}</h3>
           </div>
-          <p>
-            <div>
+          <div className={addressContainer}>
+            <p>
               Rakowicka 27, 31-510 <br />
               {t('town')}
-            </div>
-            <div>Rakowicka 27, 31-510 Kraków</div>
-            {t('ourRoom')} <br />
-            kniuex@example.com
-          </p>
+            </p>
+            <p>Rakowicka 27, 31-510 {t('town')}</p>
+            <p>
+              {t('ourRoom')} <br />
+              kniuex@example.com
+            </p>
+          </div>
         </div>
         <div>
           <h3>{t('supervisor')}</h3>

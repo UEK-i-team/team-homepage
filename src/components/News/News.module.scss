@@ -3,7 +3,12 @@
 .title {
   font-weight: 600;
   font-size: 40px;
-  margin: 20px 30px 30px 65px;
+  margin: 41px 0 41px 141px;
+  text-transform: lowercase;
+}
+
+.title:first-letter {
+  text-transform: uppercase;
 }
 
 .container {
@@ -14,10 +19,10 @@
   color: $white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-desktop) {
   .title {
     font-weight: 600;
     font-size: 20px;
-    margin: 20px 30px 28px 32px;
+    margin: 28px 0 28px 32px;
   }
 }

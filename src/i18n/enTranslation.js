@@ -18,6 +18,7 @@ const enTranslations = {
     scienceClub: 'Science Club',
     address: 'Address',
     ourProjects: 'Our projects',
+    lang: 'English',
   },
 };
 
