@@ -24,43 +24,54 @@
   -moz-box-shadow: 0 4px 4px 0 $black_100_25;
   box-shadow: 0 4px 4px 0 $black_100_25;
 }
+
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
 }
+
 .logoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   color: $white;
 }
+
 .logo {
-  height: 26px;
-  width: 19px;
+  height: 58px;
+  width: 37px;
   margin-right: 14px;
 }
+
 .name {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15px;
-  width: 68px;
+  height: 21px;
+  width: 100px;
 }
+
 .desktopMenu {
   display: none;
 }
+
 .languageThemeWraper {
-  font-size: 14px;
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: 16px;
+  font-size: 16px;
+  margin-top: 6px;
+  padding-top: 4px;
+  margin-right: 80px;
 }
+
 .languageButton {
-  margin: 0 10px;
+  margin: 0px 10px;
   background-color: $white;
-  border: 1px solid $black;
+  border: 2px solid $black;
   border-radius: 20px;
-  width: 60px;
+  width: 100px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -70,9 +81,11 @@
     width: 14px;
     margin-right: 5px;
     margin-left: -4px;
+    width: 20px;
+    margin-left: -3px;
   }
+
   span {
-    font-size: 9px;
     width: 70%;
     height: auto;
     text-align: center;
@@ -84,19 +97,23 @@
     outline: 2px solid inherit;
   }
 }
+
 .themeButton {
   background: none;
   border: none;
 }
+
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .sidebar button {
   background: none;
   border: none;
 }
+
 .languageButtonDark {
   background-color: $black;
   border: 1px solid $white;
@@ -104,6 +121,7 @@
   svg {
     filter: invert(100%);
   }
+
   span {
     color: $white;
   }
@@ -115,24 +133,22 @@
     padding: 0 0;
     box-shadow: none;
   }
+
   .sidebarContainer {
     display: none;
   }
+
   .logoContainer {
     margin-right: 80px;
   }
+
   .logo {
     height: 58px;
     width: 37px;
     margin-right: 16px;
     margin-left: 80px;
   }
-  .logoImg {
-    height: 58px;
-    width: 37px;
-    margin-right: 16px;
-    margin-left: 80px;
-  }
+
   .name {
     display: flex;
     justify-content: center;
@@ -140,10 +156,12 @@
     height: 21px;
     width: 100px;
   }
+
   .desktopMenu {
     display: flex;
     height: 100%;
   }
+
   .desktopMenuDark {
     color: $white;
   }

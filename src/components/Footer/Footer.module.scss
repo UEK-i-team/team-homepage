@@ -49,25 +49,33 @@
 }
 
 .containerIconsLight {
+  height: 100%;
   display: flex;
-  gap: 7px;
-  padding-top: 5px;
-
+  flex-direction: row;
   a * {
     width: 24px;
-    display: flex;
+    filter: invert(100%);
+    position: relative;
+    margin-top: 5px;
+    margin-right: 7px;
+    color: $black;
   }
 }
 
 .containerIconsDark {
+  height: 100%;
   display: flex;
-  gap: 7px;
-  padding-top: 5px;
+  flex-direction: row;
 
   a * {
     display: flex;
+    flex-direction: row;
+    width: 30px;
     filter: invert(100%);
-    width: 24px;
+    position: relative;
+    margin-top: 5px;
+    margin-right: 7px;
+    color: $white;
   }
 }
 
@@ -216,10 +224,4 @@ div>p:nth-child(3) {
     display: block;
   }
 
-  .containerIconsDark,
-  .containerIconsLight {
-    a * {
-      width: 30px;
-    }
-  }
 }
