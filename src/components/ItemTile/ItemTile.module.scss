@@ -30,7 +30,7 @@
   line-height: 19.36px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: $breakpoint-tablet) {
   .container {
     width: auto;
     flex-direction: column;
@@ -65,11 +65,12 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: $breakpoint-desktop) {
   .container {
     max-width: 90%;
     margin: 20px auto;
     align-items: stretch;
+    flex-direction: row;
     height: 50vh;
   }
   .image {
