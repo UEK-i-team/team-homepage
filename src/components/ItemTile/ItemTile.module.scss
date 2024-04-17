@@ -6,6 +6,7 @@
   align-items: center;
   width: 90vw;
   outline: 2px solid $grey_40;
+  margin-bottom: 20vh;
   }
 
   .darkBorder{
@@ -43,16 +44,17 @@
   line-height: 19.36px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
+  .border{
+    width: min-content;
+  }
   .container {
     width: auto;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 38px 8px 0 8px;
   }
-  .container:last-child {
-    margin-bottom: 100px;
-  }
+ 
   .image {
     width: 366px;
     max-width: 97%;
