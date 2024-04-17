@@ -67,7 +67,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
           className={close}
           onClick={onToggle}
           tabIndex={isVisible ? 0 : -1}
-          aria-label="close sidebar button"
+          aria-label={t('ariaLabelSidebarCloseButton')}
         >
           <CloseSVG />
         </button>
