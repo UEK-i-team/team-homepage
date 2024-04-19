@@ -9,7 +9,7 @@
 // LIGHT THEME
 
 .h1Light {
-  font: 24px $helvetica;
+  font: $font-size-mobile-large $helvetica;
   color: $black;
   font-weight: bolder;
   padding-top: 32px;
@@ -18,7 +18,7 @@
   margin-left: 32px;
 }
 .pLight {
-  font: 20px $helvetica;
+  font: $font-size-mobile $helvetica;
   color: $black;
   width: 90%;
   margin-top: 10px;
@@ -55,13 +55,13 @@
     position: relative;
   }
   .h1Light {
-    font: 54px $helvetica;
+    font: $font-size-desktop-title $helvetica;
     color: $black;
     font-weight: bolder;
     padding-top: 0;
   }
   .pLight {
-    font: 27px $helvetica;
+    font: $font-size-desktop $helvetica;
     color: $black;
     width: 100%;
   }

@@ -11,7 +11,7 @@
 }
 .title {
   font-weight: 600;
-  font-size: 40px;
+  font-size: $font-size-desktop-title;
   margin: 20px 30px 30px 65px;
 }
 
@@ -28,7 +28,7 @@
 @media (max-width: 768px) {
   .title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: $font-size-mobile;
     margin: 20px 30px 28px 32px;
   }
   .projectsContainer{
