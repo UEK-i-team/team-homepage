@@ -19,6 +19,10 @@ const enTranslations = {
     address: 'Address',
     ourProjects: 'Our projects',
     lang: 'English',
+    ariaLabelSidebarButton: 'Sidebar Button',
+    ariaLabelSidebarCloseButton: 'close sidebar button',
+    ariaLabelLangButton: 'Language switching button',
+    ariaLabelThemeButton: 'Theme switching button',
   },
 };
 
