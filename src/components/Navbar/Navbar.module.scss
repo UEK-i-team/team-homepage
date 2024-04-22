@@ -37,8 +37,8 @@
 }
 
 .logo {
-  height: 58px;
-  width: 37px;
+  height: 26px;
+  width: 19px;
   margin-right: 14px;
 }
 
@@ -46,8 +46,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 21px;
-  width: 100px;
+  height: 18px;
+  width: 81.6px;
 }
 
 .desktopMenu {
@@ -58,20 +58,17 @@
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 16px;
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 6px;
   padding-top: 4px;
-  margin-right: 80px;
 }
 
 .languageButton {
   margin: 0px 10px;
   background-color: $white;
-  border: 2px solid $black;
+  border: 1px solid $black;
   border-radius: 20px;
-  width: 100px;
-  height: 30px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -111,6 +108,10 @@
 .sidebar button {
   background: none;
   border: none;
+  margin-top: 6px;
+  margin-right: 14px;
+  margin-left: 14px;
+
 }
 
 .languageButtonDark {
@@ -119,6 +120,7 @@
 
   svg {
     filter: invert(100%);
+    
   }
 
   span {
@@ -219,8 +221,15 @@
     margin-right: 80px;
   }
   .languageButton {
-    border-width: 2px;
-    width: 100px;
+      margin: 0px 10px;
+      background-color: $white;
+      border: 2px solid $black;
+      border-radius: 20px;
+      width: 100px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
 
     svg {
       width: 20px;
