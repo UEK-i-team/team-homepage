@@ -110,6 +110,14 @@
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
+  .themeButton {
+    background: none;
+    border: none;
+  }
+  .themeButton *{
+    width: 25px;
+    height: 25px;
+  }
   .mainContainer {
     height: 117px;
     padding: 0 0;
