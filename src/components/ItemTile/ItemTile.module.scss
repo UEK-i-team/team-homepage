@@ -1,14 +1,28 @@
 @import '../../assets/styles/theme';
+.border{
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  outline: 2px solid $grey_40;
+  margin-bottom: 20vh;
+  }
 
-.container {
+  .darkBorder{
+    outline: 2px solid $white;
+  }
+  
+.container{
   display: flex;
   opacity: 0.9;
   background-color: $white_100_35;
   border-radius: 10px;
   flex-direction: row;
   align-items: center;
-  margin: 10px 8px;
+  width: 90vw;
 }
+
 .image {
   max-width: 366px;
   height: 245px;
@@ -30,16 +44,17 @@
   line-height: 19.36px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
+  .border{
+    width: min-content;
+  }
   .container {
     width: auto;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 38px 8px 0 8px;
   }
-  .container:last-child {
-    margin-bottom: 100px;
-  }
+ 
   .image {
     width: 366px;
     max-width: 97%;
@@ -67,8 +82,7 @@
 
 @media (min-width: 769px) {
   .container {
-    max-width: 90%;
-    margin: 20px auto;
+    max-width: 90vw;
     align-items: stretch;
     height: 50vh;
   }

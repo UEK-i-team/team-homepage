@@ -5,8 +5,10 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../context/ThemeContex';
 import {
+  border,
   container,
   content,
+  darkBorder,
   darkContainer,
   image,
   text,
@@ -20,6 +22,7 @@ export const ItemTile = ({
   itemLink,
   /* 'fileName.png', image from src/assets/images/ */
   itemImageAlt,
+  borderVisible = true,
 }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -50,13 +53,15 @@ export const ItemTile = ({
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Link to={itemLink} className={theme(container, darkContainer)}>
-      <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
-      <div className={content}>
-        <div className={title}>{itemTitle}</div>
-        <div className={text}>{itemText}</div>
-      </div>
-    </Link>
+    <div className={borderVisible ? theme(border, darkBorder) : ''}>
+      <Link to={itemLink} className={theme(container, darkContainer)}>
+        <GatsbyImage image={imageSrc} alt={itemImageAlt} className={image} />
+        <div className={content}>
+          <div className={title}>{itemTitle}</div>
+          <div className={text}>{itemText}</div>
+        </div>
+      </Link>
+    </div>
   );
 };
 
@@ -66,4 +71,5 @@ ItemTile.propTypes = {
   itemImage: PropTypes.string.isRequired,
   itemImageAlt: PropTypes.string.isRequired,
   itemLink: PropTypes.string.isRequired,
+  borderVisible: PropTypes.bool.isRequired,
 };
