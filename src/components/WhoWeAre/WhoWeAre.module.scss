@@ -7,7 +7,7 @@
   line-height: 1.6;
   width: 100%;
   margin-top: 30px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 // LIGHT THEME
 
@@ -53,7 +53,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
   box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
 }
-@media screen and (min-width: 991px) {
+@media screen and (min-width: $breakpoint-desktop) {
   .container {
     position: relative;
   }
@@ -70,14 +70,14 @@
   }
   .backgroundLight {
     position: relative;
-    width: 70vw;
-    height: 70vw;
+    width: 1200px;
+    height: 1150px;
     margin-top: 30px;
     margin-left: -57px;
     padding-top: 198px;
     padding-left: 181px;
     padding-right: 131px;
-    border-radius: 600px;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     box-shadow: none;
   }
@@ -90,20 +90,20 @@
   }
   .backgroundDark {
     position: relative;
-    width: 70vw;
-    height: 70vw;
+    width: 1200px;
+    height: 1150px;
     margin-top: 30px;
     margin-left: -57px;
     padding-top: 198px;
     padding-left: 181px;
     padding-right: 131px;
-    border-radius: 600px;
+    border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-desktop) {
   .h1Light {
     padding-top: 52px;
     margin-bottom: 26px;

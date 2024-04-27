@@ -40,12 +40,14 @@
   background: linear-gradient(180deg, $light-footer-top-mobile 15%, $light-footer-bottom-mobile 100%);
   padding-top: 55px;
   padding-bottom: 90px;
+  text-align: center;
 }
 
 .mainContainerDark {
   background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
   padding-top: 55px;
   padding-bottom: 90px;
+  text-align: center;
 }
 
 .containerIconsLight {
