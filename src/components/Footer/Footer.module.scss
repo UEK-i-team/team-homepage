@@ -98,6 +98,10 @@ ul{
   text-decoration: underline;
 }
 
+a{
+  color: $black;
+}
+
 .containerGridLight>div:nth-child(3),
 .containerGridDark>div:nth-child(3) {
   display: none;
@@ -119,7 +123,7 @@ div>p:nth-child(3) {
   margin-top: -1rem;
 }
 
-@media (min-width: $breakpoint-desktop) {
+@media (min-width: $breakpoint-tablet) {
   .breakpoint {
     display: none;
   }
@@ -223,10 +227,4 @@ div>p:nth-child(3) {
     display: block;
   }
 
-}
-
-@media(max-width: $breakpoint-desktop) {
-  a{
-    color: $black;
-  }
 }
