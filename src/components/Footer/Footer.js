@@ -118,16 +118,24 @@ export const Footer = () => {
           <div className="linksListWrapper">
             <ul>
               <li>
-                <Link to={'/'}>{t('home')}</Link>
+                <Link to={'/'} aria-label="Link to Home Page">
+                  {t('home')}
+                </Link>
               </li>
               <li>
-                <Link to={'/news'}>{t('news')}</Link>
+                <Link to={'/news'} aria-label="Link to News">
+                  {t('news')}
+                </Link>
               </li>
               <li>
-                <Link to="/">{t('joinUs')}</Link>
+                <Link to="/" aria-label="Link to Join Us">
+                  {t('joinUs')}
+                </Link>
               </li>
               <li>
-                <Link to="/">{t('contact')}</Link>
+                <Link to="/" aria-label="Link to Contact">
+                  {t('contact')}
+                </Link>
               </li>
             </ul>
           </div>

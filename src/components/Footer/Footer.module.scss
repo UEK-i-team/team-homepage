@@ -2,7 +2,7 @@
 
 .containerGridLight {
   display: inline-grid;
-  height: 200px;
+  height: 250px;
   grid-template-columns: 52% auto;
   grid-template-rows: 9% 11% 4%;
   column-gap: 15px;
@@ -13,7 +13,7 @@
 
 .containerGridDark {
   display: inline-grid;
-  height: 200px;
+  height: 250px;
   grid-template-columns: 52% auto;
   grid-template-rows: 9% 11% 4%;
   column-gap: 15px;
@@ -223,4 +223,10 @@ div>p:nth-child(3) {
     display: block;
   }
 
+}
+
+@media(max-width: $breakpoint-desktop) {
+  a{
+    color: $black;
+  }
 }
