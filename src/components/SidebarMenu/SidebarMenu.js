@@ -49,9 +49,9 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document && document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document && document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [onToggle, isVisible]);
 

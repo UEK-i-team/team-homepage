@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
@@ -28,7 +28,16 @@ export const ItemTile = ({
   return (
     <div className={borderVisible ? theme(border, darkBorder) : ''}>
       <Link to={itemLink} className={theme(container, darkContainer)}>
-        <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
+        {itemImage ? (
+          <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
+        ) : (
+          <StaticImage
+            src="https://picsum.photos/600/600"
+            alt="random image"
+            className={image}
+          />
+        )}
+
         <div className={content}>
           <div className={title}>{itemTitle}</div>
           <div className={text}>{itemText}</div>
@@ -41,8 +50,8 @@ export const ItemTile = ({
 ItemTile.propTypes = {
   itemTitle: PropTypes.string.isRequired,
   itemText: PropTypes.string.isRequired,
-  itemImage: PropTypes.object.isRequired,
-  itemImageAlt: PropTypes.string.isRequired,
+  itemImage: PropTypes.object,
+  itemImageAlt: PropTypes.string,
   itemLink: PropTypes.string.isRequired,
   borderVisible: PropTypes.bool.isRequired,
 };

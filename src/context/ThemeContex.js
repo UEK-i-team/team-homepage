@@ -18,7 +18,8 @@ const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
+    if (document)
+      document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
     if (typeof window !== 'undefined') {
       localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
     } else {

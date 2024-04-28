@@ -24,16 +24,19 @@ export const OurProjects = () => {
       <div>
         <h1 className={title}>{t('ourProjects')}</h1>
         <div className={projectsContainer}>
-            {projectsData.map((project) => (
-                <ItemTile
-                    key={project[currLang].id}
-                    itemTitle={project[currLang].title}
-                    itemImageAlt={project[currLang].image.description}
-                    itemText={project[currLang].description}
-                    itemImage={project[currLang].image.image}
-                    itemLink={`projects/${convertTitleToLinkFormat(project.pl.title)}`}
-                />
-            ))}
+          {projectsData.map((project) => (
+            <ItemTile
+              key={project[currLang].id}
+              itemTitle={project[currLang].title}
+              itemImageAlt={project[currLang].image.description}
+              itemText={project[currLang].description}
+              itemImage={project[currLang].image.image}
+              itemLink={`projects/${convertTitleToLinkFormat(
+                project.pl.title
+              )}`}
+              borderVisible
+            />
+          ))}
         </div>
       </div>
     </section>
