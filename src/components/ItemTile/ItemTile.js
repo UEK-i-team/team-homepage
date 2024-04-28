@@ -26,15 +26,15 @@ export const ItemTile = ({
   const { theme } = useContext(ThemeContext);
 
   return (
-      <div className={borderVisible ? theme(border, darkBorder) : ''}>
-        <Link to={itemLink} className={theme(container, darkContainer)}>
-          <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
-          <div className={content}>
-            <div className={title}>{itemTitle}</div>
-            <div className={text}>{itemText}</div>
-          </div>
-        </Link>
-      </div>
+    <div className={borderVisible ? theme(border, darkBorder) : ''}>
+      <Link to={itemLink} className={theme(container, darkContainer)}>
+        <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
+        <div className={content}>
+          <div className={title}>{itemTitle}</div>
+          <div className={text}>{itemText}</div>
+        </div>
+      </Link>
+    </div>
   );
 };
 

@@ -1,17 +1,11 @@
 function convertTitleToLinkFormat(title) {
   let link = title
     .toLowerCase()
-    .replace(/[ąćęłńóśżź]/g, (match) => {
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[ł]/g, (match) => {
       const replacements = {
-        ą: 'a',
-        ć: 'c',
-        ę: 'e',
         ł: 'l',
-        ń: 'n',
-        ó: 'o',
-        ś: 's',
-        ż: 'z',
-        ź: 'z',
       };
       return replacements[match];
     })
