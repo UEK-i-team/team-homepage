@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { createContext, useCallback, useEffect, useState } from 'react';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+  isDarkTheme: false,
+  toggleTheme: () => {},
+  theme: () => {},
+});
 
 const ThemeProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
@@ -14,7 +18,8 @@ const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
+    if (document)
+      document.body.className = isDarkTheme ? 'dark-body' : 'light-body';
     if (typeof window !== 'undefined') {
       localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
     } else {

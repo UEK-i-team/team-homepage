@@ -9,6 +9,8 @@ import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
+import { convertTitleToLinkFormat } from '../../utils/functions/convertTitleToLinkFormat';
+import { useGetProjectsData } from '../OurProjects/useGetProjectsData';
 import {
   caronItem,
   caronItemRotated,
@@ -30,7 +32,10 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
   const sidebarRef = useRef();
   const { isDarkTheme } = useContext(ThemeContext);
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const projectsData = useGetProjectsData();
+
+  const currLang = i18n.language;
 
   const handleToggleProjects = () => {
     setAreProjectsVisible((prev) => !prev);
@@ -44,9 +49,9 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document && document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document && document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [onToggle, isVisible]);
 
@@ -93,30 +98,27 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             </button>
           </div>
           <div>
-            <div
-              className={
-                areProjectsVisible ? projectsOption : projectsOptionHidden
-              }
-            >
-              <div className={menuItemDecoration}></div>
-              <span>
-                <Link to="/" tabIndex={isVisible ? 0 : -1}>
-                  {t('navMap')}
-                </Link>
-              </span>
-            </div>
-            <div
-              className={
-                areProjectsVisible ? projectsOption : projectsOptionHidden
-              }
-            >
-              <div className={menuItemDecoration}></div>
-              <span>
-                <Link to="/" tabIndex={isVisible ? 0 : -1}>
-                  {t('secretProject')}
-                </Link>
-              </span>
-            </div>
+            {projectsData.map((project) => (
+              <div
+                key={project[currLang].id}
+                className={
+                  areProjectsVisible ? projectsOption : projectsOptionHidden
+                }
+              >
+                <div className={menuItemDecoration}></div>
+                <span>
+                  <Link
+                    onClick={onToggle}
+                    to={`/projects/${convertTitleToLinkFormat(
+                      project.pl.title
+                    )}`}
+                    tabIndex={isVisible ? 0 : -1}
+                  >
+                    {project[currLang].title}
+                  </Link>
+                </span>
+              </div>
+            ))}
           </div>
           <div className={menuItem}>
             <Link to="/news/" tabIndex={isVisible ? 0 : -1}>

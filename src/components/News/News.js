@@ -13,16 +13,17 @@ import {
 export const News = () => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+
   return (
     <section className={theme(container, darkContainer)}>
       <div>
         <h1 className={title}>{t('news')}</h1>
         <div className={postsContainer}>
           <ItemTile
+            itemLink={`/`}
             itemTitle="Pierwszy post"
-            itemImageAlt="pierwszy post"
             itemText="To jest pierwszy post!"
-            itemImage="project-homepage.png"
+            itemImage=""
           />
         </div>
       </div>

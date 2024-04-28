@@ -1,5 +1,9 @@
 @import '../../assets/styles/theme';
 
+.body{
+  padding-bottom: 100px;
+}
+
 .mobileProjectTitleLightTheme {
   color: $black;
   font: 100% $helvetica;
@@ -28,11 +32,19 @@
   a:visited,
   a:active,
   a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration-line: none;
     color: $black;
   }
+}
+
+.arrowLightTheme{
+  margin-left: 8px;
+}
+
+.arrowDarkTheme{
+  filter: invert(1);
 }
 
 .mobileProjectTitleDarkTheme {
