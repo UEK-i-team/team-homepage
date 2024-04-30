@@ -56,7 +56,7 @@
   background-color: $white;
   border: 1px solid $black;
   border-radius: 20px;
-  width: 60px;
+  width: 70px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -68,7 +68,7 @@
     margin-left: -4px;
   }
   span {
-    font-size: $font-size-mobile-tiny; //przycisk!!!
+    font-size: $font-size-mobile-tiny;
     width: 70%;
     height: auto;
     text-align: center;
