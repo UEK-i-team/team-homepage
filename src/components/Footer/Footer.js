@@ -24,6 +24,28 @@ export const Footer = () => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const { isDarkTheme } = useContext(ThemeContext);
+  const LINKS = [
+    {
+      title: t('home'),
+      to: '/',
+      arialLabel: t('ariaLabelHomePage'),
+    },
+    {
+      title: t('news'),
+      to: '/news',
+      arialLabel: t('ariaLabelNews'),
+    },
+    {
+      title: t('joinUs'),
+      to: '/',
+      arialLabel: t('ariaLabelJoinUs'),
+    },
+    {
+      title: t('contact'),
+      to: '/',
+      arialLabel: t('ariaLabelContact'),
+    },
+  ];
   return (
     <div
       className={theme(mainContainerLight, mainContainerDark)}
@@ -117,26 +139,13 @@ export const Footer = () => {
           <h3>Linki:</h3>
           <div className="linksListWrapper">
             <ul>
-              <li>
-                <Link to={'/'} aria-label={t('ariaLabelHomePage')}>
-                  {t('home')}
-                </Link>
-              </li>
-              <li>
-                <Link to={'/news'} aria-label={t('ariaLabelNews')}>
-                  {t('news')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/" aria-label={t('ariaLabelJoinUs')}>
-                  {t('joinUs')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/" aria-label={t('ariaLabelContact')}>
-                  {t('contact')}
-                </Link>
-              </li>
+              {LINKS.map(({ title, to, arialLabel }) => (
+                <li key="">
+                  <Link to={to} aria-label={arialLabel}>
+                    {title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
