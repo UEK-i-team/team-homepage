@@ -10,6 +10,7 @@ import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
+import { SUB_PAGES } from '../../utils/constants/links';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   activeLink,
@@ -23,6 +24,7 @@ import {
   languageThemeWraper,
   logo,
   logoContainer,
+  logoImg,
   mainContainer,
   mainContainerDark,
   menuLinks,
@@ -60,7 +62,7 @@ export function Navbar() {
           {isDarkTheme ? (
             <>
               <div className={logo}>
-                <Link to="/">
+                <Link to="/" className={logoImg}>
                   <StaticImage
                     src="../../assets/images/logo_icon_dark_theme.png"
                     alt="ITeam Logo"
@@ -71,7 +73,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_dark_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>
@@ -90,7 +92,7 @@ export function Navbar() {
                 <div className={name}>
                   <StaticImage
                     src="../../assets/images/logo_text_light_theme.png"
-                    alt="ITeam Logo"
+                    alt="ITeam Logo text"
                   />
                 </div>
               </Link>
@@ -100,7 +102,11 @@ export function Navbar() {
         <div className={theme(desktopMenu, desktopMenuDark)}>
           <div className={theme(desktopMenuItems, desktopMenuItemsDark)}>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} className={menuLinks} to="/">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to={SUB_PAGES.PROJECTS}
+              >
                 {t('projects')}
               </Link>
             </div>
@@ -108,18 +114,22 @@ export function Navbar() {
               <Link
                 activeClassName={activeLink}
                 className={menuLinks}
-                to="/news"
+                to="projects"
               >
                 {t('news')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} className={menuLinks} to="/">
+              <a className={menuLinks} href={SUB_PAGES.JOIN_US}>
                 {t('joinUs')}
-              </Link>
+              </a>
             </div>
             <div className={desktopMenuItem}>
-              <Link activeClassName={activeLink} className={menuLinks} to="/">
+              <Link
+                activeClassName={activeLink}
+                className={menuLinks}
+                to="/contact"
+              >
                 {t('contact')}
               </Link>
             </div>
@@ -129,17 +139,22 @@ export function Navbar() {
           <button
             className={theme(languageButton, languageButtonDark)}
             onClick={handleButtonChange}
+            aria-label={t('ariaLabelLangButton')}
           >
             <GlobeSVG />
             <span>{t('lang')}</span>
           </button>
 
-          <button onClick={toggleTheme} className={themeButton}>
+          <button
+            onClick={toggleTheme}
+            className={themeButton}
+            aria-label={t('ariaLabelThemeButton')}
+          >
             {isDarkTheme ? <ThemeIconDark /> : <ThemeIconLight />}
           </button>
         </div>
         <div className={sidebarContainer}>
-          <div className={sidebar}>
+          <div className={sidebar} aria-label={t('ariaLabelSidebarButton')}>
             <button onClick={() => toggleSidebarMenu()}>
               {isDarkTheme ? <SidebarDark /> : <SidebarLight />}
             </button>

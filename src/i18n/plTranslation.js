@@ -19,6 +19,10 @@ const plTranslations = {
     address: 'Adres',
     ourProjects: 'Nasze projekty',
     lang: 'Polski',
+    ariaLabelSidebarButton: 'przycisk do otwarcia sidebara',
+    ariaLabelSidebarCloseButton: 'przycisk do zamknięcia sidebara',
+    ariaLabelLangButton: 'przycisk  do zmiany jezyka',
+    ariaLabelThemeButton: 'przycisk  do zmiany motywu',
   },
 };
 
