@@ -4,6 +4,7 @@ import React from 'react';
 
 import LeftArrMobile from '../../assets/svgs/LeftArrMobile.svg';
 import RightArrMobile from '../../assets/svgs/RightArrMobile.svg';
+import { useAnimationContext } from '../../context/AnimationsContext';
 import {
   arrowContainer,
   carousel,
@@ -21,6 +22,7 @@ import { useCarousel } from './useCarousel';
 export const Carousel = ({ images }) => {
   const { handleNextImage, setImage, handlePreviousImage, currentImageIndex } =
     useCarousel(images);
+  const { isPaused } = useAnimationContext();
 
   return (
     <div className={carousel}>
@@ -32,7 +34,10 @@ export const Carousel = ({ images }) => {
               alt={description}
               image={image}
               className={img}
-              style={{ transform: ` translateX(${-100 * currentImageIndex}%)` }}
+              style={{
+                transform: ` translateX(${-100 * currentImageIndex}%)`,
+                transition: isPaused ? 'none' : '',
+              }}
             />
           ))}
         </div>
