@@ -116,13 +116,13 @@ export function Navbar() {
                 to={SUB_PAGES.PROJECTS}
               >
                 {t('projects')}
-              </Link>
+              </a>
             </div>
             <div className={desktopMenuItem}>
               <Link
                 activeClassName={activeLink}
                 className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
-                to="/projects"
+                to={SUB_PAGES.NEWS}
               >
                 {t('news')}
               </Link>

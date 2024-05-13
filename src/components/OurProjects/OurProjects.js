@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../context/ThemeContex';
 import { convertTitleToLinkFormat } from '../../utils/functions/convertTitleToLinkFormat';
 import { ItemTile } from '../ItemTile/ItemTile';
+import { ScrollToTopButton } from '../ScrollToTopButton/ScrollToTopButton';
 import {
   container,
   darkContainer,
@@ -37,6 +38,9 @@ export const OurProjects = () => {
             />
           ))}
         </div>
+      </div>
+      <div className="scrollToButtonContainer">
+        <ScrollToTopButton />
       </div>
     </section>
   );
