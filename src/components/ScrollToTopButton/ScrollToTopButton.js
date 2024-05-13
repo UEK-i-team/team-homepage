@@ -13,16 +13,16 @@ export const ScrollToTopButton = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={scrollToButtonContainer}>
-      <button className={buttonNoDecoration}>
-        <svg
-          className={theme(scrollToButtonLight, scrollToButtonDark)}
-          onClick={() => {
-            window.scrollTo({
-              top,
-              behavior: 'smooth',
-            });
-          }}
-        >
+      <button
+        className={buttonNoDecoration}
+        onClick={() => {
+          window.scrollTo({
+            top,
+            behavior: 'smooth',
+          });
+        }}
+      >
+        <svg className={theme(scrollToButtonLight, scrollToButtonDark)}>
           <ArrowUp />
         </svg>
       </button>

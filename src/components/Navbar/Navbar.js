@@ -116,7 +116,7 @@ export function Navbar() {
                 to={SUB_PAGES.PROJECTS}
               >
                 {t('projects')}
-              </a>
+              </button>
             </div>
             <div className={desktopMenuItem}>
               <Link

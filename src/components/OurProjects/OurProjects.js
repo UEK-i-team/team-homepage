@@ -39,7 +39,7 @@ export const OurProjects = () => {
           ))}
         </div>
       </div>
-      <div className="scrollToButtonContainer">
+      <div>
         <ScrollToTopButton />
       </div>
     </section>

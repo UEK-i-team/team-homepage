@@ -115,7 +115,7 @@
     background: none;
     border: none;
   }
-  .themeButton *{
+  .themeButton * {
     width: 25px;
     height: 25px;
   }
@@ -175,6 +175,12 @@
 
   .desktopMenuItem {
     margin-right: 26px;
+  }
+
+  .desktopMenuItem button {
+    background: none;
+    border: none;
+    text-decoration: none;
   }
 
   .menuLinks {
@@ -241,7 +247,7 @@
     text-decoration: none;
     color: inherit;
   }
-  .animationButtonDark{
+  .animationButtonDark {
     filter: invert(100%);
   }
 }
