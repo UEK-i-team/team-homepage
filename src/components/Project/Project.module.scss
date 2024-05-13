@@ -9,7 +9,7 @@
 .mobileProjectTitleLightTheme {
   color: $black;
   font: 100% $helvetica;
-  font-size: 32px;
+  font-size: $font-size-mobile-title;
   text-align: center;
   margin: 80px 0 32px 0;
   visibility: visible;
@@ -21,7 +21,7 @@
   background-color: $white_100_35;
   color: $black;
   margin: 0 8px;
-  font-size: 16px;
+  font-size: $font-size-mobile;
   padding: 14px 24px 50px 24px;
 
   div {
@@ -34,7 +34,7 @@
   a:visited,
   a:active,
   a {
-    font-size: 16px;
+    font-size: $font-size-mobile-small;
     font-weight: 600;
     text-decoration-line: none;
     color: $black;
@@ -80,7 +80,7 @@
   .desktopProjectTitleLightTheme {
     color: $black;
     font: 100% $helvetica;
-    font-size: 38px;
+    font-size: $font-size-desktop-title;
     text-align: center;
     margin: 80px 0 32px 0;
     visibility: visible;
@@ -103,7 +103,7 @@
     background-color: $white_100_35;
     color: $black;
     margin: -40vh auto 8px;
-    font-size: 16px;
+    font-size: $font-size-desktop;
     padding: 39vh 20px 80px 24px;
     border-radius: 22px;
     width:95%;
@@ -117,7 +117,7 @@
     a:visited,
     a:active,
     a {
-      font-size: 14px;
+      font-size: $font-size-desktop-small;
       font-weight: 600;
       text-decoration-line: none;
       color: $black;

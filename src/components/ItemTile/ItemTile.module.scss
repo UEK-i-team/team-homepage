@@ -38,11 +38,11 @@
   box-sizing: content-box;
 }
 .title {
-  font-size: 20px;
+  font-size: $font-size-mobile;
   margin-top: 28px;
 }
 .text {
-  font-size: 16px;
+  font-size: $font-size-mobile-small;
   margin-top: 15px;
 }
 
@@ -72,11 +72,11 @@
     overflow-y: hidden;
   }
   .title {
-    font-size: 20px;
+    font-size: $font-size-mobile;
     margin-top: 28px;
   }
   .text {
-    font-size: 16px;
+    font-size: $font-size-mobile-small;
     margin-top: 15px;
   }
 }
@@ -99,11 +99,11 @@
     order: 2;
   }
   .title {
-    font-size: 30px;
+    font-size: $font-size-desktop-large;
     margin: 50px 30px 30px 30px;
   }
   .text {
-    font-size: 20px;
+    font-size: $font-size-desktop-small;
     margin: 30px 30px 0px 30px;
     line-height: 1.2;
   }
