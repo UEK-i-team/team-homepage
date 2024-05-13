@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { useAnimationContext } from '../../context/AnimationsContext';
 export const useCarousel = (images) => {
   const imagesLength = useMemo(() => images.length, [images]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isClickable, setClickable] = useState(true);
+  const { isPaused } = useAnimationContext();
+  const [disableSlider, setDisableSlider] = useState(false);
 
   const handlePreviousImage = useCallback(() => {
     if (isClickable) {
@@ -15,6 +18,10 @@ export const useCarousel = (images) => {
       setTimeout(() => {
         setClickable(true);
       }, 200);
+      setDisableSlider(true);
+      setTimeout(() => {
+        setDisableSlider(false);
+      }, 15000);
     }
   }, [isClickable, imagesLength]);
 
@@ -25,6 +32,10 @@ export const useCarousel = (images) => {
       setTimeout(() => {
         setClickable(true);
       }, 200);
+      setDisableSlider(true);
+      setTimeout(() => {
+        setDisableSlider(false);
+      }, 15000);
     }
   }, [isClickable, imagesLength]);
 
@@ -42,14 +53,18 @@ export const useCarousel = (images) => {
   );
 
   useEffect(() => {
-    const sliderTimeout = setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev + 1 >= imagesLength ? 0 : prev + 1));
-    }, 5000);
+    if (!isPaused && !disableSlider) {
+      const sliderTimeout = setTimeout(() => {
+        setCurrentImageIndex((prev) =>
+          prev + 1 >= imagesLength ? 0 : prev + 1
+        );
+      }, 5000);
 
-    return () => {
-      clearTimeout(sliderTimeout);
-    };
-  }, [currentImageIndex]);
+      return () => {
+        clearTimeout(sliderTimeout);
+      };
+    }
+  }, [currentImageIndex, isPaused, imagesLength, disableSlider]);
 
   return {
     handlePreviousImage,

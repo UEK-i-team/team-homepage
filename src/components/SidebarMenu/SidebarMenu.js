@@ -7,11 +7,13 @@ import CaronSVG from '../../assets/svgs/caron.svg';
 import CloseSVG from '../../assets/svgs/close.svg';
 import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
+import { useAnimationContext } from '../../context/AnimationsContext';
 import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
 import { convertTitleToLinkFormat } from '../../utils/functions/convertTitleToLinkFormat';
 import { useGetProjectsData } from '../OurProjects/useGetProjectsData';
 import {
+  animate,
   caronItem,
   caronItemRotated,
   close,
@@ -23,6 +25,7 @@ import {
   menuItem,
   menuItemDecoration,
   menuItemProjects,
+  noAnimate,
   projectsOption,
   projectsOptionHidden,
   socialMedia,
@@ -34,6 +37,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
   const [areProjectsVisible, setAreProjectsVisible] = useState(false);
   const { t, i18n } = useTranslation();
   const projectsData = useGetProjectsData();
+  const { isPaused } = useAnimationContext();
 
   const currLang = i18n.language;
 
@@ -61,11 +65,11 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
         className={
           isVisible
             ? isDarkTheme
-              ? containerDark
-              : containerLight
+              ? `${containerDark} ${!isPaused ? animate : noAnimate}`
+              : `${containerLight} ${!isPaused ? animate : noAnimate}`
             : isDarkTheme
-            ? containerHiddenDark
-            : containerHiddenLight
+            ? `${containerHiddenDark} ${!isPaused ? animate : noAnimate}`
+            : `${containerHiddenLight} ${!isPaused ? animate : noAnimate}`
         }
       >
         <button
@@ -88,7 +92,11 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
           >
             <button tabIndex={isVisible ? 0 : -1}>
               <CaronSVG
-                className={areProjectsVisible ? caronItem : caronItemRotated}
+                className={
+                  areProjectsVisible
+                    ? `${caronItem} ${!isPaused ? animate : noAnimate}`
+                    : `${caronItemRotated} ${!isPaused ? animate : noAnimate}`
+                }
               />
               <span>
                 <Link to="/" tabIndex={isVisible ? 0 : -1}>
@@ -102,7 +110,11 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
               <div
                 key={project[currLang].id}
                 className={
-                  areProjectsVisible ? projectsOption : projectsOptionHidden
+                  areProjectsVisible
+                    ? `${projectsOption} ${!isPaused ? animate : noAnimate}`
+                    : `${projectsOptionHidden} ${
+                        !isPaused ? animate : noAnimate
+                      }`
                 }
               >
                 <div className={menuItemDecoration}></div>

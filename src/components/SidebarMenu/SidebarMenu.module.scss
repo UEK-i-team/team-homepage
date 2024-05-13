@@ -134,7 +134,6 @@
   top: 0px;
   color: $black;
   font-family: $helvetica;
-  transition: 0.3s ease-in-out;
   z-index: 11;
 
   .close {
@@ -231,6 +230,32 @@
     color: inherit;
   }
 }
+
+.containerLight.noAnimate,
+.containerHiddenLight.noAnimate,
+.projectsOption.noAnimate,
+.projectsOptionHidden.noAnimate,
+.containerDark.noAnimate,
+.containerHiddenDark.noAnimate,
+.caronItem.noAnimate,
+.caronItemRotated.noAnimate{
+  transition:none;
+}
+
+.containerLight.animate,
+.containerHiddenLight.animate,
+.projectsOption.animate,
+.projectsOptionHidden.animate,
+.containerDark.animate,
+.containerHiddenDark.animate
+ {
+  transition: 0.3s ease-in-out;
+}
+.caronItem.animate,
+.caronItemRotated.animate{
+  transition: 0.2s ease-in-out;
+}
+
 .containerHiddenLight {
   background-color: $violet_50;
   color: $black;

@@ -1,9 +1,5 @@
 @import '../../assets/styles/theme';
 
-* {
-  transition: $transition-time;
-}
-
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -109,6 +105,11 @@
   }
 }
 
+.AnimationButton {
+  background: none;
+  border: 0px;
+}
+
 @media screen and (min-width: $breakpoint-desktop) {
   .themeButton {
     background: none;
@@ -182,7 +183,7 @@
   }
 
   .menuLinks::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
@@ -191,11 +192,22 @@
     left: 0;
     background-color: $black;
     transform: scaleX(0);
-    transition: transform 0.3s ease;
   }
 
   .menuLinks:hover::before {
     transform: scaleX(1);
+  }
+  .menuLinks.noAnimate::before {
+    transform: scaleX(0);
+  }
+
+  .menuLinks.noAnimate:hover::before {
+    transform: scaleX(1);
+    text-decoration: underline;
+  }
+
+  .menuLinks.animate::before {
+    transition: transform 0.3s ease;
   }
 
   .activeLink {
@@ -228,5 +240,8 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+  .animationButtonDark{
+    filter: invert(100%);
   }
 }
