@@ -154,8 +154,11 @@ export function Navbar() {
           </button>
         </div>
         <div className={sidebarContainer}>
-          <div className={sidebar} aria-label={t('ariaLabelSidebarButton')}>
-            <button onClick={() => toggleSidebarMenu()}>
+          <div className={sidebar}>
+            <button
+              onClick={() => toggleSidebarMenu()}
+              aria-label={t('ariaLabelSidebarButton')}
+            >
               {isDarkTheme ? <SidebarDark /> : <SidebarLight />}
             </button>
           </div>
