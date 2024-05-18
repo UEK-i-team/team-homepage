@@ -1,17 +1,4 @@
 @import '../../assets/styles/theme';
-.border{
-  display: flex;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  width: 90vw;
-  outline: 2px solid $grey_40;
-
-}
-
-.darkBorder{
-  outline: 2px solid $white;
-}
 
 .container{
   display: flex;
@@ -24,6 +11,7 @@
   text-decoration: none;
   width: 90vw;
   outline: 2px solid $grey_40;
+  overflow: hidden;
 }
 
 .image {
@@ -92,6 +80,13 @@
 
     &:nth-child(2n){
       flex-direction: row-reverse;
+    }
+
+    &:nth-child(odd) .image {
+      border-radius: 10px 0 0 10px;
+    }
+    &:nth-child(even) .image {
+      border-radius: 0 10px 10px 0;
     }
   }
   .image {
