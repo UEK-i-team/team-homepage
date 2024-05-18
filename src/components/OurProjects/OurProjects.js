@@ -34,7 +34,6 @@ export const OurProjects = () => {
               itemLink={`projects/${convertTitleToLinkFormat(
                 project.pl.title
               )}`}
-              borderVisible
             />
           ))}
         </div>
