@@ -3,17 +3,23 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React, { useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import AnimationPauseLight from '../../assets/svgs/AnimationPauseLight.svg';
+import AnimationPlayLight from '../../assets/svgs/AnimationPlayLight.svg';
 import GlobeSVG from '../../assets/svgs/globe.svg';
 import SidebarDark from '../../assets/svgs/Sidebar_dark.svg';
 import SidebarLight from '../../assets/svgs/Sidebar_light.svg';
 import ThemeIconLight from '../../assets/svgs/ThemeIcon_dark.svg';
 import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
+import { useAnimationContext } from '../../context/AnimationsContext';
 import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
 import { SUB_PAGES } from '../../utils/constants/links';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   activeLink,
+  animate,
+  AnimationButton,
+  animationButtonDark,
   desktopMenu,
   desktopMenuDark,
   desktopMenuItem,
@@ -29,6 +35,7 @@ import {
   mainContainerDark,
   menuLinks,
   name,
+  noAnimate,
   sidebar,
   sidebarContainer,
   themeButton,
@@ -40,6 +47,7 @@ export function Navbar() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState('pl');
+  const { togglePaused, isPaused } = useAnimationContext();
 
   function toggleSidebarMenu() {
     setIsSidebarMenuVisible((prev) => !prev);
@@ -104,7 +112,7 @@ export function Navbar() {
             <div className={desktopMenuItem}>
               <Link
                 activeClassName={activeLink}
-                className={menuLinks}
+                className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
                 to={SUB_PAGES.PROJECTS}
               >
                 {t('projects')}
@@ -113,21 +121,21 @@ export function Navbar() {
             <div className={desktopMenuItem}>
               <Link
                 activeClassName={activeLink}
-                className={menuLinks}
-                to="projects"
+                className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
+                to="/projects"
               >
                 {t('news')}
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <a className={menuLinks} href={SUB_PAGES.JOIN_US}>
+              <a className={`${menuLinks} ${isPaused ? noAnimate : animate}`} href={SUB_PAGES.JOIN_US}>
                 {t('joinUs')}
               </a>
             </div>
             <div className={desktopMenuItem}>
               <Link
                 activeClassName={activeLink}
-                className={menuLinks}
+                className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
                 to="/contact"
               >
                 {t('contact')}
@@ -145,6 +153,20 @@ export function Navbar() {
             <span>{t('lang')}</span>
           </button>
 
+          <button onClick={togglePaused} className={AnimationButton}>
+            {typeof window !== 'undefined' && isPaused ? (
+              isDarkTheme ? (
+                <AnimationPlayLight className={`${animationButtonDark}`} />
+              ) : (
+                <AnimationPlayLight />
+              )
+            ) : isDarkTheme ? (
+              <AnimationPauseLight className={`${animationButtonDark}`} />
+            ) : (
+              <AnimationPauseLight />
+            )}
+          </button>
+
           <button
             onClick={toggleTheme}
             className={themeButton}
@@ -154,8 +176,11 @@ export function Navbar() {
           </button>
         </div>
         <div className={sidebarContainer}>
-          <div className={sidebar} aria-label={t('ariaLabelSidebarButton')}>
-            <button onClick={() => toggleSidebarMenu()}>
+          <div className={sidebar}>
+            <button
+              onClick={() => toggleSidebarMenu()}
+              aria-label={t('ariaLabelSidebarButton')}
+            >
               {isDarkTheme ? <SidebarDark /> : <SidebarLight />}
             </button>
           </div>

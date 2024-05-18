@@ -1,9 +1,5 @@
 @import '../../assets/styles/theme';
 
-* {
-  transition: $transition-time;
-}
-
 .mainContainer {
   z-index: 10;
   background: $white;
@@ -49,7 +45,7 @@
   display: none;
 }
 .languageThemeWraper {
-  font-size: 14px;
+  font-size: $font-size-mobile-tiny;
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -60,7 +56,7 @@
   background-color: $white;
   border: 1px solid $black;
   border-radius: 20px;
-  width: 60px;
+  width: 70px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -72,7 +68,7 @@
     margin-left: -4px;
   }
   span {
-    font-size: 9px;
+    font-size: $font-size-mobile-tiny;
     width: 70%;
     height: auto;
     text-align: center;
@@ -107,6 +103,11 @@
   span {
     color: $white;
   }
+}
+
+.AnimationButton {
+  background: none;
+  border: 0px;
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
@@ -156,7 +157,7 @@
     color: $white;
   }
   .desktopMenuItems {
-    font-size: 16px;
+    font-size: $font-size-desktop-small;
     margin-top: 50px;
     height: 24px;
     display: flex;
@@ -182,7 +183,7 @@
   }
 
   .menuLinks::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
@@ -191,11 +192,22 @@
     left: 0;
     background-color: $black;
     transform: scaleX(0);
-    transition: transform 0.3s ease;
   }
 
   .menuLinks:hover::before {
     transform: scaleX(1);
+  }
+  .menuLinks.noAnimate::before {
+    transform: scaleX(0);
+  }
+
+  .menuLinks.noAnimate:hover::before {
+    transform: scaleX(1);
+    text-decoration: underline;
+  }
+
+  .menuLinks.animate::before {
+    transition: transform 0.3s ease;
   }
 
   .activeLink {
@@ -204,7 +216,7 @@
   }
 
   .languageThemeWraper {
-    font-size: 19px;
+    font-size: $font-size-desktop-small;
     margin-top: 6px;
     padding-top: 4px;
     margin-right: 80px;
@@ -218,7 +230,7 @@
       margin-left: -3px;
     }
     span {
-      font-size: 15px;
+      font-size: $font-size-desktop-small;
     }
   }
   .languageButtonDark {
@@ -228,5 +240,8 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+  .animationButtonDark{
+    filter: invert(100%);
   }
 }

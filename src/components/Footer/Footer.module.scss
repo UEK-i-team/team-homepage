@@ -1,9 +1,5 @@
 @import "../../assets/styles/theme";
 
-* {
-  transition: $transition-time;
-}
-
 .containerGridLight {
   display: inline-grid;
   height: 200px;
@@ -83,16 +79,16 @@
 
 h2 {
   font-weight: bold;
-  font-size: 15px;
+  font-size: $font-size-mobile-small;
 }
 
 h3 {
   font-weight: bold;
-  font-size: 13px;
+  font-size: $font-size-mobile-tiny;
 }
 
 p {
-  font-size: 13px;
+  font-size: $font-size-mobile-tiny;
   word-wrap: anywhere;
 }
 

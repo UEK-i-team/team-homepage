@@ -8,11 +8,14 @@ import React from 'react';
 
 import { Footer } from './src/components/Footer/Footer';
 import { Navbar } from './src/components/Navbar/Navbar';
+import { AnimationsContextProvider } from './src/context/AnimationsContext';
 import { ThemeProvider } from './src/context/ThemeContex';
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider>
-    <Navbar />
-    {element}
-    <Footer />
+    <AnimationsContextProvider>
+      <Navbar />
+      {element}
+      <Footer />
+    </AnimationsContextProvider>
   </ThemeProvider>
 );
