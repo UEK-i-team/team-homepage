@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +7,7 @@ import FacebookSVG from '../../assets/svgs/facebook.svg';
 import GithubSVG from '../../assets/svgs/github.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import { FACEBOOK_LINK, GITHUB_LINK } from '../../utils/constants/links';
+import { SUB_PAGES } from '../../utils/constants/links';
 import {
   addressContainer,
   containerGridDark,
@@ -23,6 +25,32 @@ export const Footer = () => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const { isDarkTheme } = useContext(ThemeContext);
+  const LINKS = [
+    {
+      title: t('home'),
+      to: SUB_PAGES.HOME,
+      arialLabel: t('ariaLabelHomePage'),
+      type: 'Link',
+    },
+    {
+      title: t('news'),
+      to: SUB_PAGES.NEWS,
+      arialLabel: t('ariaLabelNews'),
+      type: 'Link',
+    },
+    {
+      title: t('joinUs'),
+      to: SUB_PAGES.JOIN_US,
+      arialLabel: t('ariaLabelJoinUs'),
+      type: 'a',
+    },
+    {
+      title: t('contact'),
+      to: '/',
+      arialLabel: t('ariaLabelContact'),
+      type: 'a',
+    },
+  ];
   return (
     <div
       className={theme(mainContainerLight, mainContainerDark)}
@@ -98,7 +126,6 @@ export const Footer = () => {
             katwoj@fakemail.com
           </p>
         </div>
-        <div></div>
         <div>
           <h3>{t('findUs')}</h3>
           <div
@@ -111,6 +138,26 @@ export const Footer = () => {
             <a href={FACEBOOK_LINK} aria-label="I:: team facebook link">
               <FacebookSVG />
             </a>
+          </div>
+        </div>
+        <div className="linksWrapper">
+          <h3>Linki:</h3>
+          <div className="linksListWrapper">
+            <ul>
+              {LINKS.map(({ title, to, arialLabel, type }) => (
+                <li key={title}>
+                  {type === 'Link' ? (
+                    <Link to={to} aria-label={arialLabel}>
+                      {title}
+                    </Link>
+                  ) : (
+                    <a href={to} aria-label={arialLabel}>
+                      {title}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
