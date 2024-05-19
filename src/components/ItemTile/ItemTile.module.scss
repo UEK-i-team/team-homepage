@@ -1,16 +1,4 @@
 @import '../../assets/styles/theme';
-.border{
-  display: flex;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  width: 90vw;
-  outline: 2px solid $grey_40;
-  }
-
-  .darkBorder{
-    outline: 2px solid $white;
-  }
 
 .container{
   display: flex;
@@ -22,6 +10,8 @@
   margin: 10px 8px;
   text-decoration: none;
   width: 90vw;
+  outline: 2px solid $grey_40;
+  overflow: hidden;
 }
 
 .image {
@@ -86,6 +76,18 @@
     max-width: 90vw;
     align-items: stretch;
     height: 50vh;
+    display: flex;
+
+    &:nth-child(2n){
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(odd) .image {
+      border-radius: 10px 0 0 10px;
+    }
+    &:nth-child(even) .image {
+      border-radius: 0 10px 10px 0;
+    }
   }
   .image {
     min-width: 52%;
@@ -107,18 +109,11 @@
     margin: 30px 30px 0px 30px;
     line-height: 1.2;
   }
-  .container:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-  .container:nth-child(odd) .image {
-    border-radius: 0px 10px 10px 0px;
-  }
-  .container:nth-child(even) .image {
-    border-radius: 10px 0px 0px 10px;
-  }
+
 }
 .darkContainer {
   background-color: $black_100_35;
+  outline: 2px solid $white;
 
   .content {
     color: $white;
