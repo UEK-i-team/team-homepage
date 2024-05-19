@@ -21,7 +21,7 @@ export const OurProjects = () => {
   const currLang = i18n.language;
 
   return (
-    <section className={theme(container, darkContainer)}>
+    <section className={theme(container, darkContainer)} id="projects">
       <div>
         <h1 className={title}>{t('ourProjects')}</h1>
         <div className={projectsContainer}>

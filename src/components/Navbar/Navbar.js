@@ -114,9 +114,10 @@ export function Navbar() {
                 activeClassName={activeLink}
                 className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
                 to={SUB_PAGES.PROJECTS}
+                state={{ scrollToId: 'projects' }}
               >
                 {t('projects')}
-              </button>
+              </Link>
             </div>
             <div className={desktopMenuItem}>
               <Link
@@ -128,7 +129,10 @@ export function Navbar() {
               </Link>
             </div>
             <div className={desktopMenuItem}>
-              <a className={`${menuLinks} ${isPaused ? noAnimate : animate}`} href={SUB_PAGES.JOIN_US}>
+              <a
+                className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
+                href={SUB_PAGES.JOIN_US}
+              >
                 {t('joinUs')}
               </a>
             </div>
