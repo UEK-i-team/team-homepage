@@ -54,32 +54,43 @@ export const Footer = () => {
   return (
     <div
       className={theme(mainContainerLight, mainContainerDark)}
-      aria-label="site's footer"
+      aria-label={t('ariaLabelFooter')}
     >
       <div className={theme(containerGridLight, containerGridDark)}>
         <div>
-          <h3 className={title}>{t('scienceClub')}</h3>
+          <h3
+            tabIndex="0"
+            aria-label={t('ariaLabelScienceClub')}
+            className={title}
+          >
+            {t('scienceClub')}
+          </h3>
           <h2>
-            <div> {t('iTeam')} </div>
-            <div>i::team {t('uniName')}</div>
+            <div tabIndex="0" aria-label={t('ariaLabelTeamName')}>
+              {' '}
+              {t('iTeam')}{' '}
+            </div>
+            <div tabIndex="0" aria-label={t('ariaLabelUniName')}>
+              i::team {t('uniName')}
+            </div>
             <div>Uniwersytetu Ekonomicznego</div>
             {t('uniTown')}
           </h2>
         </div>
-        <div>
+        <div tabIndex="0" aria-label={t('ariaLabelboard')}>
           <h3>{t('board')}</h3>
           <p>zarzad@example.com</p>
         </div>
         <div>
           {isDarkTheme ? (
             <>
-              <div className={logo}>
+              <div aria-hidden="true" className={logo}>
                 <StaticImage
                   src="../../assets/images/logo_icon_dark_theme.png"
                   alt="ITeam Logo"
                 ></StaticImage>
               </div>
-              <div className={name}>
+              <div aria-hidden="true" className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_dark_theme.png"
                   alt="ITeam Logo"
@@ -88,13 +99,13 @@ export const Footer = () => {
             </>
           ) : (
             <>
-              <div className={logo}>
+              <div aria-hidden="true" className={logo}>
                 <StaticImage
                   src="../../assets/images/logo_icon_light_theme.png"
                   alt="ITeam Logo"
                 ></StaticImage>
               </div>
-              <div className={name}>
+              <div aria-hidden="true" className={name}>
                 <StaticImage
                   src="../../assets/images/logo_text_light_theme.png"
                   alt="ITeam Logo"
@@ -105,9 +116,13 @@ export const Footer = () => {
         </div>
         <div>
           <div>
-            <h3>{t('address')}</h3>
+            <h3 aria-label={t('ariaLabelAddressWrapper')}>{t('address')}</h3>
           </div>
-          <div className={addressContainer}>
+          <div
+            tabIndex="0"
+            aria-label={t('ariaLabelAddress')}
+            className={addressContainer}
+          >
             <p>
               Rakowicka 27, 31-510 <br />
               {t('town')}
@@ -120,28 +135,27 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <h3>{t('supervisor')}</h3>
+          <h3 tabIndex="0" aria-label={t('ariaLabelSupervisor')}>
+            {t('supervisor')}
+          </h3>
           <p>
             mgr Katarzyna Wójcik <br />
             katwoj@fakemail.com
           </p>
         </div>
-        <div>
+        <div aria-label={t('ariaLabelfindUs')}>
           <h3>{t('findUs')}</h3>
-          <div
-            className={theme(containerIconsLight, containerIconsDark)}
-            aria-label="I:: team github link"
-          >
-            <a href={GITHUB_LINK}>
+          <div className={theme(containerIconsLight, containerIconsDark)}>
+            <a href={GITHUB_LINK} aria-label={t('ariaLabelGitHub')}>
               <GithubSVG />
             </a>
-            <a href={FACEBOOK_LINK} aria-label="I:: team facebook link">
+            <a href={FACEBOOK_LINK} aria-label={t('ariaLabelFacebook')}>
               <FacebookSVG />
             </a>
           </div>
         </div>
         <div className="linksWrapper">
-          <h3>Linki:</h3>
+          <h3>{t('links')}</h3>
           <div className="linksListWrapper">
             <ul>
               {LINKS.map(({ title, to, arialLabel, type }) => (
