@@ -1,7 +1,9 @@
 export const FACEBOOK_LINK = 'https://www.facebook.com/KNIUEK';
 export const GITHUB_LINK = 'https://github.com/UEK-i-team';
+export const PROJECTS_ID = 'projects';
 export const SUB_PAGES = {
-  PROJECTS: '/projects',
+  PROJECTS: '/',
   NEWS: '/news',
   JOIN_US: 'https://longdogechallenge.com/',
+  HOME: '/',
 };
