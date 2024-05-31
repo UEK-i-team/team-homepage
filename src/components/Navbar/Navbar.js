@@ -13,7 +13,7 @@ import ThemeIconDark from '../../assets/svgs/ThemeIcon_light.svg';
 import { useAnimationContext } from '../../context/AnimationsContext';
 import { ThemeContext } from '../../context/ThemeContex';
 import { switchLanguage } from '../../i18n/switchLanguage';
-import { SUB_PAGES } from '../../utils/constants/links';
+import { PROJECTS_ID, SUB_PAGES } from '../../utils/constants/links';
 import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   activeLink,
@@ -113,8 +113,8 @@ export function Navbar() {
               <Link
                 activeClassName={activeLink}
                 className={`${menuLinks} ${isPaused ? noAnimate : animate}`}
-                to={SUB_PAGES.PROJECTS}
-                state={{ scrollToId: 'projects' }}
+                to={SUB_PAGES.HOME}
+                state={{ scrollTo: PROJECTS_ID }}
               >
                 {t('projects')}
               </Link>

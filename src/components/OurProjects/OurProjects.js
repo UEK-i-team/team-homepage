@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ThemeContext } from '../../context/ThemeContex';
+import { PROJECTS_ID } from '../../utils/constants/links';
 import { convertTitleToLinkFormat } from '../../utils/functions/convertTitleToLinkFormat';
 import { ItemTile } from '../ItemTile/ItemTile';
 import { ScrollToTopButton } from '../ScrollToTopButton/ScrollToTopButton';
@@ -21,7 +22,7 @@ export const OurProjects = () => {
   const currLang = i18n.language;
 
   return (
-    <section className={theme(container, darkContainer)} id="projects">
+    <section className={theme(container, darkContainer)} id={PROJECTS_ID}>
       <div>
         <h1 className={title}>{t('ourProjects')}</h1>
         <div className={projectsContainer}>

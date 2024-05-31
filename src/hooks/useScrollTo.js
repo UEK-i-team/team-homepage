@@ -1,13 +1,23 @@
 import { useEffect } from 'react';
 
+import { useAnimationContext } from '../context/AnimationsContext';
+
 export const useScrollTo = (location) => {
+  const { isPaused } = useAnimationContext();
+
   useEffect(() => {
-    const { scrollToId } = location?.state;
-    console.log(scrollToId);
-    if (scrollToId) {
-      document
-        .getElementById(scrollToId)
-        ?.scrollIntoView({ behavior: 'smooth' });
+    if (location.state) {
+      const { scrollTo } = location.state;
+
+      if (scrollTo && document && window) {
+        setTimeout(() => {
+          document
+            .getElementById(scrollTo)
+            ?.scrollIntoView({ behavior: isPaused ? 'instant' : 'smooth' });
+
+          window.history.replaceState({}, '');
+        });
+      }
     }
-  }, [location, document]);
+  }, [location.state]);
 };
