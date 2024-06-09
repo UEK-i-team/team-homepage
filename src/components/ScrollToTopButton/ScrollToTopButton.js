@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import ArrowUp from '../../assets/svgs/ArrowUp.svg';
+import { useAnimationContext } from '../../context/AnimationsContext';
 import { ThemeContext } from '../../context/ThemeContex';
 import {
   buttonNoDecoration,
@@ -11,6 +12,8 @@ import {
 
 export const ScrollToTopButton = () => {
   const { theme } = useContext(ThemeContext);
+  const { isPaused } = useAnimationContext();
+
   return (
     <div className={scrollToButtonContainer}>
       <button
@@ -18,7 +21,7 @@ export const ScrollToTopButton = () => {
         onClick={() => {
           window.scrollTo({
             top,
-            behavior: 'smooth',
+            behavior: isPaused ? 'instant' : 'smooth',
           });
         }}
       >

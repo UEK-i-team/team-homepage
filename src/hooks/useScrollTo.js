@@ -11,9 +11,9 @@ export const useScrollTo = (location) => {
 
       if (scrollTo && document && window) {
         setTimeout(() => {
-          document
-            .getElementById(scrollTo)
-            ?.scrollIntoView({ behavior: isPaused ? 'instant' : 'smooth' });
+          document.getElementById(scrollTo)?.scrollIntoView({
+            behavior: isPaused ? 'instant' : 'smooth',
+          });
 
           window.history.replaceState({}, '');
         });
