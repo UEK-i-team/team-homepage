@@ -1,6 +1,6 @@
 @import '../../assets/styles/theme';
 
-.projectsContainer{
+.projectsContainer {
   align-self: center;
   height: 100%;
   display: grid;
@@ -17,13 +17,11 @@
 
 .container {
   color: $black;
-  padding-bottom: 200px;
 }
 
 .darkContainer {
   color: $white;
 }
-
 
 @media (max-width: 768px) {
   .title {
@@ -31,7 +29,7 @@
     font-size: $font-size-mobile-large;
     margin: 20px 30px 28px 32px;
   }
-  .projectsContainer{
+  .projectsContainer {
     grid-row-gap: 36px;
   }
 }

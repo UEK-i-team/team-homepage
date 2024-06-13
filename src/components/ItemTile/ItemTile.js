@@ -5,10 +5,8 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from '../../context/ThemeContex';
 import {
-  border,
   container,
   content,
-  darkBorder,
   darkContainer,
   image,
   text,
@@ -21,29 +19,25 @@ export const ItemTile = ({
   itemImage,
   itemLink,
   itemImageAlt,
-  borderVisible = true,
 }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={borderVisible ? theme(border, darkBorder) : ''}>
-      <Link to={itemLink} className={theme(container, darkContainer)}>
-        {itemImage ? (
-          <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
-        ) : (
-          <StaticImage
-            src="https://picsum.photos/600/600"
-            alt="random image"
-            className={image}
-          />
-        )}
-
-        <div className={content}>
-          <div className={title}>{itemTitle}</div>
-          <div className={text}>{itemText}</div>
-        </div>
-      </Link>
-    </div>
+    <Link to={itemLink} className={theme(container, darkContainer)}>
+      {itemImage ? (
+        <GatsbyImage image={itemImage} alt={itemImageAlt} className={image} />
+      ) : (
+        <StaticImage
+          src="https://picsum.photos/600/600"
+          alt="random image"
+          className={image}
+        />
+      )}
+      <div className={content}>
+        <div className={title}>{itemTitle}</div>
+        <div className={text}>{itemText}</div>
+      </div>
+    </Link>
   );
 };
 

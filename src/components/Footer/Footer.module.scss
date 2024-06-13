@@ -2,7 +2,7 @@
 
 .containerGridLight {
   display: inline-grid;
-  height: 200px;
+  height: 250px;
   grid-template-columns: 52% auto;
   grid-template-rows: 9% 11% 4%;
   column-gap: 15px;
@@ -13,7 +13,7 @@
 
 .containerGridDark {
   display: inline-grid;
-  height: 200px;
+  height: 250px;
   grid-template-columns: 52% auto;
   grid-template-rows: 9% 11% 4%;
   column-gap: 15px;
@@ -92,13 +92,18 @@ p {
   word-wrap: anywhere;
 }
 
-.containerGridLight>div:nth-child(3),
-.containerGridDark>div:nth-child(3) {
-  display: none;
+ul{
+  font-size: 13px;
+  word-wrap: anywhere;
+  text-decoration: underline;
 }
 
-.title {
+a{
+  color: $black;
+}
 
+.containerGridLight>div:nth-child(3),
+.containerGridDark>div:nth-child(3) {
   display: none;
 }
 
@@ -118,7 +123,7 @@ div>p:nth-child(3) {
   margin-top: -1rem;
 }
 
-@media (min-width: $breakpoint-desktop) {
+@media (min-width: $breakpoint-tablet) {
   .breakpoint {
     display: none;
   }
@@ -174,13 +179,13 @@ div>p:nth-child(3) {
   .containerGridLight>div:nth-child(6),
   .containerGridDark>div:nth-child(6) {
     grid-column: 3 / span 1;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .containerGridLight>div:nth-child(7),
   .containerGridDark>div:nth-child(7) {
     grid-column: 3 / span 1;
-    grid-row: 2;
+    grid-row: 3;
   }
 
   .logo {
