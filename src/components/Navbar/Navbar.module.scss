@@ -20,20 +20,24 @@
   -moz-box-shadow: 0 4px 4px 0 $black_100_25;
   box-shadow: 0 4px 4px 0 $black_100_25;
 }
+
 .mainContainerDark {
   background-color: $dark-navbar-mobile;
 }
+
 .logoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   color: $white;
 }
+
 .logo {
   height: 26px;
   width: 19px;
   margin-right: 14px;
 }
+
 .name {
   display: flex;
   justify-content: center;
@@ -41,9 +45,11 @@
   height: 15px;
   width: 68px;
 }
+
 .desktopMenu {
   display: none;
 }
+
 .languageThemeWraper {
   font-size: $font-size-mobile-tiny;
   display: flex;
@@ -51,6 +57,7 @@
   margin-left: auto;
   margin-right: 16px;
 }
+
 .languageButton {
   margin: 0 10px;
   background-color: $white;
@@ -67,6 +74,7 @@
     margin-right: 5px;
     margin-left: -4px;
   }
+
   span {
     font-size: $font-size-mobile-tiny;
     width: 70%;
@@ -80,19 +88,23 @@
     outline: 2px solid inherit;
   }
 }
+
 .themeButton {
   background: none;
   border: none;
 }
+
 .sidebarContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .sidebar button {
   background: none;
   border: none;
 }
+
 .languageButtonDark {
   background-color: $black;
   border: 1px solid $white;
@@ -100,6 +112,7 @@
   svg {
     filter: invert(100%);
   }
+
   span {
     color: $white;
   }
@@ -110,38 +123,50 @@
   border: 0px;
 }
 
+.AnimationButton * {
+  color: black;
+
+}
+
 @media screen and (min-width: $breakpoint-desktop) {
   .themeButton {
     background: none;
     border: none;
   }
+
   .themeButton * {
     width: 25px;
     height: 25px;
   }
+
   .mainContainer {
     height: 117px;
     padding: 0 0;
     box-shadow: none;
   }
+
   .sidebarContainer {
     display: none;
   }
+
   .logoContainer {
     margin-right: 80px;
   }
+
   .logo {
     height: 58px;
     width: 37px;
     margin-right: 16px;
     margin-left: 80px;
   }
+
   .logoImg {
     height: 58px;
     width: 37px;
     margin-right: 16px;
     margin-left: 80px;
   }
+
   .name {
     display: flex;
     justify-content: center;
@@ -149,24 +174,29 @@
     height: 21px;
     width: 100px;
   }
+
   .desktopMenu {
     display: flex;
     height: 100%;
   }
+
   .desktopMenuDark {
     color: $white;
   }
+
   .desktopMenuItems {
     font-size: $font-size-desktop-small;
     margin-top: 50px;
     height: 24px;
     display: flex;
     align-items: center;
+
     div {
       display: inline-block;
       position: relative;
     }
   }
+
   .desktopMenuItemsDark {
     div ::before {
       background-color: $white;
@@ -203,6 +233,7 @@
   .menuLinks:hover::before {
     transform: scaleX(1);
   }
+
   .menuLinks.noAnimate::before {
     transform: scaleX(0);
   }
@@ -227,6 +258,7 @@
     padding-top: 4px;
     margin-right: 80px;
   }
+
   .languageButton {
     border-width: 2px;
     width: 100px;
@@ -235,18 +267,22 @@
       width: 20px;
       margin-left: -3px;
     }
+
     span {
       font-size: $font-size-desktop-small;
     }
   }
+
   .languageButtonDark {
     background-color: $black;
     border-color: $white;
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
+
   .animationButtonDark {
     filter: invert(100%);
   }
