@@ -18,7 +18,7 @@ import { SidebarMenu } from '../SidebarMenu/SidebarMenu';
 import {
   activeLink,
   animate,
-  AnimationButton,
+  animationButton,
   animationButtonDark,
   desktopMenu,
   desktopMenuDark,
@@ -30,7 +30,6 @@ import {
   languageThemeWraper,
   logo,
   logoContainer,
-  logoImg,
   mainContainer,
   mainContainerDark,
   menuLinks,
@@ -70,7 +69,7 @@ export function Navbar() {
           {isDarkTheme ? (
             <>
               <div className={logo}>
-                <Link to="/" className={logoImg}>
+                <Link to="/">
                   <StaticImage
                     src="../../assets/images/logo_icon_dark_theme.png"
                     alt="ITeam Logo"
@@ -157,15 +156,18 @@ export function Navbar() {
             <span>{t('lang')}</span>
           </button>
 
-          <button onClick={togglePaused} className={AnimationButton}>
+          <button
+            onClick={togglePaused}
+            className={theme(animationButton, animationButtonDark)}
+          >
             {typeof window !== 'undefined' && isPaused ? (
               isDarkTheme ? (
-                <AnimationPlayLight className={`${animationButtonDark}`} />
+                <AnimationPlayLight />
               ) : (
                 <AnimationPlayLight />
               )
             ) : isDarkTheme ? (
-              <AnimationPauseLight className={`${animationButtonDark}`} />
+              <AnimationPauseLight />
             ) : (
               <AnimationPauseLight />
             )}

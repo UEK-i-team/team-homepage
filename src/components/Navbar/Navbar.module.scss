@@ -118,9 +118,16 @@
   }
 }
 
-.AnimationButton {
+.animationButton {
+  svg {
+    color: $black;
+  }
   background: none;
-  border: 0px;
+  border: none;
+  
+}
+.animationButtonDark{
+  filter: invert(100%);
 }
 
 
@@ -150,13 +157,6 @@
   }
 
   .logo {
-    height: 58px;
-    width: 37px;
-    margin-right: 16px;
-    margin-left: 80px;
-  }
-
-  .logoImg {
     height: 58px;
     width: 37px;
     margin-right: 16px;

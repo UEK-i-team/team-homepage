@@ -32,13 +32,19 @@
   margin-top: 28px;
 }
 .text {
+  display: -webkit-box;
   font-size: $font-size-mobile-small;
   margin-top: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
 }
 
 @media (max-width: $breakpoint-desktop){
   .border{
-    width: min-content;
+    width: calc(100% - 16px);
+    margin: auto;
   }
   .container {
     width: auto;
@@ -57,6 +63,8 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .content {
+    max-width: 326px;
+    height: 219px;
     overflow-y: hidden;
   }
   .title {
