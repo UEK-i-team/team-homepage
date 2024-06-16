@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ThemeContext } from '../../context/ThemeContex';
-import { Carousel } from '../Carousel/Carousel';
 import { ItemTile } from '../ItemTile/ItemTile';
 import {
   container,
@@ -17,7 +16,6 @@ export const News = () => {
 
   return (
     <div>
-      <Carousel />
       <section className={theme(container, darkContainer)}>
         <div>
           <h1 className={title}>{t('news')}</h1>
