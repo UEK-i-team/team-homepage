@@ -3,7 +3,7 @@
 .mainContainer {
   z-index: 10;
   background: $white;
-  color: black;
+  color: $black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,10 +123,6 @@
   border: 0px;
 }
 
-.AnimationButton * {
-  color: black;
-
-}
 
 @media screen and (min-width: $breakpoint-desktop) {
   .themeButton {
