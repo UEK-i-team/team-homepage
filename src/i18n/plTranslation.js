@@ -27,6 +27,10 @@ const plTranslations = {
     heading: 'Kim jesteśmy?',
     description:
       'Pierwsza z Imienia, Niepłonąca, Królowa Meereen, Królowa Andalów, Rhoynar i Pierwszych Ludzi, Khalisee Wielkiej Stepowej Łąki, Łamaczka Łańcuchów i Matka Smoków.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+    notFoundHeader: 'Ups! Chyba coś poszło nie tak...',
+    notFoundDescription:
+      'Nie ma takiej strony. Może źle wpisałeś adres? Wróć na stronę główną i spróbuj jeszcze raz. Jeśli dalej nie działa, spróbuj wyszukiwarkilub skontaktuj się z nami.',
+    notFoundButton: 'Wróć do strony głównej',
     ariaLabelHomePage: 'Link do Strony Głównej',
     ariaLabelNews: 'Link do Aktualności',
     ariaLabelJoinUs: 'Link do Dołącz Do Nas',

@@ -1,0 +1,137 @@
+@import "../../assets/styles/theme";
+
+.mainContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    color: $black;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    cursor: default;
+}
+
+.mainContainerDark {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    color: $white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.infoText {
+    width: 30vw;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoTextDark {
+    width: 30vw;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoText * {
+    color: $black;
+    text-align: center;
+    align-content: center;
+}
+
+.infoTextDark * {
+    color: $white;
+    text-align: center;
+    align-content: center;
+}
+
+.animationContainer {
+    [role="button"] {
+        cursor: default !important;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+.goBackButton {
+    margin-top: 2%;
+    background: none;
+    border: 2px solid $black;
+    border-radius: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 55%;
+    cursor: pointer;
+}
+
+.goBackButton:hover {
+    background-color: black;
+    color: $white;
+}
+
+.goBackButtonDark {
+    margin-top: 2%;
+    background: none;
+    border: 2px solid $white;
+    border-radius: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 55%;
+    cursor: pointer;
+}
+
+.goBackButtonDark:hover {
+    color: $dark-footer-top-mobile;
+    background-color: $white;
+}
+
+h1 {
+    font-size: $font-size-desktop-large;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: $font-size-desktop;
+    font-weight: 400;
+}
+
+h4 {
+    text-wrap: pretty;
+    margin: 1rem;
+}
+
+.mainPageLink {
+    text-decoration: none;
+    /* Usuwa podkreślenie */
+    color: inherit;
+    /* Ustawia kolor tekstu na dziedziczony */
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+button {
+    cursor: default;
+}

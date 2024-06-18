@@ -5,5 +5,5 @@ export const SUB_PAGES = {
   HOME: '/',
   PROJECTS: '/projects',
   NEWS: '/news',
-  JOIN_US: 'https://longdogechallenge.com/',
+  JOIN_US: '/404.html',
 };
