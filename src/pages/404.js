@@ -1,9 +1,20 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import NotFound from '../components/NotFound/NotFound';
 
 const NotFoundPage = () => {
-  return <h1 style={{ fontFamily: 'sans-serif' }}>404 - page not found</h1>;
+  const { i18n } = useTranslation();
+  const currLang = i18n.language;
+  useEffect(() => {
+    document.documentElement.lang = currLang;
+  }, [currLang]);
+
+  return (
+    <>
+      <NotFound />
+    </>
+  );
 };
 
 export default NotFoundPage;
-
-export const Head = () => <title>404 - Not found</title>;
