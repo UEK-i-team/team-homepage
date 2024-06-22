@@ -121,9 +121,7 @@ h4 {
 
 .mainPageLink {
     text-decoration: none;
-    /* Usuwa podkreślenie */
     color: inherit;
-    /* Ustawia kolor tekstu na dziedziczony */
     display: inline-block;
     display: flex;
     justify-content: center;
@@ -134,4 +132,134 @@ h4 {
 
 button {
     cursor: default;
+}
+
+@media screen and (max-width: $breakpoint-desktop) {
+
+    .mainContainer {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: large;
+        color: $black;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        cursor: default;
+    }
+
+    .mainContainerDark {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: large;
+        color: $white;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+
+    .infoText,
+    .infoTextDark {
+        width: 70vw;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: justify;
+        white-space: nowrap
+    }
+
+    .infoText * {
+        color: $black;
+        text-align: center;
+        align-content: center;
+    }
+
+    .infoTextDark * {
+        color: $white;
+    }
+
+    .animationContainer {
+        [role="button"] {
+            cursor: default !important;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1%;
+    }
+
+    .goBackButton {
+        margin-top: 2%;
+        background: none;
+        border: 2px solid $black;
+        border-radius: 20px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .goBackButton:hover {
+        background-color: black;
+        color: $white;
+    }
+
+    .goBackButtonDark {
+        font-size: $font-size-mobile-small;
+        margin-top: 2%;
+        background: none;
+        border: 2px solid $white;
+        border-radius: 20px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .goBackButtonDark:hover {
+        color: $dark-footer-top-mobile;
+        background-color: $white;
+    }
+
+    h1 {
+        font-size: $font-size-desktop-large;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: $font-size-mobile-large;
+        font-weight: 400;
+    }
+
+    h4 {
+        text-wrap: pretty;
+        margin: 1rem;
+        font-size: $font-size-mobile-tiny;
+    }
+
+    .mainPageLink {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    button {
+        cursor: default;
+    }
 }
