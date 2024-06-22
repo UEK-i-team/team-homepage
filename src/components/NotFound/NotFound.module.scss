@@ -1,6 +1,7 @@
 @import "../../assets/styles/theme";
 
-.mainContainer {
+.mainContainer,
+.mainContainerDark {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -13,14 +14,7 @@
 }
 
 .mainContainerDark {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: large;
     color: $white;
-    margin-bottom: 5%;
-    margin-top: 5%;
 }
 
 .infoText {
@@ -80,7 +74,7 @@
 }
 
 .goBackButton:hover {
-    background-color: black;
+    background-color: $black;
     color: $white;
 }
 
@@ -149,14 +143,7 @@ button {
     }
 
     .mainContainerDark {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: large;
         color: $white;
-        margin-bottom: 5%;
-        margin-top: 5%;
     }
 
     .infoText,
@@ -192,6 +179,7 @@ button {
     }
 
     .goBackButton {
+        font-size: $font-size-mobile-small;
         margin-top: 2%;
         background: none;
         border: 2px solid $black;
@@ -240,6 +228,9 @@ button {
     h2 {
         font-size: $font-size-mobile-large;
         font-weight: 400;
+        width: 70vw;
+        text-align: center;
+        text-wrap: pretty;
     }
 
     h4 {

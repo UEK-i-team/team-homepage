@@ -40,44 +40,49 @@ const NotFound = () => {
   };
 
   return (
-    <div className={isDarkTheme ? mainContainerDark : mainContainer}>
-      <div className={animationContainer}>
-        {isDarkTheme ? (
-          <Lottie
-            options={defaultOptions}
-            width={128.56872}
-            height={161.77344}
-            isStopped={isStopped}
-          />
-        ) : (
-          <Lottie
-            options={defaultOptionsDark}
-            width={128.56872}
-            height={161.77344}
-            isStopped={isStopped}
-          />
-        )}
-      </div>
+    <>
       {isDarkTheme ? (
-        <div className={infoTextDark}>
-          <h1>404</h1>
-          <h2>{t('notFoundHeader')}</h2>
-          <h4>{t('notFoundDescription')}</h4>
-          <Link to="/" className={mainPageLink}>
-            <div className={goBackButtonDark}>{t('notFoundButton')}</div>
-          </Link>
+        <div className={mainContainerDark}>
+          <div className={animationContainer}>
+            {' '}
+            <Lottie
+              options={defaultOptions}
+              width={128.56872}
+              height={161.77344}
+              isStopped={isStopped}
+            />
+          </div>{' '}
+          <div className={infoTextDark}>
+            <h1>404</h1>
+            <h2>{t('notFoundHeader')}</h2>
+            <h4>{t('notFoundDescription')}</h4>
+            <Link to="/" className={mainPageLink}>
+              <div className={goBackButtonDark}>{t('notFoundButton')}</div>
+            </Link>
+          </div>
         </div>
       ) : (
-        <div className={infoText}>
-          <h1>404</h1>
-          <h2>{t('notFoundHeader')}</h2>
-          <h4>{t('notFoundDescription')}</h4>
-          <Link to="/" className={mainPageLink}>
-            <div className={goBackButton}>{t('notFoundButton')}</div>
-          </Link>
+        <div className={mainContainer}>
+          {' '}
+          <div className={animationContainer}>
+            <Lottie
+              options={defaultOptionsDark}
+              width={128.56872}
+              height={161.77344}
+              isStopped={isStopped}
+            />
+          </div>{' '}
+          <div className={infoText}>
+            <h1>404</h1>
+            <h2>{t('notFoundHeader')}</h2>
+            <h4>{t('notFoundDescription')}</h4>
+            <Link to="/" className={mainPageLink}>
+              <div className={goBackButton}>{t('notFoundButton')}</div>
+            </Link>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
