@@ -25,7 +25,10 @@ export const ScrollToTopButton = () => {
           });
         }}
       >
-        <svg className={theme(scrollToButtonLight, scrollToButtonDark)}>
+        <svg
+          className={theme(scrollToButtonLight, scrollToButtonDark)}
+          aria-label={'ariaLabelScrollToTopButton'}
+        >
           <ArrowUp />
         </svg>
       </button>

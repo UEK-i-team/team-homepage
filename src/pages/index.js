@@ -10,7 +10,7 @@ const IndexPage = ({ location }) => {
   const { i18n } = useTranslation();
   const currLang = i18n.language;
   useEffect(() => {
-    document.documentElement.lang = currLang; // Set your language code here
+    if (document) document.documentElement.lang = currLang; // Set your language code here
   }, [currLang]);
 
   useScrollTo(location);

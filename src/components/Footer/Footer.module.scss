@@ -4,22 +4,17 @@
   display: inline-grid;
   height: 250px;
   grid-template-columns: 52% auto;
-  grid-template-rows: 9% 11% 4%;
+  grid-template-rows: 18% 18% 4%;
   column-gap: 15px;
   row-gap: 80px;
   margin-left: 22px;
   margin-right: 10px;
 }
-
-.containerGridDark {
-  display: inline-grid;
-  height: 250px;
-  grid-template-columns: 52% auto;
-  grid-template-rows: 9% 11% 4%;
-  column-gap: 15px;
-  row-gap: 80px;
-  margin-left: 22px;
-  margin-right: 10px;
+.subpageLinkLight {
+  text-decoration: none;
+}
+.subpageLinkDark {
+  color: $white;
 }
 
 .containerGridLight>div {
@@ -34,16 +29,13 @@
 
 .mainContainerLight {
   background: linear-gradient(180deg, $light-footer-top-mobile 15%, $light-footer-bottom-mobile 100%);
-  padding-top: 55px;
-  padding-bottom: 90px;
+  padding-top: 40px;
+  padding-bottom: 120px;
   text-align: center;
 }
 
 .mainContainerDark {
   background: linear-gradient(180deg, $dark-footer-top-mobile 15%, $dark-footer-bottom-mobile 100%);
-  padding-top: 55px;
-  padding-bottom: 90px;
-  text-align: center;
 }
 
 .containerIconsLight {
@@ -98,8 +90,13 @@ ul{
   text-decoration: underline;
 }
 
-a{
+.footerLinksLight {
   color: $black;
+  height: 24px;
+}
+
+.footerLinksDark {
+  color: $white;
 }
 
 .containerGridLight>div:nth-child(3),
@@ -218,7 +215,6 @@ div>p:nth-child(3) {
     text-transform: uppercase;
   }
 
-
   .addressContainer>p:nth-child(1) {
     display: none;
   }
@@ -227,4 +223,13 @@ div>p:nth-child(3) {
     display: block;
   }
 
+  .footerLinksLight {
+    color: $black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .footerLinksDark {
+    color: $white;
+  }
 }

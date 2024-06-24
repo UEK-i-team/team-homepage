@@ -159,6 +159,7 @@ export function Navbar() {
           <button
             onClick={togglePaused}
             className={theme(animationButton, animationButtonDark)}
+            aria-label={t('ariaLabelPauseAnimationsButton')}
           >
             {typeof window !== 'undefined' && isPaused ? (
               isDarkTheme ? (

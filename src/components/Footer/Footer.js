@@ -14,6 +14,8 @@ import {
   containerGridLight,
   containerIconsDark,
   containerIconsLight,
+  footerLinksDark,
+  footerLinksLight,
   logo,
   mainContainerDark,
   mainContainerLight,
@@ -161,11 +163,19 @@ export const Footer = () => {
               {LINKS.map(({ title, to, arialLabel, type }) => (
                 <li key={title}>
                   {type === 'Link' ? (
-                    <Link to={to} aria-label={arialLabel}>
+                    <Link
+                      to={to}
+                      aria-label={arialLabel}
+                      className={theme(footerLinksLight, footerLinksDark)}
+                    >
                       {title}
                     </Link>
                   ) : (
-                    <a href={to} aria-label={arialLabel}>
+                    <a
+                      href={to}
+                      aria-label={arialLabel}
+                      className={theme(footerLinksLight, footerLinksDark)}
+                    >
                       {title}
                     </a>
                   )}
