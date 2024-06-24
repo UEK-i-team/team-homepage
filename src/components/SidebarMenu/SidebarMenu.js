@@ -82,7 +82,7 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
         </button>
         <div className={menu}>
           <div className={menuItem}>
-            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+            <Link to="/" tabIndex={isVisible ? 0 : -1} onClick={onToggle}>
               {t('home')}
             </Link>
           </div>
@@ -133,17 +133,17 @@ export const SidebarMenu = ({ isVisible, onToggle }) => {
             ))}
           </div>
           <div className={menuItem}>
-            <Link to="/news/" tabIndex={isVisible ? 0 : -1}>
+            <Link to="/news/" tabIndex={isVisible ? 0 : -1} onClick={onToggle}>
               {t('news')}
             </Link>
           </div>
           <div className={menuItem}>
-            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+            <Link to="/" tabIndex={isVisible ? 0 : -1} onClick={onToggle}>
               {t('joinUs')}
             </Link>
           </div>
           <div className={menuItem}>
-            <Link to="/" tabIndex={isVisible ? 0 : -1}>
+            <Link to="/" tabIndex={isVisible ? 0 : -1} onClick={onToggle}>
               {t('contact')}
             </Link>
           </div>
