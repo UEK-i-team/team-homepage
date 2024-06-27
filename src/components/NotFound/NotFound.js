@@ -1,10 +1,9 @@
 import { Link } from 'gatsby';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import Lottie from 'react-lottie';
 
-import animationDataDark from '../../assets/svgs/ErrorRobot.json';
-import animationData from '../../assets/svgs/ErrorRobotDark.json';
+import ErrorRobot from '../../assets/svgs/ErrorRobot.svg';
+import ErrorRobotDark from '../../assets/svgs/ErrorRobotDark.svg';
 import { ThemeContext } from '../../context/ThemeContex';
 import {
   animationContainer,
@@ -18,39 +17,15 @@ import {
 } from './NotFound.module.scss';
 
 const NotFound = () => {
-  const [isStopped] = useState(true);
   const { isDarkTheme } = useContext(ThemeContext);
   const { t } = useTranslation();
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationDataDark,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-  const defaultOptionsDark = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
 
   return (
     <>
       {isDarkTheme ? (
         <div className={mainContainerDark}>
           <div className={animationContainer}>
-            {' '}
-            <Lottie
-              options={defaultOptions}
-              width={128.56872}
-              height={161.77344}
-              isStopped={isStopped}
-            />
+            <ErrorRobot width="107.14" height="137.81" />
           </div>{' '}
           <div className={infoTextDark}>
             <h1>404</h1>
@@ -65,12 +40,7 @@ const NotFound = () => {
         <div className={mainContainer}>
           {' '}
           <div className={animationContainer}>
-            <Lottie
-              options={defaultOptionsDark}
-              width={128.56872}
-              height={161.77344}
-              isStopped={isStopped}
-            />
+            <ErrorRobotDark width="107.14" height="137.81" />
           </div>{' '}
           <div className={infoText}>
             <h1>404</h1>
